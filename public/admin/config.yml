@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: your-github-org/your-repo-name
+  repo: stellar-images/stellar-images-site
   branch: main
   base_url: https://your-vercel-domain.example
   auth_endpoint: api/auth

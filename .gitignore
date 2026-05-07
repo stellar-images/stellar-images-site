@@ -10,6 +10,7 @@ dist/
 base44_frames/
 base44_frames_dense/
 artifacts-*.png
+.playwright-mcp/
 
 # OS/editor noise
 .DS_Store

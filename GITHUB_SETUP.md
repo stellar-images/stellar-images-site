@@ -28,18 +28,22 @@ Suggested slug pattern:
 
 ## Create And Push The Repo
 
+The organization slug is:
+
+```text
+stellar-images
+```
+
 After the organization exists and `lylecodes` has permission to create repos there, run:
 
 ```sh
-gh repo create ORG_SLUG/stellar-images-site \
+gh repo create stellar-images/stellar-images-site \
   --private \
   --source=. \
   --remote=origin \
   --push \
   --description "Real estate photography website"
 ```
-
-Replace `ORG_SLUG` with the real organization slug.
 
 ## Decap Config After Push
 
@@ -48,7 +52,7 @@ Update `public/admin/config.yml`:
 ```yml
 backend:
   name: github
-  repo: ORG_SLUG/stellar-images-site
+  repo: stellar-images/stellar-images-site
   branch: main
   base_url: https://YOUR-VERCEL-DOMAIN
   auth_endpoint: api/auth
