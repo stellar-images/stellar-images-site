@@ -29,6 +29,14 @@ Likely variables once the OAuth provider/function is selected:
 - `GITHUB_CLIENT_ID`
 - `GITHUB_CLIENT_SECRET`
 - `OAUTH_STATE_SECRET` or equivalent signing/CSRF secret if required by the provider
+- `OAUTH_REDIRECT_URI`
+- `GITHUB_OAUTH_SCOPE`
+
+Current production state:
+
+- `OAUTH_REDIRECT_URI` is set to `https://stellar-images-site.vercel.app/api/callback`
+- `GITHUB_OAUTH_SCOPE` is set to `repo`
+- `GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET`, and `OAUTH_STATE_SECRET` still need to be added
 
 Do not put `GITHUB_CLIENT_SECRET` in `public/admin/config.yml`. That file is served publicly.
 

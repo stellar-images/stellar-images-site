@@ -49,7 +49,8 @@ Still needs final production setup:
 
 - Decap production auth environment variables
 - real Calendly URL
-- Vercel email env vars for intake delivery
+- remaining Vercel email env vars for intake delivery
+- Vercel GitHub integration access to the private organization repo for automatic deploys
 - final photos and content
 
 ## Decap Auth And Maintenance Access
@@ -76,7 +77,27 @@ Required variables:
 - `INTAKE_TO_EMAIL`
 - `INTAKE_FROM_EMAIL`
 
+Current production state:
+
+- `INTAKE_TO_EMAIL` is set to `alexandra.v.maass@gmail.com`
+- `RESEND_API_KEY` still needs to be added
+- `INTAKE_FROM_EMAIL` still needs to be added after choosing a verified Resend sender
+
 The sender address must be allowed by the Resend account. In production, use a verified domain sender rather than a personal Gmail address.
+
+## Vercel Deployment
+
+The current production deployment is live at:
+
+- https://stellar-images-site.vercel.app
+
+The project currently lives under the Vercel scope `lylej312s-projects`.
+
+Git auto-deploy is not connected yet because Vercel has not been granted access to the private GitHub organization repo. Until that is connected, deploy from this folder with:
+
+```sh
+npx --yes vercel@latest deploy --prod --yes --archive=tgz
+```
 
 ## Content Sources
 
