@@ -43,7 +43,8 @@ Current Decap status:
 
 - the admin UI and collection config are scaffolded
 - `local_backend: true` is enabled for local development
-- the production Git backend repo value in `public/admin/config.yml` is still a placeholder
+- the production Git backend points at `stellar-images/stellar-images-site`
+- Vercel is connected to the GitHub repo for automatic deploys from `main`
 
 Important:
 
@@ -54,9 +55,21 @@ Important:
 
 ## Current Gaps
 
-- the real Git backend repo and deployed Decap `base_url` still need to be configured
 - the intake form submission needs production email env vars before it can send real messages
+- Decap production OAuth env vars still need to be added
+- the real Calendly URL still needs to be added
 - placeholder content and placeholder artwork need to be replaced
+
+## Repo Visibility
+
+The repository is public so Vercel Hobby can auto-deploy from the `stellar-images` organization repo. Keep secrets out of the repo:
+
+- real `.env` files are ignored
+- `.vercel/` is ignored
+- `.env.example` contains placeholder variable names only
+- production secrets belong in Vercel Environment Variables
+
+If the repo is made private again while it remains under the organization, Vercel auto-deploys will require Vercel Pro or a move to a personal GitHub repo.
 
 ## Environment Variables
 

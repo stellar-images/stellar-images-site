@@ -34,7 +34,7 @@ The organization slug is:
 stellar-images
 ```
 
-After the organization exists and `lylecodes` has permission to create repos there, run:
+After the organization exists and `lylecodes` has permission to create repos there, this repo was created and pushed as:
 
 ```sh
 gh repo create stellar-images/stellar-images-site \
@@ -44,6 +44,8 @@ gh repo create stellar-images/stellar-images-site \
   --push \
   --description "Real estate photography website"
 ```
+
+The repo was later changed to public because Vercel Hobby does not support automatic deploys from private organization repositories. The repo does not contain production secrets; keep all credentials in Vercel Environment Variables.
 
 ## Decap Config After Push
 
@@ -70,3 +72,10 @@ Decap's GitHub backend requires CMS users to have push access to the content rep
 - Vercel redeploys from those commits
 
 No one needs to share GitHub passwords.
+
+Current deployment boundary:
+
+- GitHub repo: `stellar-images/stellar-images-site`
+- repo visibility: public for Vercel Hobby auto-deploy compatibility
+- Vercel production branch: `main`
+- secrets: Vercel Environment Variables only

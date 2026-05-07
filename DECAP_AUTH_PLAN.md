@@ -4,10 +4,11 @@ This site uses Decap CMS for owner-editable content. The `/admin` UI is static, 
 
 ## Recommended Ownership Model
 
-- The durable repo should live under her GitHub account or a shared organization if possible.
+- The durable repo lives under the `stellar-images` GitHub organization.
 - You should remain a collaborator for maintenance.
 - Vercel should be connected to that repo.
 - Decap should authenticate editors through GitHub, then commit CMS edits to the same repo Vercel deploys from.
+- The repo is public so Vercel Hobby can auto-deploy from the organization repo; all production secrets must stay in Vercel Environment Variables.
 
 ## Temporary Test Credentials
 
@@ -37,6 +38,7 @@ Current production state:
 - `OAUTH_REDIRECT_URI` is set to `https://stellar-images-site.vercel.app/api/callback`
 - `GITHUB_OAUTH_SCOPE` is set to `repo`
 - `GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET`, and `OAUTH_STATE_SECRET` still need to be added
+- Vercel Git auto-deploy is connected to `stellar-images/stellar-images-site`
 
 Do not put `GITHUB_CLIENT_SECRET` in `public/admin/config.yml`. That file is served publicly.
 
@@ -80,3 +82,4 @@ Not safe in `public/admin/config.yml`:
 - Vercel OAuth endpoints exist at `/api/auth` and `/api/callback`.
 - Production GitHub OAuth still needs real env vars.
 - `public/admin/config.yml` points at `stellar-images/stellar-images-site` and `https://stellar-images-site.vercel.app`.
+- The GitHub repo is public for Vercel Hobby deploy compatibility; no production secrets are committed.

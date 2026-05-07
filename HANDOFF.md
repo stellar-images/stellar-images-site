@@ -50,8 +50,13 @@ Still needs final production setup:
 - Decap production auth environment variables
 - real Calendly URL
 - remaining Vercel email env vars for intake delivery
-- Vercel GitHub integration access to the private organization repo for automatic deploys
 - final photos and content
+
+Already configured:
+
+- GitHub repo under `stellar-images`
+- Vercel production deployment
+- Vercel GitHub integration for automatic deploys from `main`
 
 ## Decap Auth And Maintenance Access
 
@@ -66,6 +71,19 @@ The recommended long-term setup is:
 Temporary testing with your GitHub account or OAuth app is fine, but secrets must stay in Vercel Environment Variables or another server-side auth provider. Do not commit GitHub OAuth secrets, personal access tokens, or long-lived editor tokens.
 
 See `DECAP_AUTH_PLAN.md` for the production test checklist.
+
+## Repo Visibility
+
+The GitHub repo is currently public so Vercel Hobby can deploy from the organization repo automatically. Vercel blocks private organization repositories on the Hobby plan.
+
+Security boundary:
+
+- no real `.env` files are committed
+- `.vercel/` is ignored
+- `.env.example` contains placeholder names only
+- OAuth, Resend, and other secrets must stay in Vercel Environment Variables
+
+Making the repo private again is possible in GitHub, but it would also bring back the Vercel Hobby private-organization-repo deploy blocker unless the Vercel project is upgraded to Pro or the repo is moved to a personal account.
 
 ## Email Intake Delivery
 
@@ -93,7 +111,12 @@ The current production deployment is live at:
 
 The project currently lives under the Vercel scope `lylej312s-projects`.
 
-Git auto-deploy is not connected yet because Vercel has not been granted access to the private GitHub organization repo. Until that is connected, deploy from this folder with:
+Git auto-deploy is connected to:
+
+- `stellar-images/stellar-images-site`
+- branch: `main`
+
+Manual production deploys are still possible from this folder if needed:
 
 ```sh
 npx --yes vercel@latest deploy --prod --yes --archive=tgz
