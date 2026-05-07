@@ -8,6 +8,14 @@ This repo contains the website source for the photography site. It is set up so 
 - updated through Decap CMS
 - expanded later without changing the overall architecture
 
+Current production URL:
+
+- https://stellar-images-site.vercel.app
+
+Current GitHub repo:
+
+- https://github.com/stellar-images/stellar-images-site
+
 ## What The Owner Should Control
 
 - domain registration
@@ -39,7 +47,7 @@ Scaffolded now:
 
 Still needs final production setup:
 
-- real GitHub repo and Decap production auth values
+- Decap production auth environment variables
 - real Calendly URL
 - Vercel email env vars for intake delivery
 - final photos and content

@@ -70,5 +70,5 @@ Not safe in `public/admin/config.yml`:
 - Decap collections are scaffolded.
 - Local backend is enabled for local CMS testing.
 - Vercel OAuth endpoints exist at `/api/auth` and `/api/callback`.
-- Production GitHub OAuth still needs real env vars and a real deployed `base_url`.
-- `public/admin/config.yml` still contains placeholder repo values.
+- Production GitHub OAuth still needs real env vars.
+- `public/admin/config.yml` points at `stellar-images/stellar-images-site` and `https://stellar-images-site.vercel.app`.

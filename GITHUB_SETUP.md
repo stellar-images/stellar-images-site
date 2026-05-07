@@ -54,7 +54,7 @@ backend:
   name: github
   repo: stellar-images/stellar-images-site
   branch: main
-  base_url: https://YOUR-VERCEL-DOMAIN
+  base_url: https://stellar-images-site.vercel.app
   auth_endpoint: api/auth
 ```
 

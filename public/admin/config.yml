@@ -2,7 +2,7 @@ backend:
   name: github
   repo: stellar-images/stellar-images-site
   branch: main
-  base_url: https://your-vercel-domain.example
+  base_url: https://stellar-images-site.vercel.app
   auth_endpoint: api/auth
   # Keep GitHub OAuth secrets in Vercel Environment Variables, never in this public file.
 
