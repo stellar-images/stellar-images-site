@@ -1,0 +1,85 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import SectionIntro from "../components/SectionIntro.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import CallToAction from "../components/CallToAction.astro";
+import site from "../content/site.json";
+import services from "../content/services.json";
+---
+
+<BaseLayout title={`Services | ${site.businessName}`} description="Service lineup, features, and starting pricing.">
+  <Header currentPath="/services" />
+  <main>
+    <section class="page-hero">
+      <div class="container stack-md">
+        <p class="eyebrow">Services</p>
+        <h1>Professional real estate media with clear deliverables and pricing.</h1>
+        <p class="hero-copy">The Base44 direction showed public pricing and strong service detail. This scaffold follows that rather than hiding everything behind a contact wall.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container stack-lg">
+        <SectionIntro
+          eyebrow="What We Offer"
+          title="Service overview"
+          description="Use these cards as the preview layer. The detail blocks below carry the actual decision-making information."
+        />
+        <div class="grid cards-3">
+          {services.services.map((service) => <ServiceCard service={service} />)}
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container stack-xl">
+        {services.services.map((service) => (
+          <article class="service-detail card stack-lg" id={service.slug}>
+            <div class="service-detail-head">
+              <div class="stack-sm">
+                <p class="eyebrow">{service.shortLabel}</p>
+                <h2>{service.name}</h2>
+                <p>{service.longDescription}</p>
+              </div>
+              <div class="price-chip">Starting at {service.startingPrice}</div>
+            </div>
+
+            <div class="two-column">
+              <div class="stack-md">
+                <h3>What’s included</h3>
+                <ul class="feature-list">
+                  {service.features.map((feature) => <li>{feature}</li>)}
+                </ul>
+              </div>
+
+              <div class="stack-md">
+                <h3>Pricing</h3>
+                <div class="pricing-table">
+                  {service.pricingRows.map((row) => (
+                    <div class="pricing-row">
+                      <span>{row.label}</span>
+                      <strong>{row.price}</strong>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <CallToAction
+      eyebrow="Need a Custom Package?"
+      title="Bundle the right mix of photo, drone, and walkthrough coverage."
+      description="Keep the public pricing clear, but leave room for tailored requests when the listing needs something outside the standard packages."
+      primaryHref="/contact"
+      primaryLabel="Request a Quote"
+      secondaryHref="/portfolio"
+      secondaryLabel="View Portfolio"
+    />
+  </main>
+  <Footer />
+</BaseLayout>

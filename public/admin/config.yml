@@ -1,0 +1,202 @@
+backend:
+  name: github
+  repo: your-github-org/your-repo-name
+  branch: main
+  base_url: https://your-vercel-domain.example
+  auth_endpoint: api/auth
+  # Keep GitHub OAuth secrets in Vercel Environment Variables, never in this public file.
+
+local_backend: true
+media_folder: public/images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: site_settings
+    label: Site Settings
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: site
+        label: Site Settings
+        file: src/content/site.json
+        format: json
+        fields:
+          - label: Business Name
+            name: businessName
+            widget: string
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: Heading, name: heading, widget: string }
+              - { label: Description, name: description, widget: text }
+              - label: Image
+                name: image
+                widget: object
+                fields:
+                  - { label: Image, name: src, widget: image }
+                  - { label: Alt Text, name: alt, widget: string }
+          - label: About Preview
+            name: aboutPreview
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - label: Paragraphs
+                name: paragraphs
+                widget: list
+                field: { label: Paragraph, name: paragraph, widget: text }
+          - label: About Image
+            name: aboutImage
+            widget: object
+            fields:
+              - { label: Image, name: src, widget: image }
+              - { label: Alt Text, name: alt, widget: string }
+              - { label: Caption Title, name: captionTitle, widget: string }
+              - { label: Caption Text, name: captionText, widget: text }
+          - label: Contact
+            name: contact
+            widget: object
+            fields:
+              - { label: Intro Text, name: intro, widget: text }
+              - { label: Phone, name: phone, widget: string }
+              - { label: Email, name: email, widget: string }
+              - { label: Hours, name: hours, widget: string }
+              - label: Service Area
+                name: serviceArea
+                widget: list
+                field: { label: Area, name: area, widget: string }
+          - label: Booking
+            name: booking
+            widget: object
+            fields:
+              - { label: Calendly URL, name: calendlyUrl, widget: string, required: false }
+          - label: Footer
+            name: footer
+            widget: object
+            fields:
+              - { label: Description, name: description, widget: text }
+
+      - name: form_config
+        label: Booking Form
+        file: src/content/form-config.json
+        format: json
+        fields:
+          - { label: Intro, name: intro, widget: text }
+          - { label: Note, name: note, widget: text }
+          - { label: Submit Label, name: submitLabel, widget: string }
+          - label: Fields
+            name: fields
+            widget: list
+            summary: "{{fields.label}}"
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Label, name: label, widget: string }
+              - { label: Type, name: type, widget: select, options: ["text", "email", "tel", "select", "textarea", "checkbox-group"] }
+              - { label: Required, name: required, widget: boolean, default: false }
+              - { label: Placeholder, name: placeholder, widget: string, required: false }
+              - label: Options
+                name: options
+                widget: list
+                required: false
+                field: { label: Option, name: option, widget: string }
+
+  - name: services
+    label: Services
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: services
+        label: Services
+        file: src/content/services.json
+        format: json
+        fields:
+          - label: Services
+            name: services
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { label: Slug, name: slug, widget: string }
+              - { label: Short Label, name: shortLabel, widget: string }
+              - { label: Name, name: name, widget: string }
+              - { label: Short Description, name: shortDescription, widget: text }
+              - { label: Long Description, name: longDescription, widget: text }
+              - { label: Starting Price, name: startingPrice, widget: string }
+              - { label: Icon, name: icon, widget: string }
+              - label: Features
+                name: features
+                widget: list
+                field: { label: Feature, name: feature, widget: string }
+              - label: Pricing Rows
+                name: pricingRows
+                widget: list
+                fields:
+                  - { label: Label, name: label, widget: string }
+                  - { label: Price, name: price, widget: string }
+
+  - name: portfolio
+    label: Portfolio
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: portfolio
+        label: Portfolio
+        file: src/content/portfolio.json
+        format: json
+        fields:
+          - label: Portfolio Items
+            name: portfolio
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: ID, name: id, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Category, name: category, widget: select, options: ["Interior", "Exterior", "Drone", "Video"] }
+              - { label: Image, name: image, widget: image }
+              - { label: Alt Text, name: alt, widget: string }
+              - { label: Location, name: location, widget: string }
+              - { label: Featured, name: featured, widget: boolean, default: false }
+
+  - name: testimonials
+    label: Testimonials
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: testimonials
+        label: Testimonials
+        file: src/content/testimonials.json
+        format: json
+        fields:
+          - label: Testimonials
+            name: testimonials
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { label: Quote, name: quote, widget: text }
+              - { label: Name, name: name, widget: string }
+              - { label: Role, name: role, widget: string }
+              - { label: Stars, name: stars, widget: number, value_type: int, min: 1, max: 5 }
+
+  - name: credentials
+    label: Credentials
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: credentials
+        label: Credentials
+        file: src/content/credentials.json
+        format: json
+        fields:
+          - label: Credentials
+            name: credentials
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+              - { label: Icon, name: icon, widget: string }

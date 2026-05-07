@@ -1,0 +1,26 @@
+{
+  "name": "stellar-images-site",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "astro": "^6.2.2"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "@types/node": "^25.6.0",
+    "typescript": "^6.0.3"
+  },
+  "overrides": {
+    "yaml": "^2.8.4"
+  }
+}

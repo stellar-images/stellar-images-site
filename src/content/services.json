@@ -1,0 +1,64 @@
+{
+  "services": [
+    {
+    "slug": "professional-listing-photos",
+    "shortLabel": "Listing Photos",
+    "name": "Professional Listing Photos",
+    "shortDescription": "Bright, clean, MLS-ready imagery designed to present each property clearly and professionally.",
+    "longDescription": "Use this section to explain what makes the photography deliverable strong: polish, consistency, editing standards, and the kind of image coverage agents expect for listing media.",
+    "startingPrice": "$150",
+    "icon": "PH",
+    "features": [
+      "Professional HDR editing",
+      "Balanced interior and exterior coverage",
+      "MLS-ready file delivery",
+      "Fast turnaround expectations"
+    ],
+    "pricingRows": [
+      { "label": "Up to 2,000 sq ft", "price": "$150" },
+      { "label": "2,001 - 3,500 sq ft", "price": "$225" },
+      { "label": "3,501+ sq ft", "price": "Custom Quote" }
+    ]
+    },
+    {
+    "slug": "drone-photography-video",
+    "shortLabel": "Drone Media",
+    "name": "Drone Photography & Video",
+    "shortDescription": "Aerial stills and motion for properties where the lot, setting, or surrounding neighborhood matters.",
+    "longDescription": "This is where the site should lean into aerial context and trust. The Base44 concept explicitly used the licensed drone pilot angle as a credibility driver.",
+    "startingPrice": "$200",
+    "icon": "DR",
+    "features": [
+      "Aerial still imagery",
+      "Neighborhood and lot context",
+      "FAA Part 107 licensed operation",
+      "Useful for waterfront, acreage, and luxury properties"
+    ],
+    "pricingRows": [
+      { "label": "Drone photo add-on", "price": "$200" },
+      { "label": "Drone photo + video", "price": "$300" },
+      { "label": "Custom aerial package", "price": "Custom Quote" }
+    ]
+    },
+    {
+    "slug": "video-walkthroughs",
+    "shortLabel": "Walkthrough Video",
+    "name": "Video Walkthroughs",
+    "shortDescription": "Simple, polished walkthrough coverage built for websites, social posting, and listing promotion.",
+    "longDescription": "The Base44 concept showed tiered walkthrough pricing. Keep this service clear and practical rather than overproduced unless the real offer becomes more premium.",
+    "startingPrice": "$250",
+    "icon": "VD",
+    "features": [
+      "Walkthrough coverage for listing promotion",
+      "Optimized for online sharing",
+      "Clear pricing by size or scope",
+      "Simple add-on logic to pair with photo packages"
+    ],
+    "pricingRows": [
+      { "label": "Up to 2,000 sq ft", "price": "$250" },
+      { "label": "2,001 - 3,500 sq ft", "price": "$350" },
+      { "label": "3,501+ sq ft", "price": "Custom Quote" }
+    ]
+    }
+  ]
+}

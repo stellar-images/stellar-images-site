@@ -1,0 +1,126 @@
+---
+interface FormField {
+  name: string;
+  label: string;
+  type: string;
+  required: boolean;
+  placeholder?: string;
+  options?: string[];
+}
+
+interface Props {
+  config: {
+    intro: string;
+    submitLabel: string;
+    note: string;
+    fields: FormField[];
+  };
+}
+
+const { config } = Astro.props;
+---
+
+<section class="card booking-form-card stack-md">
+  <div class="stack-xs">
+    <p class="eyebrow">Step 1</p>
+    <h2>Property details</h2>
+    <p>{config.intro}</p>
+  </div>
+
+  <form class="booking-form stack-md" name="booking-intake" data-intake-form>
+    <label class="screen-reader-only" aria-hidden="true">
+      Website
+      <input type="text" name="website" tabindex="-1" autocomplete="off" />
+    </label>
+    {config.fields.map((field) => (
+      field.type === "checkbox-group" ? (
+        <fieldset class="stack-xs">
+          <legend>{field.label}{field.required ? " *" : ""}</legend>
+          <div class="checkbox-grid">
+            {field.options?.map((option) => (
+              <label class="checkbox-row">
+                <input type="checkbox" name={field.name} value={option} />
+                <span>{option}</span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
+      ) : field.type === "textarea" ? (
+        <label class="stack-xs">
+          <span>{field.label}{field.required ? " *" : ""}</span>
+          <textarea
+            name={field.name}
+            rows="5"
+            placeholder={field.placeholder}
+            required={field.required}
+          ></textarea>
+        </label>
+      ) : field.type === "select" ? (
+        <label class="stack-xs">
+          <span>{field.label}{field.required ? " *" : ""}</span>
+          <select name={field.name} required={field.required}>
+            <option value="">{field.placeholder ?? "Select an option"}</option>
+            {field.options?.map((option) => <option value={option}>{option}</option>)}
+          </select>
+        </label>
+      ) : (
+        <label class="stack-xs">
+          <span>{field.label}{field.required ? " *" : ""}</span>
+          <input
+            type={field.type as any}
+            name={field.name}
+            placeholder={field.placeholder}
+            required={field.required}
+          />
+        </label>
+      )
+    ))}
+
+    <div class="form-note">{config.note}</div>
+    <div class="form-status" data-intake-status aria-live="polite"></div>
+    <button class="button button-primary" type="submit">{config.submitLabel}</button>
+  </form>
+</section>
+
+<script>
+  const form = document.querySelector("[data-intake-form]");
+  const status = document.querySelector("[data-intake-status]");
+
+  if (form instanceof HTMLFormElement && status instanceof HTMLElement) {
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const submitButton = form.querySelector('button[type="submit"]');
+      const formData = new FormData(form);
+      const payload: Record<string, FormDataEntryValue | FormDataEntryValue[]> = Object.fromEntries(formData.entries());
+      payload.servicesNeeded = formData.getAll("servicesNeeded");
+
+      status.textContent = "Sending request...";
+      status.className = "form-status is-pending";
+      submitButton?.setAttribute("disabled", "true");
+
+      try {
+        const response = await fetch("/api/intake", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+
+        const result = await response.json().catch(() => ({}));
+
+        if (!response.ok) {
+          throw new Error(result.error || "Unable to send the request.");
+        }
+
+        status.textContent = "Request sent. Please finish by choosing a time below.";
+        status.className = "form-status is-success";
+        form.reset();
+      } catch (error) {
+        status.textContent = error instanceof Error ? error.message : "Unable to send the request.";
+        status.className = "form-status is-error";
+      } finally {
+        submitButton?.removeAttribute("disabled");
+      }
+    });
+  }
+</script>

@@ -1,0 +1,28 @@
+---
+import site from "../content/site.json";
+---
+
+<section class="card booking-form-card stack-md">
+  <div class="stack-xs">
+    <p class="eyebrow">Step 2</p>
+    <h2>Choose a time</h2>
+    <p>Calendly will own the scheduling layer. This block stays editable through site settings once the real URL is available.</p>
+  </div>
+
+  {
+    site.booking.calendlyUrl ? (
+      <div class="calendly-shell">
+        <iframe
+          title="Schedule your shoot"
+          src={site.booking.calendlyUrl}
+          loading="lazy"
+        ></iframe>
+      </div>
+    ) : (
+      <div class="calendly-placeholder stack-sm">
+        <strong>Calendly URL placeholder</strong>
+        <p>Add the real scheduling link in the CMS settings once her account is ready.</p>
+      </div>
+    )
+  }
+</section>

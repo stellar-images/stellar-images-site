@@ -1,0 +1,47 @@
+---
+import site from "../content/site.json";
+
+interface Props {
+  currentPath: string;
+}
+
+const { currentPath } = Astro.props;
+
+const navItems = [
+  { href: "/", label: "Home" },
+  { href: "/portfolio", label: "Portfolio" },
+  { href: "/services", label: "Services" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+];
+---
+
+<header class="site-header">
+  <div class="container header-row">
+    <a class="brand-mark" href="/">
+      <span class="brand-name">{site.businessName}</span>
+    </a>
+
+    <details class="mobile-nav">
+      <summary aria-label="Open navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </summary>
+
+      <nav class="mobile-nav-panel" aria-label="Primary navigation">
+        <ul>
+          {navItems.map((item) => (
+            <li>
+              <a href={item.href} aria-current={currentPath === item.href ? "page" : undefined}>
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <a class="button button-primary" href="/contact">Book a Shoot</a>
+      </nav>
+    </details>
+  </div>
+</header>

@@ -1,0 +1,24 @@
+---
+interface PortfolioItem {
+  title: string;
+  category: string;
+  image: string;
+  alt: string;
+  location: string;
+}
+
+interface Props {
+  item: PortfolioItem;
+}
+
+const { item } = Astro.props;
+---
+
+<article class="portfolio-card" data-category={item.category.toLowerCase()}>
+  <img src={item.image} alt={item.alt} />
+  <div class="portfolio-card-body stack-xs">
+    <p class="eyebrow">{item.category}</p>
+    <h3>{item.title}</h3>
+    <p>{item.location}</p>
+  </div>
+</article>

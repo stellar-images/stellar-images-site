@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import BookingForm from "../components/BookingForm.astro";
+import ContactInfoList from "../components/ContactInfoList.astro";
+import CalendlyEmbed from "../components/CalendlyEmbed.astro";
+import site from "../content/site.json";
+import formConfig from "../content/form-config.json";
+---
+
+<BaseLayout title={`Contact & Book | ${site.businessName}`} description="Property intake and scheduling in one place.">
+  <Header currentPath="/contact" />
+  <main>
+    <section class="page-hero">
+      <div class="container stack-md">
+        <p class="eyebrow">Contact Us</p>
+        <h1>Schedule your shoot.</h1>
+        <p class="hero-copy">The v1 contact page keeps business contact details, property intake, and Calendly scheduling together so the booking path is obvious.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container booking-layout">
+        <aside class="stack-lg">
+          <ContactInfoList />
+          <div class="card stack-sm">
+            <p class="eyebrow">Booking Flow</p>
+            <h2>One page, one process.</h2>
+            <p>Collect the property details first, then let the client reserve a time through Calendly. That keeps the workflow unified even before deeper automation is added.</p>
+          </div>
+        </aside>
+
+        <div class="stack-lg">
+          <BookingForm config={formConfig} />
+          <CalendlyEmbed />
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

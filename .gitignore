@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.astro/
+.vercel/
+.env
+.env.*
+!.env.example
+
+# Local planning/video-review artifacts
+base44_frames/
+base44_frames_dense/
+artifacts-*.png
+
+# OS/editor noise
+.DS_Store

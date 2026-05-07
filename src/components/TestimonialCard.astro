@@ -1,0 +1,24 @@
+---
+interface Testimonial {
+  quote: string;
+  name: string;
+  role: string;
+  stars: number;
+}
+
+interface Props {
+  testimonial: Testimonial;
+}
+
+const { testimonial } = Astro.props;
+const rating = `${testimonial.stars}/5`;
+---
+
+<article class="card testimonial-card stack-sm">
+  <p class="stars">{rating}</p>
+  <p>“{testimonial.quote}”</p>
+  <div>
+    <strong>{testimonial.name}</strong>
+    <p>{testimonial.role}</p>
+  </div>
+</article>

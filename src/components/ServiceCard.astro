@@ -1,0 +1,25 @@
+---
+interface Service {
+  slug: string;
+  name: string;
+  shortDescription: string;
+  startingPrice: string;
+  icon: string;
+}
+
+interface Props {
+  service: Service;
+}
+
+const { service } = Astro.props;
+---
+
+<article class="card service-card stack-sm">
+  <div class="icon-badge">{service.icon}</div>
+  <h3>{service.name}</h3>
+  <p>{service.shortDescription}</p>
+  <div class="service-card-footer">
+    <span class="price-tag">Starting at {service.startingPrice}</span>
+    <a class="inline-link" href={`/services#${service.slug}`}>Learn More</a>
+  </div>
+</article>

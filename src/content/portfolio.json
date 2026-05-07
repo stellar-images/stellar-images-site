@@ -1,0 +1,58 @@
+{
+  "portfolio": [
+    {
+    "id": "interior-modern-living-room",
+    "title": "Modern Living Room",
+    "category": "Interior",
+    "image": "/images/portfolio/interior-living.svg",
+    "location": "Beaufort, SC",
+    "featured": true,
+    "alt": "Placeholder interior living room image"
+    },
+    {
+    "id": "exterior-waterfront-home",
+    "title": "Waterfront Exterior",
+    "category": "Exterior",
+    "image": "/images/portfolio/exterior-waterfront.svg",
+    "location": "Hilton Head, SC",
+    "featured": true,
+    "alt": "Placeholder waterfront exterior image"
+    },
+    {
+    "id": "drone-marsh-view",
+    "title": "Marsh View Aerial",
+    "category": "Drone",
+    "image": "/images/portfolio/drone-marsh.svg",
+    "location": "Bluffton, SC",
+    "featured": true,
+    "alt": "Placeholder aerial marsh image"
+    },
+    {
+    "id": "video-tour-preview",
+    "title": "Walkthrough Coverage",
+    "category": "Video",
+    "image": "/images/portfolio/video-tour.svg",
+    "location": "Lowcountry",
+    "featured": true,
+    "alt": "Placeholder walkthrough preview image"
+    },
+    {
+    "id": "interior-bedroom-suite",
+    "title": "Primary Bedroom Suite",
+    "category": "Interior",
+    "image": "/images/portfolio/interior-bedroom.svg",
+    "location": "Beaufort, SC",
+    "featured": false,
+    "alt": "Placeholder bedroom suite image"
+    },
+    {
+    "id": "exterior-front-approach",
+    "title": "Front Approach",
+    "category": "Exterior",
+    "image": "/images/portfolio/exterior-front.svg",
+    "location": "Bluffton, SC",
+    "featured": false,
+    "alt": "Placeholder front approach image"
+    }
+  ]
+}

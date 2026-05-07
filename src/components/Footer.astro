@@ -1,0 +1,32 @@
+---
+import site from "../content/site.json";
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="stack-sm">
+      <h2>{site.businessName}</h2>
+      <p>{site.footer.description}</p>
+    </div>
+
+    <div class="stack-sm">
+      <p class="footer-heading">Quick Links</p>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/portfolio">Portfolio</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="stack-sm">
+      <p class="footer-heading">Contact</p>
+      <ul class="footer-links">
+        <li>{site.contact.phone}</li>
+        <li>{site.contact.email}</li>
+        <li>{site.contact.serviceArea.join(", ")}</li>
+      </ul>
+    </div>
+  </div>
+</footer>

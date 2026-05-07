@@ -1,0 +1,82 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import PortfolioCard from "../components/PortfolioCard.astro";
+import CallToAction from "../components/CallToAction.astro";
+import site from "../content/site.json";
+import portfolio from "../content/portfolio.json";
+
+const categories = ["All", "Interior", "Exterior", "Drone", "Video"];
+---
+
+<BaseLayout title={`Portfolio | ${site.businessName}`} description="Browse real estate photography, drone imagery, and listing visuals.">
+  <Header currentPath="/portfolio" />
+  <main>
+    <section class="page-hero">
+      <div class="container stack-md">
+        <p class="eyebrow">Portfolio</p>
+        <h1>Browse the collection of real estate photography, drone imagery, and video work.</h1>
+        <p class="hero-copy">This mirrors the Base44 structure: simple filters, clean cards, and a curated feel rather than a dump of every file.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container stack-lg">
+        <div class="portfolio-filters" data-portfolio-controls>
+          {categories.map((category, index) => (
+            <button
+              class:list={["filter-pill", { "is-active": index === 0 }]}
+              type="button"
+              data-filter={category.toLowerCase()}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
+        <div class="grid cards-2" data-portfolio-grid>
+          {portfolio.portfolio.map((item) => <PortfolioCard item={item} />)}
+        </div>
+      </div>
+    </section>
+
+    <CallToAction
+      eyebrow="Book The Shoot"
+      title="If the work is the sell, the next step should be obvious."
+      description="Keep the portfolio page lean, then drive people into the booking page without making them hunt."
+      primaryHref="/contact"
+      primaryLabel="Schedule Your Shoot"
+      secondaryHref="/services"
+      secondaryLabel="See Pricing"
+    />
+  </main>
+  <Footer />
+</BaseLayout>
+
+<script>
+  const controls = document.querySelector("[data-portfolio-controls]");
+  const grid = document.querySelector("[data-portfolio-grid]");
+
+  if (controls && grid) {
+    const buttons = Array.from(controls.querySelectorAll("button"));
+    const cards = Array.from(grid.querySelectorAll("[data-category]"));
+
+    controls.addEventListener("click", (event) => {
+      const target = event.target;
+      if (!(target instanceof HTMLButtonElement)) return;
+
+      const selected = target.dataset.filter ?? "all";
+
+      buttons.forEach((button) => {
+        button.classList.toggle("is-active", button === target);
+      });
+
+      cards.forEach((card) => {
+        const category = card.getAttribute("data-category");
+        const matches = selected === "all" || category === selected;
+        card.toggleAttribute("hidden", !matches);
+      });
+    });
+  }
+</script>

@@ -1,0 +1,22 @@
+{
+  "testimonials": [
+    {
+    "quote": "The visuals made the listing feel sharper immediately, and the turnaround was exactly what we needed.",
+    "name": "Sarah Mitchell",
+    "role": "Beaufort Realty Group",
+    "stars": 5
+    },
+    {
+    "quote": "Reliable, easy to work with, and the drone coverage helped show context that photos alone could not.",
+    "name": "James Carter",
+    "role": "Coastal Property Advisor",
+    "stars": 5
+    },
+    {
+    "quote": "Professional from start to finish. The workflow was clear and the finished media looked polished.",
+    "name": "Megan Ellis",
+    "role": "Independent Realtor",
+    "stars": 5
+    }
+  ]
+}

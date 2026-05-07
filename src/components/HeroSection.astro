@@ -1,0 +1,21 @@
+---
+import site from "../content/site.json";
+---
+
+<section class="hero-section">
+  <div class="hero-media">
+    <img src={site.hero.image.src} alt={site.hero.image.alt} />
+  </div>
+
+  <div class="container hero-content">
+    <div class="hero-card stack-md">
+      <p class="eyebrow">{site.hero.eyebrow}</p>
+      <h1>{site.hero.heading}</h1>
+      <p class="hero-copy">{site.hero.description}</p>
+      <div class="button-row">
+        <a class="button button-primary" href="/portfolio">View Portfolio</a>
+        <a class="button button-secondary" href="/contact">Book a Shoot</a>
+      </div>
+    </div>
+  </div>
+</section>

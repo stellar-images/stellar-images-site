@@ -1,0 +1,71 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import SectionIntro from "../components/SectionIntro.astro";
+import CredentialCard from "../components/CredentialCard.astro";
+import CallToAction from "../components/CallToAction.astro";
+import site from "../content/site.json";
+import credentials from "../content/credentials.json";
+---
+
+<BaseLayout title={`About | ${site.businessName}`} description="Founder story, credentials, and service approach.">
+  <Header currentPath="/about" />
+  <main>
+    <section class="page-hero">
+      <div class="container stack-md">
+        <p class="eyebrow">About</p>
+        <h1>Precision, professionalism, and local trust.</h1>
+        <p class="hero-copy">This page carries the “serious local operator” tone from the Base44 concept and keeps the trust stack explicit.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container two-column about-grid">
+        <div class="stack-lg">
+          <SectionIntro
+            eyebrow="About Stellar Images"
+            title={site.aboutPreview.heading}
+            description={site.aboutPreview.paragraphs[0]}
+            align="left"
+          />
+          <div class="stack-md prose">
+            {site.aboutPreview.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+          </div>
+        </div>
+
+        <aside class="card portrait-card">
+          <img src={site.aboutImage.src} alt={site.aboutImage.alt} />
+          <div class="stack-xs">
+            <h3>{site.aboutImage.captionTitle}</h3>
+            <p>{site.aboutImage.captionText}</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container stack-lg">
+        <SectionIntro
+          eyebrow="Credentials & Qualifications"
+          title="Trust should be visible, not implied."
+          description="The Base44 concept made credentials a real section. That is the right move for this category."
+        />
+        <div class="grid cards-4">
+          {credentials.credentials.map((credential) => <CredentialCard credential={credential} />)}
+        </div>
+      </div>
+    </section>
+
+    <CallToAction
+      eyebrow="Service Area"
+      title={`Serving ${site.contact.serviceArea.join(", ")}`}
+      description="The final copy and service radius can change through the CMS, but the page should always make geography and professionalism obvious."
+      primaryHref="/contact"
+      primaryLabel="Book a Shoot"
+      secondaryHref="/services"
+      secondaryLabel="See Services"
+    />
+  </main>
+  <Footer />
+</BaseLayout>

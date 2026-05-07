@@ -1,0 +1,39 @@
+{
+  "businessName": "Stellar Images",
+  "hero": {
+    "eyebrow": "Real Estate Photography",
+    "heading": "Professional listing photos, drone media, and video that help homes sell faster.",
+    "description": "A placeholder content model based on the Base44 direction. Swap the copy, service area, media, and booking link from the CMS when the real business details are ready.",
+    "image": {
+      "src": "/images/hero/hero-waterfront.svg",
+      "alt": "Placeholder waterfront property hero image"
+    }
+  },
+  "aboutPreview": {
+    "heading": "Capturing properties at their absolute best.",
+    "paragraphs": [
+      "Founded in Beaufort, Stellar Images Photography combines precision, professionalism, and a sharp eye for how homes need to be presented online.",
+      "The positioning here mirrors the Base44 concept: serious local operator, strong visual quality, and enough trust language to make the service feel established.",
+      "This content is placeholder copy for the scaffold. It should be replaced with her real story, credentials, and service area once final content is available."
+    ]
+  },
+  "aboutImage": {
+    "src": "/images/about/founder-placeholder.svg",
+    "alt": "Placeholder founder portrait",
+    "captionTitle": "Founder profile",
+    "captionText": "Replace this with her actual headshot or a brand photo once assets arrive."
+  },
+  "contact": {
+    "intro": "Let’s create strong visuals for your next listing. This page keeps the contact details, intake form, and booking step in one place.",
+    "phone": "(925) 518-8677",
+    "email": "alexandra.v.maass@gmail.com",
+    "hours": "Mon - Fri, 8am - 6pm",
+    "serviceArea": ["Beaufort", "Bluffton", "Hilton Head", "Lowcountry"]
+  },
+  "booking": {
+    "calendlyUrl": ""
+  },
+  "footer": {
+    "description": "Professional real estate photography serving Beaufort, Bluffton, Hilton Head, and the surrounding Lowcountry."
+  }
+}

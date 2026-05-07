@@ -1,0 +1,33 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  description: string;
+  primaryHref: string;
+  primaryLabel: string;
+  secondaryHref: string;
+  secondaryLabel: string;
+}
+
+const {
+  eyebrow,
+  title,
+  description,
+  primaryHref,
+  primaryLabel,
+  secondaryHref,
+  secondaryLabel,
+} = Astro.props;
+---
+
+<section class="section cta-band">
+  <div class="container cta-card stack-md">
+    <p class="eyebrow">{eyebrow}</p>
+    <h2>{title}</h2>
+    <p>{description}</p>
+    <div class="button-row">
+      <a class="button button-primary" href={primaryHref}>{primaryLabel}</a>
+      <a class="button button-secondary" href={secondaryHref}>{secondaryLabel}</a>
+    </div>
+  </div>
+</section>

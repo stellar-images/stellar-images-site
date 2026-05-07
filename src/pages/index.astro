@@ -1,0 +1,118 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import HeroSection from "../components/HeroSection.astro";
+import SectionIntro from "../components/SectionIntro.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import PortfolioCard from "../components/PortfolioCard.astro";
+import TestimonialCard from "../components/TestimonialCard.astro";
+import CredentialCard from "../components/CredentialCard.astro";
+import CallToAction from "../components/CallToAction.astro";
+import site from "../content/site.json";
+import services from "../content/services.json";
+import portfolio from "../content/portfolio.json";
+import testimonials from "../content/testimonials.json";
+import credentials from "../content/credentials.json";
+
+const featuredWork = portfolio.portfolio.filter((item) => item.featured).slice(0, 4);
+const featuredTestimonials = testimonials.testimonials.slice(0, 3);
+const featuredCredentials = credentials.credentials.slice(0, 4);
+---
+
+<BaseLayout title={`${site.businessName} | Real Estate Photography`} description={site.hero.description}>
+  <Header currentPath="/" />
+  <main>
+    <HeroSection />
+
+    <section class="section">
+      <div class="container stack-lg">
+        <SectionIntro
+          eyebrow="About Stellar Images"
+          title={site.aboutPreview.heading}
+          description={site.aboutPreview.paragraphs[0]}
+          align="left"
+        />
+        <div class="two-column narrative">
+          <div class="stack-md prose">
+            {site.aboutPreview.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+          </div>
+          <aside class="card portrait-card">
+            <img src={site.aboutImage.src} alt={site.aboutImage.alt} />
+            <div class="stack-xs">
+              <h3>{site.aboutImage.captionTitle}</h3>
+              <p>{site.aboutImage.captionText}</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container stack-lg">
+        <SectionIntro
+          eyebrow="What We Offer"
+          title="Services tailored for real estate"
+          description="Clear deliverables, strong turnaround expectations, and media designed to help listings move faster."
+        />
+        <div class="grid cards-3">
+          {services.services.slice(0, 3).map((service) => <ServiceCard service={service} />)}
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container stack-lg">
+        <div class="section-heading-row">
+          <SectionIntro
+            eyebrow="Our Work"
+            title="Featured portfolio"
+            description="A curated preview of interiors, exteriors, drone work, and listing visuals."
+            align="left"
+          />
+          <a class="inline-link" href="/portfolio">View Full Portfolio</a>
+        </div>
+        <div class="grid cards-2">
+          {featuredWork.map((item) => <PortfolioCard item={item} />)}
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container stack-lg">
+        <SectionIntro
+          eyebrow="What Our Clients Say"
+          title="Confidence without over-selling"
+          description="The site should read like a serious local business with strong service standards, not a generic template."
+        />
+        <div class="grid cards-3">
+          {featuredTestimonials.map((testimonial) => <TestimonialCard testimonial={testimonial} />)}
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container stack-lg">
+        <SectionIntro
+          eyebrow="Credentials & Qualifications"
+          title="Precision, professionalism, and trust"
+          description="The Base44 direction leaned heavily on credibility. These blocks keep that trust layer explicit."
+        />
+        <div class="grid cards-4">
+          {featuredCredentials.map((credential) => <CredentialCard credential={credential} />)}
+        </div>
+      </div>
+    </section>
+
+    <CallToAction
+      eyebrow="Ready to Elevate Your Listings?"
+      title="Bring the booking flow and the property details into one clear process."
+      description="The v1 site keeps the intake simple: strong portfolio, clear pricing, one booking path, and owner-editable content."
+      primaryHref="/contact"
+      primaryLabel="Book a Shoot"
+      secondaryHref="/services"
+      secondaryLabel="View Services"
+    />
+  </main>
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,66 @@
+{
+  "intro": "This v1 scaffold keeps the form fields close to what was visible in the Base44 concept. They can be expanded later if the intake needs more MLS-style detail.",
+  "note": "After sending the property details, finish the request by choosing a time in Calendly below.",
+  "submitLabel": "Send Property Details",
+  "fields": [
+    {
+      "name": "fullName",
+      "label": "Full Name",
+      "type": "text",
+      "required": true,
+      "placeholder": "John Smith"
+    },
+    {
+      "name": "email",
+      "label": "Email",
+      "type": "email",
+      "required": true,
+      "placeholder": "john@example.com"
+    },
+    {
+      "name": "phone",
+      "label": "Phone",
+      "type": "tel",
+      "required": false,
+      "placeholder": "(843) 555-0000"
+    },
+    {
+      "name": "squareFootageRange",
+      "label": "Square Footage",
+      "type": "select",
+      "required": false,
+      "placeholder": "Select range",
+      "options": [
+        "Under 2,000 sq ft",
+        "2,001 - 3,500 sq ft",
+        "3,501 - 5,000 sq ft",
+        "Over 5,000 sq ft"
+      ]
+    },
+    {
+      "name": "propertyAddress",
+      "label": "Property Address",
+      "type": "text",
+      "required": true,
+      "placeholder": "123 Main St, Beaufort, SC"
+    },
+    {
+      "name": "servicesNeeded",
+      "label": "Services Needed",
+      "type": "checkbox-group",
+      "required": true,
+      "options": [
+        "Professional Listing Photos",
+        "Drone Photography & Video",
+        "Video Walkthroughs"
+      ]
+    },
+    {
+      "name": "additionalDetails",
+      "label": "Additional Details",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Tell us about the property or any special requests..."
+    }
+  ]
+}
