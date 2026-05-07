@@ -1,7 +1,7 @@
 {
   "intro": "This v1 scaffold keeps the form fields close to what was visible in the Base44 concept. They can be expanded later if the intake needs more MLS-style detail.",
   "note": "After sending the property details, finish the request by choosing a time in Calendly below.",
-  "submitLabel": "Send Property Details Test",
+  "submitLabel": "Send Property Details",
   "fields": [
     {
       "name": "fullName",
