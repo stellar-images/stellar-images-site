@@ -22,6 +22,19 @@ const navItems = [
       <span class="brand-name">{site.businessName}</span>
     </a>
 
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <ul>
+        {navItems.map((item) => (
+          <li>
+            <a href={item.href} aria-current={currentPath === item.href ? "page" : undefined}>
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+      <a class="button button-primary" href="/contact">Book a Shoot</a>
+    </nav>
+
     <details class="mobile-nav">
       <summary aria-label="Open navigation">
         <span></span>

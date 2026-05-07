@@ -6,18 +6,19 @@ import PortfolioCard from "../components/PortfolioCard.astro";
 import CallToAction from "../components/CallToAction.astro";
 import site from "../content/site.json";
 import portfolio from "../content/portfolio.json";
+import pages from "../content/pages.json";
 
 const categories = ["All", "Interior", "Exterior", "Drone", "Video"];
 ---
 
 <BaseLayout title={`Portfolio | ${site.businessName}`} description="Browse real estate photography, drone imagery, and listing visuals.">
   <Header currentPath="/portfolio" />
-  <main>
+  <main id="main-content">
     <section class="page-hero">
       <div class="container stack-md">
-        <p class="eyebrow">Portfolio</p>
-        <h1>Browse the collection of real estate photography, drone imagery, and video work.</h1>
-        <p class="hero-copy">This mirrors the Base44 structure: simple filters, clean cards, and a curated feel rather than a dump of every file.</p>
+        <p class="eyebrow">{pages.portfolio.hero.eyebrow}</p>
+        <h1>{pages.portfolio.hero.heading}</h1>
+        <p class="hero-copy">{pages.portfolio.hero.description}</p>
       </div>
     </section>
 
@@ -42,13 +43,13 @@ const categories = ["All", "Interior", "Exterior", "Drone", "Video"];
     </section>
 
     <CallToAction
-      eyebrow="Book The Shoot"
-      title="If the work is the sell, the next step should be obvious."
-      description="Keep the portfolio page lean, then drive people into the booking page without making them hunt."
+      eyebrow={pages.portfolio.cta.eyebrow}
+      title={pages.portfolio.cta.title}
+      description={pages.portfolio.cta.description}
       primaryHref="/contact"
-      primaryLabel="Schedule Your Shoot"
+      primaryLabel={pages.portfolio.cta.primaryLabel}
       secondaryHref="/services"
-      secondaryLabel="See Pricing"
+      secondaryLabel={pages.portfolio.cta.secondaryLabel}
     />
   </main>
   <Footer />

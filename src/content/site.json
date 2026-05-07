@@ -1,5 +1,8 @@
 {
   "businessName": "Stellar Images",
+  "seo": {
+    "noIndex": true
+  },
   "hero": {
     "eyebrow": "Real Estate Photography",
     "heading": "Professional listing photos, drone media, and video that help homes sell faster.",

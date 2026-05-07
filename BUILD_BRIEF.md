@@ -243,6 +243,13 @@ Business content should not be scattered through components. Keep it in structur
 
 Recommended content files:
 
+### `src/content/pages.json`
+
+- page hero copy
+- section headings
+- section descriptions
+- CTA button labels
+
 ### `src/content/site.json`
 
 - business name
@@ -311,6 +318,7 @@ Per credential:
 Recommended Decap collections:
 
 - `site settings`
+- `page content`
 - `services`
 - `portfolio`
 - `testimonials`

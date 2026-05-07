@@ -14,6 +14,7 @@ import services from "../content/services.json";
 import portfolio from "../content/portfolio.json";
 import testimonials from "../content/testimonials.json";
 import credentials from "../content/credentials.json";
+import pages from "../content/pages.json";
 
 const featuredWork = portfolio.portfolio.filter((item) => item.featured).slice(0, 4);
 const featuredTestimonials = testimonials.testimonials.slice(0, 3);
@@ -22,13 +23,13 @@ const featuredCredentials = credentials.credentials.slice(0, 4);
 
 <BaseLayout title={`${site.businessName} | Real Estate Photography`} description={site.hero.description}>
   <Header currentPath="/" />
-  <main>
+  <main id="main-content">
     <HeroSection />
 
     <section class="section">
       <div class="container stack-lg">
         <SectionIntro
-          eyebrow="About Stellar Images"
+          eyebrow={pages.home.aboutSection.eyebrow}
           title={site.aboutPreview.heading}
           description={site.aboutPreview.paragraphs[0]}
           align="left"
@@ -51,9 +52,9 @@ const featuredCredentials = credentials.credentials.slice(0, 4);
     <section class="section section-alt">
       <div class="container stack-lg">
         <SectionIntro
-          eyebrow="What We Offer"
-          title="Services tailored for real estate"
-          description="Clear deliverables, strong turnaround expectations, and media designed to help listings move faster."
+          eyebrow={pages.home.servicesSection.eyebrow}
+          title={pages.home.servicesSection.title}
+          description={pages.home.servicesSection.description}
         />
         <div class="grid cards-3">
           {services.services.slice(0, 3).map((service) => <ServiceCard service={service} />)}
@@ -65,12 +66,12 @@ const featuredCredentials = credentials.credentials.slice(0, 4);
       <div class="container stack-lg">
         <div class="section-heading-row">
           <SectionIntro
-            eyebrow="Our Work"
-            title="Featured portfolio"
-            description="A curated preview of interiors, exteriors, drone work, and listing visuals."
+            eyebrow={pages.home.portfolioSection.eyebrow}
+            title={pages.home.portfolioSection.title}
+            description={pages.home.portfolioSection.description}
             align="left"
           />
-          <a class="inline-link" href="/portfolio">View Full Portfolio</a>
+          <a class="inline-link" href="/portfolio">{pages.home.portfolioSection.linkLabel}</a>
         </div>
         <div class="grid cards-2">
           {featuredWork.map((item) => <PortfolioCard item={item} />)}
@@ -81,9 +82,9 @@ const featuredCredentials = credentials.credentials.slice(0, 4);
     <section class="section section-alt">
       <div class="container stack-lg">
         <SectionIntro
-          eyebrow="What Our Clients Say"
-          title="Confidence without over-selling"
-          description="The site should read like a serious local business with strong service standards, not a generic template."
+          eyebrow={pages.home.testimonialsSection.eyebrow}
+          title={pages.home.testimonialsSection.title}
+          description={pages.home.testimonialsSection.description}
         />
         <div class="grid cards-3">
           {featuredTestimonials.map((testimonial) => <TestimonialCard testimonial={testimonial} />)}
@@ -94,9 +95,9 @@ const featuredCredentials = credentials.credentials.slice(0, 4);
     <section class="section">
       <div class="container stack-lg">
         <SectionIntro
-          eyebrow="Credentials & Qualifications"
-          title="Precision, professionalism, and trust"
-          description="The Base44 direction leaned heavily on credibility. These blocks keep that trust layer explicit."
+          eyebrow={pages.home.credentialsSection.eyebrow}
+          title={pages.home.credentialsSection.title}
+          description={pages.home.credentialsSection.description}
         />
         <div class="grid cards-4">
           {featuredCredentials.map((credential) => <CredentialCard credential={credential} />)}
@@ -105,13 +106,13 @@ const featuredCredentials = credentials.credentials.slice(0, 4);
     </section>
 
     <CallToAction
-      eyebrow="Ready to Elevate Your Listings?"
-      title="Bring the booking flow and the property details into one clear process."
-      description="The v1 site keeps the intake simple: strong portfolio, clear pricing, one booking path, and owner-editable content."
+      eyebrow={pages.home.cta.eyebrow}
+      title={pages.home.cta.title}
+      description={pages.home.cta.description}
       primaryHref="/contact"
-      primaryLabel="Book a Shoot"
+      primaryLabel={pages.home.cta.primaryLabel}
       secondaryHref="/services"
-      secondaryLabel="View Services"
+      secondaryLabel={pages.home.cta.secondaryLabel}
     />
   </main>
   <Footer />

@@ -25,6 +25,11 @@ collections:
           - label: Business Name
             name: businessName
             widget: string
+          - label: SEO
+            name: seo
+            widget: object
+            fields:
+              - { label: Hide From Search Engines Until Launch, name: noIndex, widget: boolean, default: true }
           - label: Hero
             name: hero
             widget: object
@@ -101,6 +106,157 @@ collections:
                 widget: list
                 required: false
                 field: { label: Option, name: option, widget: string }
+
+  - name: page_content
+    label: Page Content
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: pages
+        label: Page Copy
+        file: src/content/pages.json
+        format: json
+        fields:
+          - label: Home Page
+            name: home
+            widget: object
+            fields:
+              - label: About Section
+                name: aboutSection
+                widget: object
+                fields:
+                  - { label: Eyebrow, name: eyebrow, widget: string }
+              - label: Services Section
+                name: servicesSection
+                widget: object
+                fields:
+                  - { label: Eyebrow, name: eyebrow, widget: string }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Description, name: description, widget: text }
+              - label: Portfolio Section
+                name: portfolioSection
+                widget: object
+                fields:
+                  - { label: Eyebrow, name: eyebrow, widget: string }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Description, name: description, widget: text }
+                  - { label: Link Label, name: linkLabel, widget: string }
+              - label: Testimonials Section
+                name: testimonialsSection
+                widget: object
+                fields:
+                  - { label: Eyebrow, name: eyebrow, widget: string }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Description, name: description, widget: text }
+              - label: Credentials Section
+                name: credentialsSection
+                widget: object
+                fields:
+                  - { label: Eyebrow, name: eyebrow, widget: string }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Description, name: description, widget: text }
+              - label: CTA
+                name: cta
+                widget: object
+                fields:
+                  - { label: Eyebrow, name: eyebrow, widget: string }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Description, name: description, widget: text }
+                  - { label: Primary Button Label, name: primaryLabel, widget: string }
+                  - { label: Secondary Button Label, name: secondaryLabel, widget: string }
+          - label: Portfolio Page
+            name: portfolio
+            widget: object
+            fields:
+              - label: Hero
+                name: hero
+                widget: object
+                fields:
+                  - { label: Eyebrow, name: eyebrow, widget: string }
+                  - { label: Heading, name: heading, widget: string }
+                  - { label: Description, name: description, widget: text }
+              - label: CTA
+                name: cta
+                widget: object
+                fields:
+                  - { label: Eyebrow, name: eyebrow, widget: string }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Description, name: description, widget: text }
+                  - { label: Primary Button Label, name: primaryLabel, widget: string }
+                  - { label: Secondary Button Label, name: secondaryLabel, widget: string }
+          - label: Services Page
+            name: services
+            widget: object
+            fields:
+              - label: Hero
+                name: hero
+                widget: object
+                fields:
+                  - { label: Eyebrow, name: eyebrow, widget: string }
+                  - { label: Heading, name: heading, widget: string }
+                  - { label: Description, name: description, widget: text }
+              - label: Overview Section
+                name: overview
+                widget: object
+                fields:
+                  - { label: Eyebrow, name: eyebrow, widget: string }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Description, name: description, widget: text }
+              - label: CTA
+                name: cta
+                widget: object
+                fields:
+                  - { label: Eyebrow, name: eyebrow, widget: string }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Description, name: description, widget: text }
+                  - { label: Primary Button Label, name: primaryLabel, widget: string }
+                  - { label: Secondary Button Label, name: secondaryLabel, widget: string }
+          - label: About Page
+            name: about
+            widget: object
+            fields:
+              - label: Hero
+                name: hero
+                widget: object
+                fields:
+                  - { label: Eyebrow, name: eyebrow, widget: string }
+                  - { label: Heading, name: heading, widget: string }
+                  - { label: Description, name: description, widget: text }
+              - label: Credentials Section
+                name: credentialsSection
+                widget: object
+                fields:
+                  - { label: Eyebrow, name: eyebrow, widget: string }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Description, name: description, widget: text }
+              - label: CTA
+                name: cta
+                widget: object
+                fields:
+                  - { label: Eyebrow, name: eyebrow, widget: string }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Description, name: description, widget: text }
+                  - { label: Primary Button Label, name: primaryLabel, widget: string }
+                  - { label: Secondary Button Label, name: secondaryLabel, widget: string }
+          - label: Contact Page
+            name: contact
+            widget: object
+            fields:
+              - label: Hero
+                name: hero
+                widget: object
+                fields:
+                  - { label: Eyebrow, name: eyebrow, widget: string }
+                  - { label: Heading, name: heading, widget: string }
+                  - { label: Description, name: description, widget: text }
+              - label: Booking Flow Card
+                name: bookingFlowCard
+                widget: object
+                fields:
+                  - { label: Eyebrow, name: eyebrow, widget: string }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Description, name: description, widget: text }
 
   - name: services
     label: Services

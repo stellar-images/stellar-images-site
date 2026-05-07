@@ -7,16 +7,17 @@ import CredentialCard from "../components/CredentialCard.astro";
 import CallToAction from "../components/CallToAction.astro";
 import site from "../content/site.json";
 import credentials from "../content/credentials.json";
+import pages from "../content/pages.json";
 ---
 
 <BaseLayout title={`About | ${site.businessName}`} description="Founder story, credentials, and service approach.">
   <Header currentPath="/about" />
-  <main>
+  <main id="main-content">
     <section class="page-hero">
       <div class="container stack-md">
-        <p class="eyebrow">About</p>
-        <h1>Precision, professionalism, and local trust.</h1>
-        <p class="hero-copy">This page carries the “serious local operator” tone from the Base44 concept and keeps the trust stack explicit.</p>
+        <p class="eyebrow">{pages.about.hero.eyebrow}</p>
+        <h1>{pages.about.hero.heading}</h1>
+        <p class="hero-copy">{pages.about.hero.description}</p>
       </div>
     </section>
 
@@ -47,9 +48,9 @@ import credentials from "../content/credentials.json";
     <section class="section section-alt">
       <div class="container stack-lg">
         <SectionIntro
-          eyebrow="Credentials & Qualifications"
-          title="Trust should be visible, not implied."
-          description="The Base44 concept made credentials a real section. That is the right move for this category."
+          eyebrow={pages.about.credentialsSection.eyebrow}
+          title={pages.about.credentialsSection.title}
+          description={pages.about.credentialsSection.description}
         />
         <div class="grid cards-4">
           {credentials.credentials.map((credential) => <CredentialCard credential={credential} />)}
@@ -58,13 +59,13 @@ import credentials from "../content/credentials.json";
     </section>
 
     <CallToAction
-      eyebrow="Service Area"
-      title={`Serving ${site.contact.serviceArea.join(", ")}`}
-      description="The final copy and service radius can change through the CMS, but the page should always make geography and professionalism obvious."
+      eyebrow={pages.about.cta.eyebrow}
+      title={pages.about.cta.title}
+      description={pages.about.cta.description}
       primaryHref="/contact"
-      primaryLabel="Book a Shoot"
+      primaryLabel={pages.about.cta.primaryLabel}
       secondaryHref="/services"
-      secondaryLabel="See Services"
+      secondaryLabel={pages.about.cta.secondaryLabel}
     />
   </main>
   <Footer />

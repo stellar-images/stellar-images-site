@@ -25,6 +25,7 @@ html {
   font-family: "Georgia", "Iowan Old Style", "Palatino Linotype", serif;
   background: var(--bg);
   color: var(--ink);
+  scroll-behavior: smooth;
 }
 
 body {
@@ -53,6 +54,48 @@ textarea,
 select,
 button {
   font: inherit;
+}
+
+button,
+a,
+input,
+textarea,
+select,
+summary {
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    opacity 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+summary:focus-visible {
+  outline: 3px solid rgba(105, 182, 234, 0.55);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: 100;
+  transform: translateY(calc(-100% - 2rem));
+  padding: 0.8rem 1rem;
+  border-radius: 999px;
+  background: var(--navy);
+  color: white;
+  font-weight: 700;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
 }
 
 .container {
@@ -133,6 +176,33 @@ h3 {
 
 .brand-name {
   font-size: 1.6rem;
+}
+
+.desktop-nav {
+  display: none;
+}
+
+.desktop-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.desktop-nav a:not(.button) {
+  display: inline-flex;
+  padding: 0.75rem 0.9rem;
+  border-radius: 999px;
+  color: var(--ink-soft);
+  font-weight: 700;
+}
+
+.desktop-nav a:not(.button):hover,
+.desktop-nav a[aria-current="page"] {
+  background: rgba(105, 182, 234, 0.15);
+  color: var(--accent-deep);
 }
 
 .mobile-nav {
@@ -292,12 +362,21 @@ h3 {
 .button-primary {
   color: white;
   background: linear-gradient(135deg, var(--accent) 0%, #4da4db 100%);
+  box-shadow: 0 12px 30px rgba(77, 164, 219, 0.22);
 }
 
 .button-secondary {
   background: transparent;
   border-color: rgba(255, 255, 255, 0.5);
   color: inherit;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary:hover {
+  box-shadow: 0 16px 38px rgba(77, 164, 219, 0.28);
 }
 
 .page-hero {
@@ -314,6 +393,21 @@ h3 {
 
 .card {
   padding: 1.5rem;
+}
+
+.card,
+.portfolio-card {
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.card:hover,
+.portfolio-card:hover {
+  border-color: rgba(29, 111, 159, 0.18);
+  box-shadow: 0 24px 60px rgba(24, 50, 77, 0.15);
+  transform: translateY(-2px);
 }
 
 .portrait-card img,
@@ -439,6 +533,18 @@ h3 {
   border-radius: 16px;
   border: 1px solid rgba(24, 50, 77, 0.14);
   background: #fff;
+}
+
+.booking-form input:focus,
+.booking-form textarea:focus,
+.booking-form select:focus {
+  border-color: rgba(29, 111, 159, 0.45);
+  box-shadow: 0 0 0 4px rgba(105, 182, 234, 0.14);
+}
+
+.booking-form button[disabled] {
+  cursor: wait;
+  opacity: 0.72;
 }
 
 .screen-reader-only {
@@ -574,6 +680,16 @@ h3 {
 }
 
 @media (min-width: 980px) {
+  .desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+
   .cards-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -585,5 +701,16 @@ h3 {
   .booking-layout {
     grid-template-columns: 0.9fr 1.1fr;
     align-items: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }

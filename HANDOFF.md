@@ -25,38 +25,45 @@ Current GitHub repo:
 - Google Calendar account
 - email inbox that receives inquiries
 
-## How Content Updates Are Intended To Work
+## How Content Updates Work
 
 Target owner flow:
 
-1. Open `/admin`
-2. Log in
-3. Edit text, pricing, services, portfolio items, or images
-4. Save and publish
-5. Let Vercel redeploy the site automatically
+1. Open `/admin`.
+2. Log in.
+3. Edit text, pricing, services, portfolio items, images, or form settings.
+4. Publish.
+5. Let Vercel redeploy the site automatically.
+
+See `EDITOR_GUIDE.md` for the non-technical editing guide.
 
 ## Current State
 
-Scaffolded now:
+Scaffolded and configured now:
 
 - five core pages
 - reusable components
 - structured content files
 - Decap admin UI
+- Decap GitHub OAuth production login
+- owner-editable page copy, services, portfolio, testimonials, credentials, site settings, and booking form settings
 - placeholder assets
 
 Still needs final production setup:
 
-- Decap production auth environment variables
 - real Calendly URL
 - remaining Vercel email env vars for intake delivery
 - final photos and content
+- custom domain
+- launch SEO flag turned off after final content is ready
 
 Already configured:
 
 - GitHub repo under `stellar-images`
 - Vercel production deployment
 - Vercel GitHub integration for automatic deploys from `main`
+- Vercel production env vars for Decap GitHub OAuth
+- verified CMS login and publish path
 
 ## Decap Auth And Maintenance Access
 
@@ -68,9 +75,9 @@ The recommended long-term setup is:
 - Decap authenticates editors through GitHub
 - Decap commits content edits back to the repo
 
-Temporary testing with your GitHub account or OAuth app is fine, but secrets must stay in Vercel Environment Variables or another server-side auth provider. Do not commit GitHub OAuth secrets, personal access tokens, or long-lived editor tokens.
+The current OAuth app is configured through Vercel Environment Variables. Do not commit GitHub OAuth secrets, personal access tokens, or long-lived editor tokens.
 
-See `DECAP_AUTH_PLAN.md` for the production test checklist.
+See `DECAP_AUTH_PLAN.md` for the production auth details.
 
 ## Repo Visibility
 
@@ -99,9 +106,9 @@ Current production state:
 
 - `INTAKE_TO_EMAIL` is set to `alexandra.v.maass@gmail.com`
 - `RESEND_API_KEY` still needs to be added
-- `INTAKE_FROM_EMAIL` still needs to be added after choosing a verified Resend sender
+- `INTAKE_FROM_EMAIL` still needs to be added after choosing a verified sender
 
-The sender address must be allowed by the Resend account. In production, use a verified domain sender rather than a personal Gmail address.
+The sender address must be allowed by the email delivery account. In production, use a verified domain sender rather than a personal Gmail address.
 
 ## Vercel Deployment
 
@@ -125,6 +132,7 @@ npx --yes vercel@latest deploy --prod --yes --archive=tgz
 ## Content Sources
 
 - `src/content/site.json`
+- `src/content/pages.json`
 - `src/content/services.json`
 - `src/content/portfolio.json`
 - `src/content/testimonials.json`
@@ -132,3 +140,11 @@ npx --yes vercel@latest deploy --prod --yes --archive=tgz
 - `src/content/form-config.json`
 
 These files are intended to be managed by Decap rather than edited by hand in normal use.
+
+## Launch SEO Flag
+
+The site currently sets `noindex, nofollow` through `src/content/site.json` because it still contains placeholder content. In the CMS, this is:
+
+- `Site Settings -> SEO -> Hide From Search Engines Until Launch`
+
+Turn it off only after real content, photos, Calendly, email delivery, and domain setup are ready.

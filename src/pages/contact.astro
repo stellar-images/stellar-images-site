@@ -7,16 +7,17 @@ import ContactInfoList from "../components/ContactInfoList.astro";
 import CalendlyEmbed from "../components/CalendlyEmbed.astro";
 import site from "../content/site.json";
 import formConfig from "../content/form-config.json";
+import pages from "../content/pages.json";
 ---
 
 <BaseLayout title={`Contact & Book | ${site.businessName}`} description="Property intake and scheduling in one place.">
   <Header currentPath="/contact" />
-  <main>
+  <main id="main-content">
     <section class="page-hero">
       <div class="container stack-md">
-        <p class="eyebrow">Contact Us</p>
-        <h1>Schedule your shoot.</h1>
-        <p class="hero-copy">The v1 contact page keeps business contact details, property intake, and Calendly scheduling together so the booking path is obvious.</p>
+        <p class="eyebrow">{pages.contact.hero.eyebrow}</p>
+        <h1>{pages.contact.hero.heading}</h1>
+        <p class="hero-copy">{pages.contact.hero.description}</p>
       </div>
     </section>
 
@@ -25,9 +26,9 @@ import formConfig from "../content/form-config.json";
         <aside class="stack-lg">
           <ContactInfoList />
           <div class="card stack-sm">
-            <p class="eyebrow">Booking Flow</p>
-            <h2>One page, one process.</h2>
-            <p>Collect the property details first, then let the client reserve a time through Calendly. That keeps the workflow unified even before deeper automation is added.</p>
+            <p class="eyebrow">{pages.contact.bookingFlowCard.eyebrow}</p>
+            <h2>{pages.contact.bookingFlowCard.title}</h2>
+            <p>{pages.contact.bookingFlowCard.description}</p>
           </div>
         </aside>
 
