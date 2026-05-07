@@ -7,6 +7,7 @@
   --line: rgba(31, 37, 46, 0.1);
   --accent: #69b6ea;
   --accent-deep: #1d6f9f;
+  --sand: #d8c2a3;
   --navy: #18324d;
   --shadow: 0 20px 50px rgba(24, 50, 77, 0.12);
   --radius-sm: 16px;
@@ -29,10 +30,12 @@ html {
 }
 
 body {
+  min-height: 100vh;
   margin: 0;
   font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
   color: var(--ink);
   background:
+    radial-gradient(circle at 85% 18%, rgba(216, 194, 163, 0.28), transparent 24rem),
     radial-gradient(circle at top left, rgba(105, 182, 234, 0.18), transparent 35%),
     linear-gradient(180deg, #fbf8f3 0%, #f5efe6 100%);
 }
@@ -286,7 +289,8 @@ h3 {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(16, 26, 40, 0.78) 0%, rgba(16, 26, 40, 0.38) 48%, rgba(16, 26, 40, 0.12) 100%),
+    radial-gradient(circle at 28% 72%, rgba(105, 182, 234, 0.18), transparent 18rem),
+    linear-gradient(90deg, rgba(16, 26, 40, 0.82) 0%, rgba(16, 26, 40, 0.38) 48%, rgba(16, 26, 40, 0.12) 100%),
     linear-gradient(180deg, rgba(16, 26, 40, 0.12) 0%, rgba(16, 26, 40, 0.58) 100%);
 }
 
@@ -308,6 +312,17 @@ h3 {
   max-width: 42rem;
   color: white;
   text-shadow: 0 2px 18px rgba(0, 0, 0, 0.42);
+}
+
+.hero-card::before {
+  content: "";
+  display: block;
+  width: 5rem;
+  height: 0.35rem;
+  margin-bottom: 1.5rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), rgba(255, 255, 255, 0.7));
+  box-shadow: 0 12px 30px rgba(105, 182, 234, 0.32);
 }
 
 .hero-card h1,
@@ -380,7 +395,20 @@ h3 {
 }
 
 .page-hero {
-  padding: 5rem 0 2rem;
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 0 3rem;
+}
+
+.page-hero::before {
+  content: "";
+  position: absolute;
+  inset: auto -8rem -9rem auto;
+  width: 22rem;
+  height: 22rem;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(105, 182, 234, 0.18), transparent 68%);
+  pointer-events: none;
 }
 
 .card,
@@ -458,6 +486,13 @@ h3 {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+
+.portfolio-card img,
+.portrait-card img {
+  background:
+    linear-gradient(135deg, rgba(105, 182, 234, 0.16), rgba(216, 194, 163, 0.18)),
+    var(--surface-muted);
 }
 
 .portfolio-card-body {

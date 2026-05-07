@@ -25,24 +25,29 @@ collections:
           - label: Business Name
             name: businessName
             widget: string
+            hint: Public brand name shown in the header and footer.
           - label: SEO
             name: seo
             widget: object
             fields:
-              - { label: Hide From Search Engines Until Launch, name: noIndex, widget: boolean, default: true }
+              - { label: Site URL, name: siteUrl, widget: string, hint: Use the final production domain after launch. }
+              - { label: Default Browser Title, name: defaultTitle, widget: string }
+              - { label: Default Description, name: defaultDescription, widget: text, hint: Short search/social description. Aim for one clear sentence. }
+              - { label: Social Share Image, name: socialImage, widget: image, hint: Used for link previews when someone shares the site. }
+              - { label: Hide From Search Engines Until Launch, name: noIndex, widget: boolean, default: true, hint: Keep enabled while placeholder content is visible. Turn off only at final launch. }
           - label: Hero
             name: hero
             widget: object
             fields:
-              - { label: Eyebrow, name: eyebrow, widget: string }
-              - { label: Heading, name: heading, widget: string }
-              - { label: Description, name: description, widget: text }
+              - { label: Eyebrow, name: eyebrow, widget: string, hint: Small all-caps text above the homepage headline. }
+              - { label: Heading, name: heading, widget: string, hint: Main homepage headline. Keep this strong and concise. }
+              - { label: Description, name: description, widget: text, hint: One or two sentences below the headline. }
               - label: Image
                 name: image
                 widget: object
                 fields:
-                  - { label: Image, name: src, widget: image }
-                  - { label: Alt Text, name: alt, widget: string }
+                  - { label: Image, name: src, widget: image, hint: Wide hero image. Horizontal photos work best. }
+                  - { label: Alt Text, name: alt, widget: string, hint: Describe the image for accessibility. }
           - label: About Preview
             name: aboutPreview
             widget: object
@@ -76,7 +81,7 @@ collections:
             name: booking
             widget: object
             fields:
-              - { label: Calendly URL, name: calendlyUrl, widget: string, required: false }
+              - { label: Calendly URL, name: calendlyUrl, widget: string, required: false, hint: Paste the public Calendly event URL here when it is ready. }
           - label: Footer
             name: footer
             widget: object
@@ -97,7 +102,7 @@ collections:
             summary: "{{fields.label}}"
             fields:
               - { label: Name, name: name, widget: string }
-              - { label: Label, name: label, widget: string }
+              - { label: Label, name: label, widget: string, hint: Text clients see above the input. }
               - { label: Type, name: type, widget: select, options: ["text", "email", "tel", "select", "textarea", "checkbox-group"] }
               - { label: Required, name: required, widget: boolean, default: false }
               - { label: Placeholder, name: placeholder, widget: string, required: false }
@@ -311,10 +316,10 @@ collections:
               - { label: ID, name: id, widget: string }
               - { label: Title, name: title, widget: string }
               - { label: Category, name: category, widget: select, options: ["Interior", "Exterior", "Drone", "Video"] }
-              - { label: Image, name: image, widget: image }
-              - { label: Alt Text, name: alt, widget: string }
+              - { label: Image, name: image, widget: image, hint: Upload compressed JPG or WebP photos when real portfolio assets are ready. }
+              - { label: Alt Text, name: alt, widget: string, hint: Plain-language description of the photo. }
               - { label: Location, name: location, widget: string }
-              - { label: Featured, name: featured, widget: boolean, default: false }
+              - { label: Featured, name: featured, widget: boolean, default: false, hint: Featured items appear on the homepage. }
 
   - name: testimonials
     label: Testimonials

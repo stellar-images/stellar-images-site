@@ -254,6 +254,8 @@ Recommended content files:
 
 - business name
 - tagline
+- SEO/social defaults
+- launch `noindex` flag
 - hero copy
 - service area
 - phone

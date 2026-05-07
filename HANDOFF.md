@@ -36,6 +36,7 @@ Target owner flow:
 5. Let Vercel redeploy the site automatically.
 
 See `EDITOR_GUIDE.md` for the non-technical editing guide.
+See `LAUNCH_CHECKLIST.md` before sharing the site publicly.
 
 ## Current State
 
@@ -148,3 +149,7 @@ The site currently sets `noindex, nofollow` through `src/content/site.json` beca
 - `Site Settings -> SEO -> Hide From Search Engines Until Launch`
 
 Turn it off only after real content, photos, Calendly, email delivery, and domain setup are ready.
+
+## Maintainer Notes
+
+Use `MAINTAINER_CHECKLIST.md` for the current local and production verification flow. GitHub Actions are intentionally not configured yet to avoid burning CI minutes during frequent early iteration.

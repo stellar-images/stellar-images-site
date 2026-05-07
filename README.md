@@ -33,7 +33,9 @@ Astro site for a real estate photography business. The project is structured aro
 ├── BASE44_REFERENCE.md
 ├── BUILD_BRIEF.md
 ├── EDITOR_GUIDE.md
-└── HANDOFF.md
+├── HANDOFF.md
+├── LAUNCH_CHECKLIST.md
+└── MAINTAINER_CHECKLIST.md
 ```
 
 ## Content Editing
@@ -113,3 +115,5 @@ These files are intended to be managed by Decap rather than edited by hand in no
 - The implementation plan is documented in [BUILD_BRIEF.md](/Users/lylejens/Documents/Codex/2026-05-06/files-mentioned-by-the-user-3100/BUILD_BRIEF.md).
 - The Decap production login setup is documented in [DECAP_AUTH_PLAN.md](/Users/lylejens/Documents/Codex/2026-05-06/files-mentioned-by-the-user-3100/DECAP_AUTH_PLAN.md).
 - The owner editing flow is documented in [EDITOR_GUIDE.md](/Users/lylejens/Documents/Codex/2026-05-06/files-mentioned-by-the-user-3100/EDITOR_GUIDE.md).
+- Launch readiness is documented in [LAUNCH_CHECKLIST.md](/Users/lylejens/Documents/Codex/2026-05-06/files-mentioned-by-the-user-3100/LAUNCH_CHECKLIST.md).
+- Maintainer verification is documented in [MAINTAINER_CHECKLIST.md](/Users/lylejens/Documents/Codex/2026-05-06/files-mentioned-by-the-user-3100/MAINTAINER_CHECKLIST.md).

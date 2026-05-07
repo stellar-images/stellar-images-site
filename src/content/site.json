@@ -1,6 +1,10 @@
 {
   "businessName": "Stellar Images",
   "seo": {
+    "siteUrl": "https://stellar-images-site.vercel.app",
+    "defaultTitle": "Stellar Images | Real Estate Photography",
+    "defaultDescription": "Professional real estate photography, drone media, and video walkthroughs for Beaufort, Bluffton, Hilton Head, and the Lowcountry.",
+    "socialImage": "/images/hero/hero-waterfront.svg",
     "noIndex": true
   },
   "hero": {

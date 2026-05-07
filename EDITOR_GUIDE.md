@@ -34,7 +34,27 @@ Recommended image prep:
 
 - Use `.jpg` or `.webp` for real photography.
 - Keep files reasonably compressed before upload.
+- Prefer horizontal images for hero and portfolio cards.
 - Use descriptive alt text such as `Bright kitchen with white cabinets in Beaufort listing`.
+
+## Updating Page Copy
+
+Use `Page Content` for page-level wording:
+
+- hero headings and descriptions
+- section titles and descriptions
+- CTA text
+- button labels
+
+Use `Site Settings` for business-wide details:
+
+- business name
+- homepage hero image
+- contact details
+- service area
+- footer description
+- Calendly URL
+- SEO launch setting
 
 ## Launch SEO Flag
 
