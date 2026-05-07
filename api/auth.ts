@@ -1,5 +1,5 @@
 import { createHmac, randomBytes } from "node:crypto";
-import type { VercelRequest, VercelResponse } from "./vercel-types";
+import type { VercelRequest, VercelResponse } from "./vercel-types.js";
 
 const TEN_MINUTES_MS = 10 * 60 * 1000;
 

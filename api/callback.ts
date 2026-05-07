@@ -1,5 +1,5 @@
-import type { VercelRequest, VercelResponse } from "./vercel-types";
-import { verifyState } from "./auth";
+import type { VercelRequest, VercelResponse } from "./vercel-types.js";
+import { verifyState } from "./auth.js";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "GET") {
