@@ -36,7 +36,7 @@ Likely variables once the OAuth provider/function is selected:
 Current production state:
 
 - `OAUTH_REDIRECT_URI` is set to `https://stellar-images-site.vercel.app/api/callback`
-- `GITHUB_OAUTH_SCOPE` is set to `repo`
+- `GITHUB_OAUTH_SCOPE` is set to `public_repo`
 - `GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET`, and `OAUTH_STATE_SECRET` still need to be added
 - Vercel Git auto-deploy is connected to `stellar-images/stellar-images-site`
 

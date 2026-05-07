@@ -19,7 +19,7 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
   const origin = getOrigin(req);
   const redirectUri = process.env.OAUTH_REDIRECT_URI || `${origin}/api/callback`;
   const state = signState({ nonce: randomBytes(16).toString("hex"), createdAt: Date.now() }, stateSecret);
-  const scope = process.env.GITHUB_OAUTH_SCOPE || "repo";
+  const scope = process.env.GITHUB_OAUTH_SCOPE || "public_repo";
   const authorizeUrl = new URL("https://github.com/login/oauth/authorize");
 
   authorizeUrl.searchParams.set("client_id", clientId);
