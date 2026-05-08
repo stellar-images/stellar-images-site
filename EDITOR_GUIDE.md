@@ -11,9 +11,11 @@ This guide is for non-technical content updates after the site is handed over.
 5. Click `Publish`.
 6. Wait for Vercel to redeploy. Most edits should show on the live site within a minute or two.
 
+Publishing creates a GitHub commit and a Vercel deployment. It does not use GitHub Actions minutes, but it does count against Vercel deployment/build quotas. When making several small edits, batch them into one publish when practical.
+
 ## What Can Be Edited
 
-- `Site Settings`: business name, homepage hero, about preview, contact info, service area, footer, launch SEO flag, Calendly URL placeholder.
+- `Site Settings`: business name, homepage hero, about preview, contact info, service area, footer, launch SEO flag, and public Calendly event URL.
 - `Page Content`: hero copy, section headings, descriptions, and CTA button labels for the main pages.
 - `Services`: service names, descriptions, features, starting prices, and pricing rows.
 - `Portfolio`: portfolio cards, categories, images, locations, alt text, and featured status.
@@ -71,6 +73,7 @@ Use `Site Settings` for business-wide details:
 - Do not paste API keys, passwords, OAuth secrets, or calendar credentials into any CMS field.
 - Do not use the CMS for private client notes or inquiry tracking. The site is static and repo-backed.
 - Do not delete required form fields unless the booking workflow changes intentionally.
+- Avoid changing fields labeled `Advanced` unless a maintainer asks you to. Those values are internal IDs, anchors, or input types the website depends on.
 
 ## If A Publish Does Not Show Up
 
@@ -78,4 +81,4 @@ Use `Site Settings` for business-wide details:
 2. Refresh the page.
 3. Check whether the edit appears in the GitHub repo commit history.
 4. Check the Vercel deployment list for a failed build.
-5. Ask the maintainer to run `npm run build` locally if the deploy failed.
+5. Ask the maintainer to run `npm run verify` locally if the deploy failed.

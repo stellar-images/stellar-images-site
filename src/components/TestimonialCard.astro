@@ -11,11 +11,12 @@ interface Props {
 }
 
 const { testimonial } = Astro.props;
-const rating = `${testimonial.stars}/5`;
+const ratingLabel = `${testimonial.stars} out of 5 stars`;
+const stars = "★".repeat(testimonial.stars);
 ---
 
 <article class="card testimonial-card stack-sm">
-  <p class="stars">{rating}</p>
+  <p class="stars" aria-label={ratingLabel}>{stars}</p>
   <p>“{testimonial.quote}”</p>
   <div>
     <strong>{testimonial.name}</strong>

@@ -10,7 +10,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "astro check && tsc --noEmit",
+    "verify:admin": "node scripts/verify-admin-content.mjs",
+    "verify": "npm run typecheck && npm run build && npm run verify:admin"
   },
   "dependencies": {
     "astro": "^6.2.2"
@@ -18,7 +20,8 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
     "@types/node": "^25.6.0",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "yaml": "^2.8.4"
   },
   "overrides": {
     "yaml": "^2.8.4"

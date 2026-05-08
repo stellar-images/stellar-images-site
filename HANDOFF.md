@@ -52,8 +52,8 @@ Scaffolded and configured now:
 
 Still needs final production setup:
 
-- real Calendly URL
-- remaining Vercel email env vars for intake delivery
+- owner-controlled Calendly event URL replacing the current maintainer test URL
+- owner-controlled Resend sender domain and inquiry recipient replacing the current maintainer test email setup
 - final photos and content
 - custom domain
 - launch SEO flag turned off after final content is ready
@@ -65,6 +65,32 @@ Already configured:
 - Vercel GitHub integration for automatic deploys from `main`
 - Vercel production env vars for Decap GitHub OAuth
 - verified CMS login and publish path
+- Vercel production env vars for test Resend delivery
+- production-tested Calendly booking flow using the maintainer test event
+- production-tested email intake flow using the maintainer Resend account
+
+## Production Test Status
+
+End-to-end production verification was completed on May 8, 2026 using temporary maintainer-owned integration values.
+
+Verified:
+
+- live `/contact` page rendered the Calendly iframe
+- live form submission returned the success state
+- live `/api/intake` returned `200 {"ok": true}`
+- Resend delivered production test emails to `lyle.jensen95@gmail.com`
+- Calendly created a booking for the public event URL
+- Google Calendar showed the booking
+- the dummy booking was canceled afterward
+
+Current temporary test values:
+
+- Calendly URL in content: `https://calendly.com/lyle-jensen95/30min`
+- `INTAKE_TO_EMAIL`: `lyle.jensen95@gmail.com`
+- `INTAKE_FROM_EMAIL`: `onboarding@resend.dev`
+- `RESEND_API_KEY`: set in Vercel Production as an encrypted secret
+
+Do not treat these as final owner values. They are intentionally maintainer-owned so the integration can be tested before Allex has final accounts/domain sender ready.
 
 ## Decap Auth And Maintenance Access
 
@@ -105,11 +131,11 @@ Required variables:
 
 Current production state:
 
-- `INTAKE_TO_EMAIL` is set to `alexandra.v.maass@gmail.com`
-- `RESEND_API_KEY` still needs to be added
-- `INTAKE_FROM_EMAIL` still needs to be added after choosing a verified sender
+- `INTAKE_TO_EMAIL` is currently set to `lyle.jensen95@gmail.com` for production testing
+- `INTAKE_FROM_EMAIL` is currently set to `onboarding@resend.dev` for production testing
+- `RESEND_API_KEY` is set in Vercel Production as an encrypted secret
 
-The sender address must be allowed by the email delivery account. In production, use a verified domain sender rather than a personal Gmail address.
+The sender address must be allowed by the email delivery account. For public launch, use a verified domain sender rather than `onboarding@resend.dev`, then change `INTAKE_TO_EMAIL` to the owner's real inquiry inbox.
 
 ## Vercel Deployment
 
@@ -129,6 +155,24 @@ Manual production deploys are still possible from this folder if needed:
 ```sh
 npx --yes vercel@latest deploy --prod --yes --archive=tgz
 ```
+
+## Vercel Plan And Quota Notes
+
+CMS publishes do not consume GitHub Actions minutes. Decap commits content changes to GitHub, and the Vercel Git integration builds/deploys those commits on Vercel infrastructure.
+
+Current practical quota notes for Vercel Hobby, verified May 2026:
+
+- build execution: 6,000 minutes per month
+- deployments: 100 per day
+- build rate limit: 32 builds per hour
+- maximum build duration: 45 minutes per deployment
+- fast data transfer: 100 GB per month
+- function invocations: 1,000,000 per month
+- static file upload limit: 100 MB per deployment
+
+For this small Astro site, the main practical limit is deployment frequency from CMS publishing. Normal owner edits should be fine, but avoid repeatedly publishing tiny changes one at a time during heavy editing sessions.
+
+Important business-use caveat: Vercel Hobby is intended for personal/non-commercial use. Since this is a business website, the cleaner long-term setup is Vercel Pro if the site is launched publicly for commercial use. Pro also avoids the private organization repo blocker and provides more headroom.
 
 ## Content Sources
 
@@ -152,4 +196,4 @@ Turn it off only after real content, photos, Calendly, email delivery, and domai
 
 ## Maintainer Notes
 
-Use `MAINTAINER_CHECKLIST.md` for the current local and production verification flow. GitHub Actions are intentionally not configured yet to avoid burning CI minutes during frequent early iteration.
+Use `MAINTAINER_CHECKLIST.md` for the current local and production verification flow. The main local gate is `npm run verify`. GitHub Actions are intentionally not configured yet to avoid burning CI minutes during frequent early iteration.

@@ -1,21 +1,21 @@
 {
   "testimonials": [
     {
-    "quote": "The final gallery made the listing feel polished immediately, and the turnaround fit our schedule perfectly.",
-    "name": "Sample Client",
-    "role": "Real Estate Agent",
+    "quote": "Stellar Images transformed our listings. The drone shots alone brought in more interest than we ever expected. Professional, punctual, and the quality is unmatched.",
+    "name": "Sarah Mitchell",
+    "role": "Realtor, Beaufort Realty Group",
     "stars": 5
     },
     {
-    "quote": "The aerial coverage helped show the property setting in a way ground photos could not.",
-    "name": "Sample Client",
-    "role": "Listing Agent",
+    "quote": "We switched to Stellar Images for all our luxury listings and saw a noticeable increase in online engagement. The photos practically sell the homes themselves.",
+    "name": "James Thornton",
+    "role": "Broker, Lowcountry Properties",
     "stars": 5
     },
     {
-    "quote": "The process was clear from start to finish, and the finished media looked clean and professional.",
-    "name": "Sample Client",
-    "role": "Property Professional",
+    "quote": "The video walkthroughs have been a game-changer for our vacation rental properties. Bookings went up significantly after updating our listings with their media.",
+    "name": "Amanda Chen",
+    "role": "Property Manager, Hilton Head Rentals",
     "stars": 5
     }
   ]

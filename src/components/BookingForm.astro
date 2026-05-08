@@ -5,6 +5,7 @@ interface FormField {
   type: string;
   required: boolean;
   placeholder?: string;
+  defaultValue?: string;
   options?: string[];
 }
 
@@ -22,8 +23,8 @@ const { config } = Astro.props;
 
 <section class="card booking-form-card stack-md">
   <div class="stack-xs">
-    <p class="eyebrow">Step 1</p>
-    <h2>Property details</h2>
+    <p class="eyebrow">Schedule Your Shoot</p>
+    <h2>Schedule Your Shoot</h2>
     <p>{config.intro}</p>
   </div>
 
@@ -60,7 +61,7 @@ const { config } = Astro.props;
           <span>{field.label}{field.required ? " *" : ""}</span>
           <select name={field.name} required={field.required}>
             <option value="">{field.placeholder ?? "Select an option"}</option>
-            {field.options?.map((option) => <option value={option}>{option}</option>)}
+            {field.options?.map((option) => <option value={option} selected={field.defaultValue === option}>{option}</option>)}
           </select>
         </label>
       ) : (
@@ -112,7 +113,7 @@ const { config } = Astro.props;
           throw new Error(result.error || "Unable to send the request.");
         }
 
-        status.textContent = "Request sent. Please finish by choosing a time below.";
+        status.textContent = "Request sent. Please choose a time below to finish booking.";
         status.className = "form-status is-success";
         form.reset();
       } catch (error) {

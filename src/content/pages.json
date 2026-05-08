@@ -5,95 +5,90 @@
     },
     "servicesSection": {
       "eyebrow": "What We Offer",
-      "title": "Services tailored for real estate",
-      "description": "Professional photos, drone media, and walkthrough coverage designed to help buyers understand the property quickly."
+      "title": "Services Tailored for Real Estate",
+      "description": ""
     },
     "portfolioSection": {
       "eyebrow": "Our Work",
-      "title": "Featured portfolio",
-      "description": "A curated preview of interior, exterior, aerial, and video-style listing coverage.",
+      "title": "Featured Portfolio",
+      "description": "",
       "linkLabel": "View Full Portfolio"
     },
     "testimonialsSection": {
-      "eyebrow": "What Our Clients Say",
-      "title": "Reliable visuals, clear communication, and polished delivery",
-      "description": "The experience should feel organized from the first request through final delivery."
+      "eyebrow": "Testimonials",
+      "title": "What Our Clients Say",
+      "description": ""
     },
     "credentialsSection": {
       "eyebrow": "Credentials & Qualifications",
-      "title": "A trust-first approach to listing media",
-      "description": "Credentials and qualifications give clients confidence that the shoot will be handled professionally."
+      "title": "Credentials & Qualifications",
+      "description": ""
     },
     "cta": {
       "eyebrow": "Ready to Elevate Your Listings?",
-      "title": "Give your next listing the visuals it deserves.",
-      "description": "Share the property details, choose the services you need, and book a shoot in one simple flow.",
+      "title": "Ready to Elevate Your Listings?",
+      "description": "Get in touch to schedule a shoot for your next listing.",
       "primaryLabel": "Book a Shoot",
       "secondaryLabel": "View Services"
     }
   },
   "portfolio": {
     "hero": {
-      "eyebrow": "Portfolio",
-      "heading": "Browse the collection of real estate photography, drone imagery, and video work.",
-      "description": "Explore interior, exterior, aerial, and walkthrough-style coverage organized by media type."
+      "eyebrow": "",
+      "heading": "Portfolio",
+      "description": "Browse our collection of real estate photography, drone imagery, and video work."
     },
     "cta": {
-      "eyebrow": "Book The Shoot",
-      "title": "Ready to create this level of presentation for your next listing?",
-      "description": "Send the property details and choose the media package that fits the listing.",
+      "eyebrow": "Ready to Elevate Your Listings?",
+      "title": "Ready to Elevate Your Listings?",
+      "description": "Get in touch to schedule a shoot for your next listing.",
       "primaryLabel": "Schedule Your Shoot",
       "secondaryLabel": "See Pricing"
     }
   },
   "services": {
     "hero": {
-      "eyebrow": "Services",
-      "heading": "Professional real estate media with clear deliverables and pricing.",
-      "description": "Choose from professional listing photos, drone photography and video, walkthrough coverage, or a custom package."
+      "eyebrow": "",
+      "heading": "Services & Pricing",
+      "description": "Professional real estate photography, drone media, and video walkthrough packages."
     },
     "overview": {
       "eyebrow": "What We Offer",
-      "title": "Service overview",
-      "description": "Straightforward packages for the core media most real estate listings need."
+      "title": "Services Tailored for Real Estate",
+      "description": ""
     },
     "cta": {
       "eyebrow": "Need a Custom Package?",
-      "title": "Bundle the right mix of photo, drone, and walkthrough coverage.",
-      "description": "For acreage, waterfront homes, luxury properties, or special marketing needs, request a package tailored to the listing.",
+      "title": "Need a Custom Package?",
+      "description": "We offer bundled packages for agencies, property managers, and recurring clients. Get in touch for a custom quote tailored to your needs.",
       "primaryLabel": "Request a Quote",
       "secondaryLabel": "View Portfolio"
     }
   },
   "about": {
     "hero": {
-      "eyebrow": "About",
-      "heading": "Precision, professionalism, and local trust.",
-      "description": "Stellar Images is built around reliable service, attention to detail, and a clear understanding of how properties need to show online."
+      "eyebrow": "",
+      "heading": "About",
+      "description": "The story behind Stellar Images Photography."
     },
     "credentialsSection": {
       "eyebrow": "Credentials & Qualifications",
-      "title": "Trust should be visible, not implied.",
-      "description": "Background, training, and professionalism matter when someone is trusting you with a listing."
+      "title": "Credentials & Qualifications",
+      "description": ""
     },
     "cta": {
-      "eyebrow": "Service Area",
-      "title": "Serving Beaufort, Bluffton, Hilton Head, and the Lowcountry",
-      "description": "Local market familiarity, organized communication, and polished media help keep the listing process moving.",
-      "primaryLabel": "Book a Shoot",
+      "eyebrow": "Get in Touch",
+      "title": "Ready to Elevate Your Listings?",
+      "description": "Get in touch to schedule a shoot for your next listing.",
+      "primaryLabel": "Get in Touch",
       "secondaryLabel": "See Services"
     }
   },
   "contact": {
     "hero": {
-      "eyebrow": "Contact Us",
-      "heading": "Schedule your shoot.",
-      "description": "Share the property details, select the services you need, and choose a time for your shoot."
-    },
-    "bookingFlowCard": {
-      "eyebrow": "Booking Flow",
-      "title": "One page, one process.",
-      "description": "The intake form captures the listing details. Calendly handles scheduling so availability stays connected to the calendar."
+      "eyebrow": "",
+      "heading": "Contact Us",
+      "description": "Let's create stunning visuals for your listings."
     }
   }
 }

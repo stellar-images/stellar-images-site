@@ -6,6 +6,14 @@ type IntakePayload = {
   phone?: string;
   squareFootageRange?: string;
   propertyAddress?: string;
+  unit?: string;
+  city?: string;
+  state?: string;
+  zipCode?: string;
+  mlsNumber?: string;
+  bedrooms?: string;
+  bathrooms?: string;
+  lotSize?: string;
   servicesNeeded?: string[];
   additionalDetails?: string;
   website?: string;
@@ -86,6 +94,14 @@ function normalizePayload(body: unknown): IntakePayload {
     phone: asString(input.phone),
     squareFootageRange: asString(input.squareFootageRange),
     propertyAddress: asString(input.propertyAddress),
+    unit: asString(input.unit),
+    city: asString(input.city),
+    state: asString(input.state),
+    zipCode: asString(input.zipCode),
+    mlsNumber: asString(input.mlsNumber),
+    bedrooms: asString(input.bedrooms),
+    bathrooms: asString(input.bathrooms),
+    lotSize: asString(input.lotSize),
     servicesNeeded: asStringArray(input.servicesNeeded),
     additionalDetails: asString(input.additionalDetails),
     website: asString(input.website),
@@ -96,6 +112,9 @@ function validatePayload(payload: IntakePayload) {
   if (!payload.fullName) return "Full name is required.";
   if (!payload.email || !payload.email.includes("@")) return "A valid email is required.";
   if (!payload.propertyAddress) return "Property address is required.";
+  if (!payload.city) return "City is required.";
+  if (!payload.state) return "State is required.";
+  if (!payload.zipCode) return "Zip code is required.";
   if (!payload.servicesNeeded || payload.servicesNeeded.length === 0) {
     return "At least one service is required.";
   }
@@ -126,8 +145,16 @@ function renderTextEmail(payload: IntakePayload) {
     `Name: ${payload.fullName}`,
     `Email: ${payload.email}`,
     `Phone: ${payload.phone || "Not provided"}`,
-    `Square Footage: ${payload.squareFootageRange || "Not provided"}`,
     `Property Address: ${payload.propertyAddress}`,
+    `Apartment / Unit: ${payload.unit || "Not provided"}`,
+    `City: ${payload.city}`,
+    `State: ${payload.state}`,
+    `Zip Code: ${payload.zipCode}`,
+    `MLS Number: ${payload.mlsNumber || "Not provided"}`,
+    `Bedrooms: ${payload.bedrooms || "Not provided"}`,
+    `Bathrooms: ${payload.bathrooms || "Not provided"}`,
+    `Lot Size: ${payload.lotSize || "Not provided"}`,
+    `Square Footage: ${payload.squareFootageRange || "Not provided"}`,
     `Services Needed: ${payload.servicesNeeded?.join(", ")}`,
     "",
     "Additional Details:",
@@ -140,8 +167,16 @@ function renderHtmlEmail(payload: IntakePayload) {
     ["Name", payload.fullName || ""],
     ["Email", payload.email || ""],
     ["Phone", payload.phone || "Not provided"],
-    ["Square Footage", payload.squareFootageRange || "Not provided"],
     ["Property Address", payload.propertyAddress || ""],
+    ["Apartment / Unit", payload.unit || "Not provided"],
+    ["City", payload.city || ""],
+    ["State", payload.state || ""],
+    ["Zip Code", payload.zipCode || ""],
+    ["MLS Number", payload.mlsNumber || "Not provided"],
+    ["Bedrooms", payload.bedrooms || "Not provided"],
+    ["Bathrooms", payload.bathrooms || "Not provided"],
+    ["Lot Size", payload.lotSize || "Not provided"],
+    ["Square Footage", payload.squareFootageRange || "Not provided"],
     ["Services Needed", payload.servicesNeeded?.join(", ") || ""],
     ["Additional Details", payload.additionalDetails || "None provided"],
   ];

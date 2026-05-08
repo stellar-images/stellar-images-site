@@ -14,9 +14,9 @@ const categories = ["All", "Interior", "Exterior", "Drone", "Video"];
 <BaseLayout title={`Portfolio | ${site.businessName}`} description="Browse real estate photography, drone imagery, and listing visuals.">
   <Header currentPath="/portfolio" />
   <main id="main-content">
-    <section class="page-hero">
+    <section class="page-hero page-hero-image page-hero-portfolio">
       <div class="container stack-md">
-        <p class="eyebrow">{pages.portfolio.hero.eyebrow}</p>
+        {pages.portfolio.hero.eyebrow && <p class="eyebrow">{pages.portfolio.hero.eyebrow}</p>}
         <h1>{pages.portfolio.hero.heading}</h1>
         <p class="hero-copy">{pages.portfolio.hero.description}</p>
       </div>

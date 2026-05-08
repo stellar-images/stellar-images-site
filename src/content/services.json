@@ -4,60 +4,63 @@
     "slug": "professional-listing-photos",
     "shortLabel": "Listing Photos",
     "name": "Professional Listing Photos",
-    "shortDescription": "Bright, clean, MLS-ready images that present each property clearly and professionally.",
-    "longDescription": "Professional listing photography focuses on the rooms, exterior angles, and details buyers need to understand the home online. Each shoot is edited for a clean, consistent look and delivered for listing use.",
+    "shortDescription": "Interior and exterior coverage with MLS-ready editing that makes every room shine.",
+    "longDescription": "High-quality interior and exterior photography that makes every listing shine. Our photos are MLS-ready and optimized for online platforms.",
     "startingPrice": "$150",
     "icon": "PH",
     "features": [
+      "Interior & exterior coverage",
       "Professional HDR editing",
-      "Interior, exterior, and detail coverage",
-      "MLS-ready file delivery",
-      "24 to 48 hour turnaround target"
+      "MLS-ready delivery",
+      "24-48 hour turnaround",
+      "Unlimited photos per session"
     ],
     "pricingRows": [
-      { "label": "Up to 2,000 sq ft", "price": "$150" },
-      { "label": "2,001 - 3,500 sq ft", "price": "$225" },
-      { "label": "3,501+ sq ft", "price": "Custom Quote" }
+      { "label": "Under 2,000 sq ft", "price": "$150" },
+      { "label": "2,000 - 3,500 sq ft", "price": "$200" },
+      { "label": "3,500+ sq ft", "price": "$275" }
     ]
     },
     {
     "slug": "drone-photography-video",
     "shortLabel": "Drone Media",
     "name": "Drone Photography & Video",
-    "shortDescription": "Aerial stills and motion for properties where the setting, lot, or neighborhood matters.",
-    "longDescription": "Drone photography and video add context that ground-level images cannot capture, especially for waterfront homes, acreage, large lots, and properties where the surrounding area helps tell the story.",
+    "shortDescription": "Aerial imagery and cinematic footage to showcase property location, land, and surroundings.",
+    "longDescription": "FAA-licensed aerial imaging that showcases the full scope of any property - from sweeping land views to neighborhood context.",
     "startingPrice": "$200",
     "icon": "DR",
     "features": [
-      "Aerial still imagery",
-      "Neighborhood and lot context",
-      "Licensed drone operation",
-      "Useful for waterfront, acreage, and luxury properties"
+      "Aerial images & cinematic footage",
+      "Showcase property & surroundings",
+      "FAA Part 107 licensed pilot",
+      "Multiple altitude angles",
+      "Edited and color-graded"
     ],
     "pricingRows": [
-      { "label": "Drone photo add-on", "price": "$200" },
-      { "label": "Drone photo + video", "price": "$300" },
-      { "label": "Custom aerial package", "price": "Custom Quote" }
+      { "label": "Photos Only", "price": "$70" },
+      { "label": "Photos + Video", "price": "$150" },
+      { "label": "Premium Aerial Package", "price": "$250" }
     ]
     },
     {
     "slug": "video-walkthroughs",
     "shortLabel": "Walkthrough Video",
     "name": "Video Walkthroughs",
-    "shortDescription": "Polished walkthrough coverage built for websites, social posting, and listing promotion.",
-    "longDescription": "Video walkthroughs give buyers a more natural sense of flow, scale, and layout. They are useful for social media, listing pages, and marketing packages that need more than still photography.",
+    "shortDescription": "Smooth, professional home tours optimized for social media and MLS listings.",
+    "longDescription": "Smooth, cinematic home tours that give buyers a true feel for the property. Optimized for social media, MLS, and websites.",
     "startingPrice": "$250",
     "icon": "VD",
     "features": [
-      "Smooth interior and exterior walkthrough coverage",
-      "Optimized for social media, websites, and listing promotion",
-      "Clear pricing by size or scope",
-      "Simple add-on logic to pair with photo packages"
+      "Professional home tours",
+      "Stabilized 4K footage",
+      "Licensed background music",
+      "Optimized for social media",
+      "Quick turnaround"
     ],
     "pricingRows": [
-      { "label": "Up to 2,000 sq ft", "price": "$250" },
-      { "label": "2,001 - 3,500 sq ft", "price": "$350" },
-      { "label": "3,501+ sq ft", "price": "Custom Quote" }
+      { "label": "Under 2,000 sq ft", "price": "$50" },
+      { "label": "2,000 - 3,500 sq ft", "price": "$100" },
+      { "label": "3,500+ sq ft", "price": "$150" }
     ]
     }
   ]

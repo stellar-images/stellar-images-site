@@ -1,5 +1,6 @@
 ---
 interface PortfolioItem {
+  id: string;
   title: string;
   category: string;
   image: string;
@@ -14,7 +15,7 @@ interface Props {
 const { item } = Astro.props;
 ---
 
-<article class="portfolio-card" data-category={item.category.toLowerCase()}>
+<article class="portfolio-card" id={item.id} data-category={item.category.toLowerCase()}>
   <img src={item.image} alt={item.alt} />
   <div class="portfolio-card-body stack-xs">
     <p class="eyebrow">{item.category}</p>

@@ -14,11 +14,19 @@ Use this when making code or content-model changes.
 Run:
 
 ```sh
-npm run typecheck
-npm run build
-node -e "import('yaml').then(({default:YAML})=>{const fs=require('fs'); YAML.parse(fs.readFileSync('public/admin/config.yml','utf8')); console.log('yaml ok')})"
-node -e "for (const file of ['src/content/site.json','src/content/pages.json','src/content/services.json','src/content/portfolio.json','src/content/testimonials.json','src/content/credentials.json','src/content/form-config.json']) { JSON.parse(require('fs').readFileSync(file,'utf8')); } console.log('json ok')"
+npm run verify
 ```
+
+This runs Astro checks, TypeScript checks, a production build, and `scripts/verify-admin-content.mjs`.
+
+The admin/content verifier checks:
+
+- every `src/content/*.json` file is represented in `public/admin/config.yml`
+- JSON keys do not drift away from the Decap field model
+- required booking workflow fields stay present and required
+- service options in the booking form match service names
+- referenced images exist under `public/images`
+- built pages render the CMS-managed copy, form labels, image paths, alt text, portfolio IDs, service anchors, and admin page
 
 Optional local browser check:
 
@@ -30,9 +38,11 @@ Open:
 
 - `http://127.0.0.1:4321/`
 - `http://127.0.0.1:4321/contact`
-- `http://127.0.0.1:4321/admin/index.html`
+- `http://127.0.0.1:4321/admin/`
+- `http://127.0.0.1:4321/admin/#/collections/site_settings/entries/site`
+- `http://127.0.0.1:4321/admin/#/collections/page_content/entries/pages`
 
-Astro dev serves the CMS at `/admin/index.html`; production serves `/admin/`.
+Astro dev and production both serve the CMS at `/admin/`.
 
 ## Production Verification
 

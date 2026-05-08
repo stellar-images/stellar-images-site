@@ -21,7 +21,7 @@ const featuredTestimonials = testimonials.testimonials.slice(0, 3);
 const featuredCredentials = credentials.credentials.slice(0, 4);
 ---
 
-<BaseLayout title={`${site.businessName} | Real Estate Photography`} description={site.hero.description}>
+<BaseLayout title={site.seo.defaultTitle} description={site.seo.defaultDescription}>
   <Header currentPath="/" />
   <main id="main-content">
     <HeroSection />
@@ -36,7 +36,7 @@ const featuredCredentials = credentials.credentials.slice(0, 4);
         />
         <div class="two-column narrative">
           <div class="stack-md prose">
-            {site.aboutPreview.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+            {site.aboutPreview.paragraphs.slice(1).map((paragraph) => <p>{paragraph}</p>)}
           </div>
           <aside class="card portrait-card">
             <img src={site.aboutImage.src} alt={site.aboutImage.alt} />

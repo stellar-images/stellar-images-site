@@ -4,7 +4,7 @@
     "id": "interior-modern-living-room",
     "title": "Modern Living Room",
     "category": "Interior",
-    "image": "/images/portfolio/interior-living.svg",
+    "image": "/images/placeholders/interior-living.jpg",
     "location": "Beaufort, SC",
     "featured": true,
     "alt": "Bright modern living room prepared for a real estate listing"
@@ -13,7 +13,7 @@
     "id": "exterior-waterfront-home",
     "title": "Waterfront Exterior",
     "category": "Exterior",
-    "image": "/images/portfolio/exterior-waterfront.svg",
+    "image": "/images/placeholders/exterior-luxury.jpg",
     "location": "Hilton Head, SC",
     "featured": true,
     "alt": "Waterfront home exterior photographed for a real estate listing"
@@ -22,7 +22,7 @@
     "id": "drone-marsh-view",
     "title": "Marsh View Aerial",
     "category": "Drone",
-    "image": "/images/portfolio/drone-marsh.svg",
+    "image": "/images/placeholders/hero-aerial.jpg",
     "location": "Bluffton, SC",
     "featured": true,
     "alt": "Aerial view of marsh and Lowcountry landscape"
@@ -31,7 +31,7 @@
     "id": "video-tour-preview",
     "title": "Walkthrough Coverage",
     "category": "Video",
-    "image": "/images/portfolio/video-tour.svg",
+    "image": "/images/placeholders/interior-kitchen.jpg",
     "location": "Lowcountry",
     "featured": true,
     "alt": "Video walkthrough preview for a real estate listing"
@@ -40,7 +40,7 @@
     "id": "interior-bedroom-suite",
     "title": "Primary Bedroom Suite",
     "category": "Interior",
-    "image": "/images/portfolio/interior-bedroom.svg",
+    "image": "/images/placeholders/interior-kitchen.jpg",
     "location": "Beaufort, SC",
     "featured": false,
     "alt": "Primary bedroom suite photographed for a real estate listing"
@@ -49,7 +49,7 @@
     "id": "exterior-front-approach",
     "title": "Front Approach",
     "category": "Exterior",
-    "image": "/images/portfolio/exterior-front.svg",
+    "image": "/images/placeholders/exterior-front.jpg",
     "location": "Bluffton, SC",
     "featured": false,
     "alt": "Front exterior approach of a residential listing"

@@ -5,8 +5,8 @@ Astro site for a real estate photography business. The project is structured aro
 - `Astro` for the frontend
 - `Vercel` for hosting
 - `Decap CMS` for owner-editable content
-- `Calendly` for scheduling once the real event URL is available
-- email-only intake delivery once production email env vars are added
+- `Calendly` for scheduling
+- `Resend` for email-only intake delivery
 
 ## Commands
 
@@ -15,15 +15,18 @@ Astro site for a real estate photography business. The project is structured aro
 - `npm run build`
 - `npm run preview`
 - `npm run typecheck`
+- `npm run verify`
 - `npx vercel dev` for local testing that includes Vercel `/api` functions
 
 ## Project Structure
 
 ```text
 /
+├── api/
 ├── public/
-│   ├── admin/
+│   ├── admin/config.yml
 │   └── images/
+├── scripts/
 ├── src/
 │   ├── components/
 │   ├── content/
@@ -42,7 +45,7 @@ Astro site for a real estate photography business. The project is structured aro
 
 The site content is designed to be edited through Decap CMS at `/admin`.
 
-For local Astro dev, open `http://127.0.0.1:4321/admin/index.html`. Production serves the shorter `/admin/` path correctly through Vercel.
+For local Astro dev, open `http://127.0.0.1:4321/admin/`. Production uses the same `/admin/` path.
 
 Current Decap status:
 
@@ -61,10 +64,21 @@ Important:
 
 ## Current Gaps
 
-- the intake form submission needs production email env vars before it can send real messages
-- the real Calendly URL still needs to be added
+- production integrations are currently wired to Lyle's test Calendly/Resend accounts
+- final owner-controlled Calendly, Resend sender domain, and inquiry inbox still need to replace the test values before public launch
 - placeholder content and placeholder artwork need to be replaced
 - the launch SEO flag should stay set to `noindex` until final launch
+
+## Current Integration Status
+
+Production has been end-to-end tested with temporary maintainer-owned integration values:
+
+- public booking URL: `https://calendly.com/lyle-jensen95/30min`
+- email sender: `onboarding@resend.dev`
+- inquiry recipient: `lyle.jensen95@gmail.com`
+- verified on May 8, 2026: live form submission, Resend delivery, Calendly booking creation, Google Calendar sync, and dummy booking cancellation
+
+Before handing the site to the owner or sharing it publicly, replace those values with owner-controlled Calendly and email delivery settings.
 
 ## Repo Visibility
 

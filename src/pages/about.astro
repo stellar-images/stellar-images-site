@@ -13,9 +13,9 @@ import pages from "../content/pages.json";
 <BaseLayout title={`About | ${site.businessName}`} description="Founder story, credentials, and service approach.">
   <Header currentPath="/about" />
   <main id="main-content">
-    <section class="page-hero">
+    <section class="page-hero page-hero-image page-hero-about">
       <div class="container stack-md">
-        <p class="eyebrow">{pages.about.hero.eyebrow}</p>
+        {pages.about.hero.eyebrow && <p class="eyebrow">{pages.about.hero.eyebrow}</p>}
         <h1>{pages.about.hero.heading}</h1>
         <p class="hero-copy">{pages.about.hero.description}</p>
       </div>
@@ -31,7 +31,7 @@ import pages from "../content/pages.json";
             align="left"
           />
           <div class="stack-md prose">
-            {site.aboutPreview.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+            {site.aboutPreview.paragraphs.slice(1).map((paragraph) => <p>{paragraph}</p>)}
           </div>
         </div>
 

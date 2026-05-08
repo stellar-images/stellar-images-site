@@ -1,4 +1,6 @@
 ---
+import IconBadge from "./IconBadge.astro";
+
 interface Service {
   slug: string;
   name: string;
@@ -15,7 +17,7 @@ const { service } = Astro.props;
 ---
 
 <article class="card service-card stack-sm">
-  <div class="icon-badge">{service.icon}</div>
+  <IconBadge icon={service.icon} />
   <h3>{service.name}</h3>
   <p>{service.shortDescription}</p>
   <div class="service-card-footer">

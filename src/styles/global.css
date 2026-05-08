@@ -9,11 +9,11 @@
   --accent-deep: #1d6f9f;
   --sand: #d8c2a3;
   --navy: #18324d;
-  --shadow: 0 20px 50px rgba(24, 50, 77, 0.12);
+  --shadow: 0 18px 42px rgba(24, 50, 77, 0.07);
   --radius-sm: 16px;
   --radius-md: 24px;
   --radius-lg: 36px;
-  --container: min(1120px, calc(100vw - 2rem));
+  --container: min(1120px, calc(100% - 2rem));
 }
 
 *,
@@ -35,9 +35,9 @@ body {
   font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
   color: var(--ink);
   background:
-    radial-gradient(circle at 85% 18%, rgba(216, 194, 163, 0.28), transparent 24rem),
-    radial-gradient(circle at top left, rgba(105, 182, 234, 0.18), transparent 35%),
-    linear-gradient(180deg, #fbf8f3 0%, #f5efe6 100%);
+    radial-gradient(circle at 86% 12%, rgba(216, 194, 163, 0.2), transparent 23rem),
+    radial-gradient(circle at top left, rgba(105, 182, 234, 0.11), transparent 33%),
+    linear-gradient(180deg, #fbf8f3 0%, #f6f0e7 100%);
 }
 
 img {
@@ -107,7 +107,7 @@ summary:focus-visible {
 }
 
 .section {
-  padding: 4.5rem 0;
+  padding: 3.25rem 0;
 }
 
 .section-alt {
@@ -166,7 +166,7 @@ summary:focus-visible {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 0;
+  padding: 0.75rem 0;
 }
 
 .brand-name,
@@ -178,7 +178,7 @@ h3 {
 }
 
 .brand-name {
-  font-size: 1.6rem;
+  font-size: clamp(1.45rem, 6vw, 1.6rem);
 }
 
 .desktop-nav {
@@ -268,7 +268,7 @@ h3 {
 
 .hero-section {
   position: relative;
-  min-height: min(92vh, 820px);
+  min-height: clamp(36rem, 82svh, 44rem);
   display: grid;
   align-items: stretch;
 }
@@ -282,6 +282,7 @@ h3 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 62% center;
 }
 
 .hero-media::after {
@@ -289,9 +290,8 @@ h3 {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 28% 72%, rgba(105, 182, 234, 0.18), transparent 18rem),
-    linear-gradient(90deg, rgba(16, 26, 40, 0.82) 0%, rgba(16, 26, 40, 0.38) 48%, rgba(16, 26, 40, 0.12) 100%),
-    linear-gradient(180deg, rgba(16, 26, 40, 0.12) 0%, rgba(16, 26, 40, 0.58) 100%);
+    linear-gradient(90deg, rgba(9, 20, 32, 0.84) 0%, rgba(9, 20, 32, 0.44) 52%, rgba(9, 20, 32, 0.12) 100%),
+    linear-gradient(180deg, rgba(9, 20, 32, 0.08) 0%, rgba(9, 20, 32, 0.56) 100%);
 }
 
 .hero-content {
@@ -299,7 +299,7 @@ h3 {
   z-index: 1;
   display: grid;
   align-items: center;
-  padding: 8rem 0 4rem;
+  padding: 5.5rem 0 3.5rem;
 }
 
 .cta-card {
@@ -309,20 +309,13 @@ h3 {
 }
 
 .hero-card {
-  max-width: 42rem;
+  max-width: 45rem;
   color: white;
   text-shadow: 0 2px 18px rgba(0, 0, 0, 0.42);
 }
 
 .hero-card::before {
-  content: "";
-  display: block;
-  width: 5rem;
-  height: 0.35rem;
-  margin-bottom: 1.5rem;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--accent), rgba(255, 255, 255, 0.7));
-  box-shadow: 0 12px 30px rgba(105, 182, 234, 0.32);
+  content: none;
 }
 
 .hero-card h1,
@@ -330,8 +323,25 @@ h3 {
 .section-intro h2,
 .cta-card h2 {
   margin: 0;
-  line-height: 0.95;
-  font-size: 3rem;
+  letter-spacing: -0.035em;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
+.hero-card h1 {
+  font-size: clamp(2.65rem, 11vw, 4.75rem);
+  line-height: 0.98;
+}
+
+.page-hero h1 {
+  font-size: clamp(2.25rem, 8.6vw, 4.25rem);
+  line-height: 1;
+}
+
+.section-intro h2,
+.cta-card h2 {
+  font-size: clamp(2rem, 7.5vw, 3.75rem);
+  line-height: 1.02;
 }
 
 .hero-copy,
@@ -342,11 +352,16 @@ h3 {
 .card p,
 .contact-info-list p {
   color: var(--ink-soft);
-  line-height: 1.7;
+  line-height: 1.65;
 }
 
 .hero-card .hero-copy {
   color: rgba(255, 255, 255, 0.88);
+}
+
+.hero-card .eyebrow,
+.page-hero-image .eyebrow {
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .eyebrow {
@@ -361,6 +376,10 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 0.9rem;
+}
+
+.cta-card .button-row {
+  justify-content: center;
 }
 
 .button {
@@ -397,7 +416,7 @@ h3 {
 .page-hero {
   position: relative;
   overflow: hidden;
-  padding: 5rem 0 3rem;
+  padding: 3.75rem 0 3rem;
 }
 
 .page-hero::before {
@@ -411,16 +430,61 @@ h3 {
   pointer-events: none;
 }
 
+.page-hero-image {
+  isolation: isolate;
+  min-height: 19rem;
+  display: grid;
+  align-items: end;
+  padding: 5rem 0 3.5rem;
+  color: white;
+  background-size: cover;
+  background-position: center;
+}
+
+.page-hero-image::before {
+  inset: 0;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background:
+    linear-gradient(90deg, rgba(9, 20, 32, 0.82) 0%, rgba(9, 20, 32, 0.46) 58%, rgba(9, 20, 32, 0.18) 100%),
+    linear-gradient(180deg, rgba(9, 20, 32, 0.08) 0%, rgba(9, 20, 32, 0.58) 100%);
+  z-index: -1;
+}
+
+.page-hero-image .container {
+  position: relative;
+  z-index: 1;
+}
+
+.page-hero-image .hero-copy {
+  max-width: 42rem;
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.page-hero-portfolio,
+.page-hero-about {
+  background-image: url("/images/placeholders/hero-aerial.jpg");
+}
+
+.page-hero-services {
+  background-image: url("/images/placeholders/interior-living.jpg");
+}
+
+.page-hero-contact {
+  background-image: url("/images/placeholders/interior-kitchen.jpg");
+}
+
 .card,
 .portfolio-card {
   background: var(--surface);
-  border: 1px solid rgba(24, 50, 77, 0.08);
+  border: 1px solid rgba(24, 50, 77, 0.07);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow);
 }
 
 .card {
-  padding: 1.5rem;
+  padding: clamp(1.15rem, 4.5vw, 1.5rem);
 }
 
 .card,
@@ -433,9 +497,9 @@ h3 {
 
 .card:hover,
 .portfolio-card:hover {
-  border-color: rgba(29, 111, 159, 0.18);
-  box-shadow: 0 24px 60px rgba(24, 50, 77, 0.15);
-  transform: translateY(-2px);
+  border-color: rgba(29, 111, 159, 0.14);
+  box-shadow: 0 20px 48px rgba(24, 50, 77, 0.1);
+  transform: translateY(-1px);
 }
 
 .portrait-card img,
@@ -446,14 +510,24 @@ h3 {
 .icon-badge {
   display: inline-grid;
   place-items: center;
-  width: 3.2rem;
-  height: 3rem;
-  border-radius: 16px;
-  background: rgba(105, 182, 234, 0.14);
+  width: 3.4rem;
+  height: 3.4rem;
+  flex: 0 0 auto;
+  border-radius: 18px;
+  background: rgba(105, 182, 234, 0.16);
   color: var(--accent-deep);
   font-weight: 700;
   font-size: 0.68rem;
   letter-spacing: 0.04em;
+}
+
+.icon-badge svg {
+  width: 1.45rem;
+  height: 1.45rem;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .service-card-footer,
@@ -465,6 +539,15 @@ h3 {
   gap: 1rem;
   justify-content: space-between;
   align-items: flex-start;
+}
+
+.section-heading-row {
+  display: grid;
+}
+
+.service-card-footer,
+.pricing-row {
+  flex-wrap: wrap;
 }
 
 .price-tag,
@@ -496,7 +579,7 @@ h3 {
 }
 
 .portfolio-card-body {
-  padding: 1.2rem 1.25rem 1.4rem;
+  padding: 1.15rem 1.1rem 1.3rem;
 }
 
 .stars {
@@ -515,7 +598,7 @@ h3 {
   background: rgba(255, 255, 255, 0.72);
   color: var(--ink);
   border-radius: 999px;
-  padding: 0.8rem 1.1rem;
+  padding: 0.75rem 1rem;
   font-weight: 700;
 }
 
@@ -549,9 +632,18 @@ h3 {
   border-radius: 20px;
 }
 
+.service-detail {
+  background: rgba(255, 253, 249, 0.94);
+}
+
 .booking-form label,
 .booking-form fieldset {
   display: grid;
+}
+
+.booking-form {
+  display: grid;
+  gap: 1.1rem;
 }
 
 .booking-form fieldset {
@@ -568,6 +660,7 @@ h3 {
   border-radius: 16px;
   border: 1px solid rgba(24, 50, 77, 0.14);
   background: #fff;
+  color: var(--ink);
 }
 
 .booking-form input:focus,
@@ -594,7 +687,7 @@ h3 {
   border: 0;
 }
 
-.checkbox-row {
+.booking-form .checkbox-row {
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -602,6 +695,18 @@ h3 {
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.74);
   border: 1px solid var(--line);
+}
+
+.booking-form .checkbox-row span {
+  line-height: 1.35;
+}
+
+.booking-form .checkbox-row input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+  margin: 0;
+  accent-color: var(--accent-deep);
 }
 
 .form-note,
@@ -630,7 +735,7 @@ h3 {
 }
 
 .booking-form-card {
-  padding: 1.75rem;
+  padding: clamp(1.35rem, 5vw, 1.75rem);
 }
 
 .calendly-shell {
@@ -651,6 +756,7 @@ h3 {
 }
 
 .cta-card {
+  padding: clamp(1.6rem, 6vw, 2rem);
   text-align: center;
   background: linear-gradient(180deg, rgba(24, 50, 77, 0.96) 0%, rgba(24, 50, 77, 0.9) 100%);
   color: white;
@@ -661,7 +767,7 @@ h3 {
 }
 
 .site-footer {
-  padding: 4rem 0;
+  padding: 3rem 0;
   background: var(--navy);
   color: white;
 }
@@ -687,11 +793,24 @@ h3 {
 }
 
 @media (min-width: 720px) {
-  .hero-card h1,
-  .page-hero h1,
-  .section-intro h2,
-  .cta-card h2 {
-    font-size: 4.25rem;
+  .section {
+    padding: 4.5rem 0;
+  }
+
+  .header-row {
+    padding: 1rem 0;
+  }
+
+  .hero-section {
+    min-height: min(92vh, 820px);
+  }
+
+  .hero-content {
+    padding: 8rem 0 4rem;
+  }
+
+  .page-hero {
+    padding: 5rem 0 3rem;
   }
 
   .cards-2 {
@@ -711,6 +830,41 @@ h3 {
   .footer-grid,
   .about-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .section-heading-row {
+    display: flex;
+  }
+
+  .booking-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .booking-form fieldset,
+  .booking-form label:has(textarea),
+  .booking-form .form-note,
+  .booking-form .form-status,
+  .booking-form .button {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 520px) {
+  .button {
+    min-height: 3rem;
+    padding-inline: 1.1rem;
+  }
+
+  .hero-card .button-row .button {
+    flex: 1 1 9.5rem;
+  }
+
+  .cta-card .button-row {
+    display: grid;
+  }
+
+  .cta-card .button {
+    width: 100%;
   }
 }
 

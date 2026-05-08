@@ -1,0 +1,126 @@
+---
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Content Manager</title>
+  </head>
+  <body>
+    <script is:inline>
+      (() => {
+        const entryRoutePattern = /^#\/collections\/[^/]+\/entries\/[^/]+/;
+        const reloadKeyPrefix = "stellar-admin-entry-health:";
+        let healthCheckTimer;
+
+        function clearEntryReloadKeys() {
+          for (let index = sessionStorage.length - 1; index >= 0; index -= 1) {
+            const key = sessionStorage.key(index);
+            if (key?.startsWith(reloadKeyPrefix)) {
+              sessionStorage.removeItem(key);
+            }
+          }
+        }
+
+        function visibleValueFields() {
+          return Array.from(
+            document.querySelectorAll("input, textarea, select"),
+          ).filter((field) => {
+            if (!(field instanceof HTMLInputElement || field instanceof HTMLTextAreaElement || field instanceof HTMLSelectElement)) {
+              return false;
+            }
+
+            if (field instanceof HTMLInputElement && ["button", "file", "hidden", "submit"].includes(field.type)) {
+              return false;
+            }
+
+            return field.offsetParent !== null;
+          });
+        }
+
+        function normalizedText(value) {
+          return String(value ?? "").replace(/\s+/g, " ").trim().toLowerCase();
+        }
+
+        function labelCandidates(field) {
+          const candidates = [
+            field.getAttribute("aria-label"),
+            field.getAttribute("placeholder"),
+          ];
+          const labelledBy = field.getAttribute("aria-labelledby");
+
+          if (labelledBy) {
+            labelledBy.split(/\s+/).forEach((id) => {
+              const label = document.getElementById(id);
+              if (label?.innerText) candidates.push(label.innerText);
+            });
+          }
+
+          if ("labels" in field && field.labels) {
+            Array.from(field.labels).forEach((label) => candidates.push(label.innerText));
+          }
+
+          return candidates.map(normalizedText).filter(Boolean);
+        }
+
+        function fieldHasValue(field) {
+          if (field instanceof HTMLInputElement && ["checkbox", "radio"].includes(field.type)) {
+            return field.checked;
+          }
+
+          if (typeof field.value !== "string") return false;
+
+          const value = normalizedText(field.value);
+          if (!value) return false;
+
+          return !labelCandidates(field).includes(value);
+        }
+
+        function entryLooksUnhydrated() {
+          const bodyText = document.body.innerText.trim();
+
+          if (!bodyText) return true;
+          if (/Loading (configuration|entry)/i.test(bodyText)) return true;
+          if (!bodyText.includes("Writing in")) return false;
+
+          const fields = visibleValueFields();
+          if (fields.length === 0) return false;
+
+          return !fields.some(fieldHasValue);
+        }
+
+        function scheduleEntryHealthCheck() {
+          window.clearTimeout(healthCheckTimer);
+
+          const hash = window.location.hash;
+
+          if (!entryRoutePattern.test(hash)) {
+            clearEntryReloadKeys();
+            return;
+          }
+
+          healthCheckTimer = window.setTimeout(() => {
+            if (!entryRoutePattern.test(window.location.hash)) return;
+            if (!entryLooksUnhydrated()) return;
+
+            const reloadKey = `${reloadKeyPrefix}${window.location.hash}`;
+            const reloadCount = Number(sessionStorage.getItem(reloadKey) ?? "0");
+
+            if (reloadCount >= 2) return;
+
+            sessionStorage.setItem(reloadKey, String(reloadCount + 1));
+            window.location.reload();
+          }, 3000);
+        }
+
+        scheduleEntryHealthCheck();
+        window.addEventListener("load", scheduleEntryHealthCheck);
+        window.addEventListener("hashchange", scheduleEntryHealthCheck);
+      })();
+    </script>
+    <script is:inline src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  </body>
+</html>

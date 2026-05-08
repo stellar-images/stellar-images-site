@@ -13,9 +13,9 @@ import pages from "../content/pages.json";
 <BaseLayout title={`Services | ${site.businessName}`} description="Service lineup, features, and starting pricing.">
   <Header currentPath="/services" />
   <main id="main-content">
-    <section class="page-hero">
+    <section class="page-hero page-hero-image page-hero-services">
       <div class="container stack-md">
-        <p class="eyebrow">{pages.services.hero.eyebrow}</p>
+        {pages.services.hero.eyebrow && <p class="eyebrow">{pages.services.hero.eyebrow}</p>}
         <h1>{pages.services.hero.heading}</h1>
         <p class="hero-copy">{pages.services.hero.description}</p>
       </div>
@@ -31,6 +31,7 @@ import pages from "../content/pages.json";
         <div class="grid cards-3">
           {services.services.map((service) => <ServiceCard service={service} />)}
         </div>
+        <a class="inline-link" href="#professional-listing-photos">View All Services & Pricing</a>
       </div>
     </section>
 

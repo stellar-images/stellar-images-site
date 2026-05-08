@@ -81,7 +81,7 @@ collections:
             name: booking
             widget: object
             fields:
-              - { label: Calendly URL, name: calendlyUrl, widget: string, required: false, hint: Paste the public Calendly event URL here when it is ready. }
+              - { label: Public Calendly Event URL, name: calendlyUrl, widget: string, required: false, hint: Paste the public booking page URL clients should use. Do not paste API keys, tokens, or private dashboard URLs. }
           - label: Footer
             name: footer
             widget: object
@@ -101,11 +101,12 @@ collections:
             widget: list
             summary: "{{fields.label}}"
             fields:
-              - { label: Name, name: name, widget: string }
+              - { label: "Advanced: Field Key", name: name, widget: string, hint: Internal form key used by the website and email payload. Do not change unless the workflow is intentionally changing. }
               - { label: Label, name: label, widget: string, hint: Text clients see above the input. }
-              - { label: Type, name: type, widget: select, options: ["text", "email", "tel", "select", "textarea", "checkbox-group"] }
+              - { label: "Advanced: Input Type", name: type, widget: select, options: ["text", "email", "tel", "number", "select", "textarea", "checkbox-group"], hint: Controls how the browser renders the field. Do not change unless the field behavior needs to change. }
               - { label: Required, name: required, widget: boolean, default: false }
               - { label: Placeholder, name: placeholder, widget: string, required: false }
+              - { label: Default Value, name: defaultValue, widget: string, required: false, hint: Optional default value, mostly useful for select fields like State = SC. }
               - label: Options
                 name: options
                 widget: list
@@ -138,14 +139,14 @@ collections:
                 fields:
                   - { label: Eyebrow, name: eyebrow, widget: string }
                   - { label: Title, name: title, widget: string }
-                  - { label: Description, name: description, widget: text }
+                  - { label: Description, name: description, widget: text, required: false }
               - label: Portfolio Section
                 name: portfolioSection
                 widget: object
                 fields:
                   - { label: Eyebrow, name: eyebrow, widget: string }
                   - { label: Title, name: title, widget: string }
-                  - { label: Description, name: description, widget: text }
+                  - { label: Description, name: description, widget: text, required: false }
                   - { label: Link Label, name: linkLabel, widget: string }
               - label: Testimonials Section
                 name: testimonialsSection
@@ -153,14 +154,14 @@ collections:
                 fields:
                   - { label: Eyebrow, name: eyebrow, widget: string }
                   - { label: Title, name: title, widget: string }
-                  - { label: Description, name: description, widget: text }
+                  - { label: Description, name: description, widget: text, required: false }
               - label: Credentials Section
                 name: credentialsSection
                 widget: object
                 fields:
                   - { label: Eyebrow, name: eyebrow, widget: string }
                   - { label: Title, name: title, widget: string }
-                  - { label: Description, name: description, widget: text }
+                  - { label: Description, name: description, widget: text, required: false }
               - label: CTA
                 name: cta
                 widget: object
@@ -178,7 +179,7 @@ collections:
                 name: hero
                 widget: object
                 fields:
-                  - { label: Eyebrow, name: eyebrow, widget: string }
+                  - { label: Eyebrow, name: eyebrow, widget: string, required: false }
                   - { label: Heading, name: heading, widget: string }
                   - { label: Description, name: description, widget: text }
               - label: CTA
@@ -198,7 +199,7 @@ collections:
                 name: hero
                 widget: object
                 fields:
-                  - { label: Eyebrow, name: eyebrow, widget: string }
+                  - { label: Eyebrow, name: eyebrow, widget: string, required: false }
                   - { label: Heading, name: heading, widget: string }
                   - { label: Description, name: description, widget: text }
               - label: Overview Section
@@ -207,7 +208,7 @@ collections:
                 fields:
                   - { label: Eyebrow, name: eyebrow, widget: string }
                   - { label: Title, name: title, widget: string }
-                  - { label: Description, name: description, widget: text }
+                  - { label: Description, name: description, widget: text, required: false }
               - label: CTA
                 name: cta
                 widget: object
@@ -225,7 +226,7 @@ collections:
                 name: hero
                 widget: object
                 fields:
-                  - { label: Eyebrow, name: eyebrow, widget: string }
+                  - { label: Eyebrow, name: eyebrow, widget: string, required: false }
                   - { label: Heading, name: heading, widget: string }
                   - { label: Description, name: description, widget: text }
               - label: Credentials Section
@@ -234,7 +235,7 @@ collections:
                 fields:
                   - { label: Eyebrow, name: eyebrow, widget: string }
                   - { label: Title, name: title, widget: string }
-                  - { label: Description, name: description, widget: text }
+                  - { label: Description, name: description, widget: text, required: false }
               - label: CTA
                 name: cta
                 widget: object
@@ -252,15 +253,8 @@ collections:
                 name: hero
                 widget: object
                 fields:
-                  - { label: Eyebrow, name: eyebrow, widget: string }
+                  - { label: Eyebrow, name: eyebrow, widget: string, required: false }
                   - { label: Heading, name: heading, widget: string }
-                  - { label: Description, name: description, widget: text }
-              - label: Booking Flow Card
-                name: bookingFlowCard
-                widget: object
-                fields:
-                  - { label: Eyebrow, name: eyebrow, widget: string }
-                  - { label: Title, name: title, widget: string }
                   - { label: Description, name: description, widget: text }
 
   - name: services
@@ -279,13 +273,13 @@ collections:
             widget: list
             summary: "{{fields.name}}"
             fields:
-              - { label: Slug, name: slug, widget: string }
+              - { label: "Advanced: URL Anchor Slug", name: slug, widget: string, hint: Used for page anchors and links. Keep lowercase with hyphens and avoid changing after launch. }
               - { label: Short Label, name: shortLabel, widget: string }
               - { label: Name, name: name, widget: string }
               - { label: Short Description, name: shortDescription, widget: text }
               - { label: Long Description, name: longDescription, widget: text }
               - { label: Starting Price, name: startingPrice, widget: string }
-              - { label: Icon, name: icon, widget: string }
+              - { label: Icon, name: icon, widget: select, options: ["PH", "DR", "VD"], hint: PH = photos, DR = drone, VD = video. }
               - label: Features
                 name: features
                 widget: list
@@ -313,7 +307,7 @@ collections:
             widget: list
             summary: "{{fields.title}}"
             fields:
-              - { label: ID, name: id, widget: string }
+              - { label: "Advanced: Card ID", name: id, widget: string, hint: Unique internal card ID. Keep lowercase with hyphens and avoid changing after launch. }
               - { label: Title, name: title, widget: string }
               - { label: Category, name: category, widget: select, options: ["Interior", "Exterior", "Drone", "Video"] }
               - { label: Image, name: image, widget: image, hint: Upload compressed JPG or WebP photos when real portfolio assets are ready. }
@@ -360,4 +354,4 @@ collections:
             fields:
               - { label: Title, name: title, widget: string }
               - { label: Description, name: description, widget: text }
-              - { label: Icon, name: icon, widget: string }
+              - { label: Icon, name: icon, widget: select, options: ["PRO", "FAA", "PPL", "NAV"], hint: PRO = professional, FAA = drone pilot, PPL = private pilot, NAV = Navy veteran. }

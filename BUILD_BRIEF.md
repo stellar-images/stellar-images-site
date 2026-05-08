@@ -406,7 +406,7 @@ Recommended Astro routes:
 - `src/pages/services.astro`
 - `src/pages/about.astro`
 - `src/pages/contact.astro`
-- `public/admin/index.html`
+- `src/pages/admin/index.astro`
 - `public/admin/config.yml`
 
 Optional later routes:

@@ -1,5 +1,6 @@
 ---
 import site from "../content/site.json";
+import IconBadge from "./IconBadge.astro";
 ---
 
 <section class="stack-md">
@@ -11,7 +12,7 @@ import site from "../content/site.json";
 
   <div class="contact-info-list">
     <div class="info-row">
-      <div class="icon-badge">AREA</div>
+      <IconBadge icon="area" />
       <div>
         <strong>Service Area</strong>
         <p>{site.contact.serviceArea.join(", ")}</p>
@@ -19,7 +20,7 @@ import site from "../content/site.json";
     </div>
 
     <div class="info-row">
-      <div class="icon-badge">TEL</div>
+      <IconBadge icon="tel" />
       <div>
         <strong>Phone</strong>
         <p>{site.contact.phone}</p>
@@ -27,7 +28,7 @@ import site from "../content/site.json";
     </div>
 
     <div class="info-row">
-      <div class="icon-badge">MAIL</div>
+      <IconBadge icon="mail" />
       <div>
         <strong>Email</strong>
         <p>{site.contact.email}</p>
@@ -35,7 +36,7 @@ import site from "../content/site.json";
     </div>
 
     <div class="info-row">
-      <div class="icon-badge">HRS</div>
+      <IconBadge icon="hrs" />
       <div>
         <strong>Hours</strong>
         <p>{site.contact.hours}</p>

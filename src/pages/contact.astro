@@ -13,9 +13,9 @@ import pages from "../content/pages.json";
 <BaseLayout title={`Contact & Book | ${site.businessName}`} description="Property intake and scheduling in one place.">
   <Header currentPath="/contact" />
   <main id="main-content">
-    <section class="page-hero">
+    <section class="page-hero page-hero-image page-hero-contact">
       <div class="container stack-md">
-        <p class="eyebrow">{pages.contact.hero.eyebrow}</p>
+        {pages.contact.hero.eyebrow && <p class="eyebrow">{pages.contact.hero.eyebrow}</p>}
         <h1>{pages.contact.hero.heading}</h1>
         <p class="hero-copy">{pages.contact.hero.description}</p>
       </div>
@@ -25,11 +25,6 @@ import pages from "../content/pages.json";
       <div class="container booking-layout">
         <aside class="stack-lg">
           <ContactInfoList />
-          <div class="card stack-sm">
-            <p class="eyebrow">{pages.contact.bookingFlowCard.eyebrow}</p>
-            <h2>{pages.contact.bookingFlowCard.title}</h2>
-            <p>{pages.contact.bookingFlowCard.description}</p>
-          </div>
         </aside>
 
         <div class="stack-lg">

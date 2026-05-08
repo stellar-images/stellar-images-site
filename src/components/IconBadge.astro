@@ -1,0 +1,72 @@
+---
+interface Props {
+  icon: string;
+}
+
+const { icon } = Astro.props;
+const key = icon.toLowerCase();
+
+const aliases: Record<string, string> = {
+  ph: "camera",
+  pro: "camera",
+  dr: "drone",
+  faa: "drone",
+  vd: "video",
+  ppl: "plane",
+  nav: "anchor",
+  area: "map-pin",
+  tel: "phone",
+  mail: "mail",
+  hrs: "clock",
+};
+
+const paths: Record<string, string[]> = {
+  camera: [
+    "M5 8.5h3l1.5-2h5L16 8.5h3v9H5z",
+    "M12 16a3.25 3.25 0 1 0 0-6.5 3.25 3.25 0 0 0 0 6.5z",
+  ],
+  drone: [
+    "M12 12h-2.5m2.5 0h2.5M12 12V9.5m0 2.5v2.5",
+    "M5.5 5.5h4v4h-4zM14.5 5.5h4v4h-4zM5.5 14.5h4v4h-4zM14.5 14.5h4v4h-4z",
+    "M9.5 9.5 12 12l2.5-2.5M9.5 14.5 12 12l2.5 2.5",
+  ],
+  video: [
+    "M5 7h10v10H5z",
+    "m15 10 4-2.5v9L15 14",
+  ],
+  plane: [
+    "M4 12 20 5l-5 15-3-6-6-2z",
+    "m12 14 8-9",
+  ],
+  anchor: [
+    "M12 5v14",
+    "M8 9h8",
+    "M9 5a3 3 0 1 0 6 0 3 3 0 0 0-6 0z",
+    "M5 14c1 4 4 6 7 6s6-2 7-6",
+  ],
+  "map-pin": [
+    "M12 21s6-5.25 6-10a6 6 0 1 0-12 0c0 4.75 6 10 6 10z",
+    "M12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4z",
+  ],
+  phone: [
+    "M7 5h3l1 4-2 1.5a11 11 0 0 0 4.5 4.5L15 13l4 1v3c0 1-1 2-2.25 2C10.5 19 5 13.5 5 7.25 5 6 6 5 7 5z",
+  ],
+  mail: [
+    "M5 7h14v10H5z",
+    "m5 8 7 5 7-5",
+  ],
+  clock: [
+    "M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16z",
+    "M12 8v4l2.5 1.5",
+  ],
+};
+
+const iconName = aliases[key] ?? key;
+const pathSet = paths[iconName] ?? paths.camera;
+---
+
+<span class="icon-badge" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none">
+    {pathSet.map((path) => <path d={path} />)}
+  </svg>
+</span>

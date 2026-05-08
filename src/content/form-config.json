@@ -1,5 +1,5 @@
 {
-  "intro": "Share the core property details so the shoot can be scoped clearly before scheduling.",
+  "intro": "Fill out the form and we'll get back to you within 24 hours with a quote and available shooting times.",
   "note": "After sending the property details, finish the request by choosing a time in Calendly below.",
   "submitLabel": "Schedule Your Shoot",
   "fields": [
@@ -25,6 +25,75 @@
       "placeholder": "(843) 555-0000"
     },
     {
+      "name": "propertyAddress",
+      "label": "Property Address",
+      "type": "text",
+      "required": true,
+      "placeholder": "123 Main St"
+    },
+    {
+      "name": "unit",
+      "label": "Apartment / Unit",
+      "type": "text",
+      "required": false,
+      "placeholder": "Unit, suite, or gate code"
+    },
+    {
+      "name": "city",
+      "label": "City",
+      "type": "text",
+      "required": true,
+      "placeholder": "Beaufort"
+    },
+    {
+      "name": "state",
+      "label": "State",
+      "type": "select",
+      "required": true,
+      "placeholder": "Select state",
+      "defaultValue": "SC",
+      "options": [
+        "SC",
+        "GA",
+        "NC"
+      ]
+    },
+    {
+      "name": "zipCode",
+      "label": "Zip Code",
+      "type": "text",
+      "required": true,
+      "placeholder": "29902"
+    },
+    {
+      "name": "mlsNumber",
+      "label": "MLS Number",
+      "type": "text",
+      "required": false,
+      "placeholder": "MLS #"
+    },
+    {
+      "name": "bedrooms",
+      "label": "Bedrooms",
+      "type": "number",
+      "required": false,
+      "placeholder": "3"
+    },
+    {
+      "name": "bathrooms",
+      "label": "Bathrooms",
+      "type": "number",
+      "required": false,
+      "placeholder": "2"
+    },
+    {
+      "name": "lotSize",
+      "label": "Lot Size",
+      "type": "text",
+      "required": false,
+      "placeholder": "0.25 acres"
+    },
+    {
       "name": "squareFootageRange",
       "label": "Square Footage",
       "type": "select",
@@ -36,13 +105,6 @@
         "3,501 - 5,000 sq ft",
         "Over 5,000 sq ft"
       ]
-    },
-    {
-      "name": "propertyAddress",
-      "label": "Property Address",
-      "type": "text",
-      "required": true,
-      "placeholder": "123 Main St, Beaufort, SC"
     },
     {
       "name": "servicesNeeded",
