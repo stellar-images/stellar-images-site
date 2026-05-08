@@ -37,6 +37,12 @@ Recommended image prep:
 - Prefer horizontal images for hero and portfolio cards.
 - Use descriptive alt text such as `Bright kitchen with white cabinets in Beaufort listing`.
 
+Where uploads go:
+
+- CMS-uploaded images are stored in the repo under `public/images/uploads`.
+- The site serves those images from `/images/uploads/...`.
+- Publishing an image upload creates a Git commit and triggers a Vercel deploy, just like text edits.
+
 ## Updating Page Copy
 
 Use `Page Content` for page-level wording:

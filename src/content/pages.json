@@ -6,28 +6,28 @@
     "servicesSection": {
       "eyebrow": "What We Offer",
       "title": "Services tailored for real estate",
-      "description": "Clear deliverables, strong turnaround expectations, and media designed to help listings move faster."
+      "description": "Professional photos, drone media, and walkthrough coverage designed to help buyers understand the property quickly."
     },
     "portfolioSection": {
       "eyebrow": "Our Work",
       "title": "Featured portfolio",
-      "description": "A curated preview of interiors, exteriors, drone work, and listing visuals.",
+      "description": "A curated preview of interior, exterior, aerial, and video-style listing coverage.",
       "linkLabel": "View Full Portfolio"
     },
     "testimonialsSection": {
       "eyebrow": "What Our Clients Say",
-      "title": "Confidence without over-selling",
-      "description": "The site should read like a serious local business with strong service standards, not a generic template."
+      "title": "Reliable visuals, clear communication, and polished delivery",
+      "description": "The experience should feel organized from the first request through final delivery."
     },
     "credentialsSection": {
       "eyebrow": "Credentials & Qualifications",
-      "title": "Precision, professionalism, and trust",
-      "description": "The Base44 direction leaned heavily on credibility. These blocks keep that trust layer explicit."
+      "title": "A trust-first approach to listing media",
+      "description": "Credentials and qualifications give clients confidence that the shoot will be handled professionally."
     },
     "cta": {
       "eyebrow": "Ready to Elevate Your Listings?",
-      "title": "Bring the booking flow and the property details into one clear process.",
-      "description": "The v1 site keeps the intake simple: strong portfolio, clear pricing, one booking path, and owner-editable content.",
+      "title": "Give your next listing the visuals it deserves.",
+      "description": "Share the property details, choose the services you need, and book a shoot in one simple flow.",
       "primaryLabel": "Book a Shoot",
       "secondaryLabel": "View Services"
     }
@@ -36,12 +36,12 @@
     "hero": {
       "eyebrow": "Portfolio",
       "heading": "Browse the collection of real estate photography, drone imagery, and video work.",
-      "description": "This mirrors the Base44 structure: simple filters, clean cards, and a curated feel rather than a dump of every file."
+      "description": "Explore interior, exterior, aerial, and walkthrough-style coverage organized by media type."
     },
     "cta": {
       "eyebrow": "Book The Shoot",
-      "title": "If the work is the sell, the next step should be obvious.",
-      "description": "Keep the portfolio page lean, then drive people into the booking page without making them hunt.",
+      "title": "Ready to create this level of presentation for your next listing?",
+      "description": "Send the property details and choose the media package that fits the listing.",
       "primaryLabel": "Schedule Your Shoot",
       "secondaryLabel": "See Pricing"
     }
@@ -50,17 +50,17 @@
     "hero": {
       "eyebrow": "Services",
       "heading": "Professional real estate media with clear deliverables and pricing.",
-      "description": "The Base44 direction showed public pricing and strong service detail. This scaffold follows that rather than hiding everything behind a contact wall."
+      "description": "Choose from professional listing photos, drone photography and video, walkthrough coverage, or a custom package."
     },
     "overview": {
       "eyebrow": "What We Offer",
       "title": "Service overview",
-      "description": "Use these cards as the preview layer. The detail blocks below carry the actual decision-making information."
+      "description": "Straightforward packages for the core media most real estate listings need."
     },
     "cta": {
       "eyebrow": "Need a Custom Package?",
       "title": "Bundle the right mix of photo, drone, and walkthrough coverage.",
-      "description": "Keep the public pricing clear, but leave room for tailored requests when the listing needs something outside the standard packages.",
+      "description": "For acreage, waterfront homes, luxury properties, or special marketing needs, request a package tailored to the listing.",
       "primaryLabel": "Request a Quote",
       "secondaryLabel": "View Portfolio"
     }
@@ -69,17 +69,17 @@
     "hero": {
       "eyebrow": "About",
       "heading": "Precision, professionalism, and local trust.",
-      "description": "This page carries the serious local operator tone from the Base44 concept and keeps the trust stack explicit."
+      "description": "Stellar Images is built around reliable service, attention to detail, and a clear understanding of how properties need to show online."
     },
     "credentialsSection": {
       "eyebrow": "Credentials & Qualifications",
       "title": "Trust should be visible, not implied.",
-      "description": "The Base44 concept made credentials a real section. That is the right move for this category."
+      "description": "Background, training, and professionalism matter when someone is trusting you with a listing."
     },
     "cta": {
       "eyebrow": "Service Area",
       "title": "Serving Beaufort, Bluffton, Hilton Head, and the Lowcountry",
-      "description": "The final copy and service radius can change through the CMS, but the page should always make geography and professionalism obvious.",
+      "description": "Local market familiarity, organized communication, and polished media help keep the listing process moving.",
       "primaryLabel": "Book a Shoot",
       "secondaryLabel": "See Services"
     }
@@ -88,12 +88,12 @@
     "hero": {
       "eyebrow": "Contact Us",
       "heading": "Schedule your shoot.",
-      "description": "Business contact details, property intake, and scheduling stay together so the booking path is obvious."
+      "description": "Share the property details, select the services you need, and choose a time for your shoot."
     },
     "bookingFlowCard": {
       "eyebrow": "Booking Flow",
       "title": "One page, one process.",
-      "description": "Collect the property details first, then let the client reserve a time through Calendly. That keeps the workflow unified even before deeper automation is added."
+      "description": "The intake form captures the listing details. Calendly handles scheduling so availability stays connected to the calendar."
     }
   }
 }

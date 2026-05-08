@@ -1,7 +1,7 @@
 {
-  "intro": "This v1 scaffold keeps the form fields close to what was visible in the Base44 concept. They can be expanded later if the intake needs more MLS-style detail.",
+  "intro": "Share the core property details so the shoot can be scoped clearly before scheduling.",
   "note": "After sending the property details, finish the request by choosing a time in Calendly below.",
-  "submitLabel": "Send Property Details",
+  "submitLabel": "Schedule Your Shoot",
   "fields": [
     {
       "name": "fullName",

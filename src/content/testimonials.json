@@ -1,21 +1,21 @@
 {
   "testimonials": [
     {
-    "quote": "The visuals made the listing feel sharper immediately, and the turnaround was exactly what we needed.",
-    "name": "Sarah Mitchell",
-    "role": "Beaufort Realty Group",
+    "quote": "The final gallery made the listing feel polished immediately, and the turnaround fit our schedule perfectly.",
+    "name": "Sample Client",
+    "role": "Real Estate Agent",
     "stars": 5
     },
     {
-    "quote": "Reliable, easy to work with, and the drone coverage helped show context that photos alone could not.",
-    "name": "James Carter",
-    "role": "Coastal Property Advisor",
+    "quote": "The aerial coverage helped show the property setting in a way ground photos could not.",
+    "name": "Sample Client",
+    "role": "Listing Agent",
     "stars": 5
     },
     {
-    "quote": "Professional from start to finish. The workflow was clear and the finished media looked polished.",
-    "name": "Megan Ellis",
-    "role": "Independent Realtor",
+    "quote": "The process was clear from start to finish, and the finished media looked clean and professional.",
+    "name": "Sample Client",
+    "role": "Property Professional",
     "stars": 5
     }
   ]

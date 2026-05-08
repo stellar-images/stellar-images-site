@@ -4,15 +4,15 @@
     "slug": "professional-listing-photos",
     "shortLabel": "Listing Photos",
     "name": "Professional Listing Photos",
-    "shortDescription": "Bright, clean, MLS-ready imagery designed to present each property clearly and professionally.",
-    "longDescription": "Use this section to explain what makes the photography deliverable strong: polish, consistency, editing standards, and the kind of image coverage agents expect for listing media.",
+    "shortDescription": "Bright, clean, MLS-ready images that present each property clearly and professionally.",
+    "longDescription": "Professional listing photography focuses on the rooms, exterior angles, and details buyers need to understand the home online. Each shoot is edited for a clean, consistent look and delivered for listing use.",
     "startingPrice": "$150",
     "icon": "PH",
     "features": [
       "Professional HDR editing",
-      "Balanced interior and exterior coverage",
+      "Interior, exterior, and detail coverage",
       "MLS-ready file delivery",
-      "Fast turnaround expectations"
+      "24 to 48 hour turnaround target"
     ],
     "pricingRows": [
       { "label": "Up to 2,000 sq ft", "price": "$150" },
@@ -24,14 +24,14 @@
     "slug": "drone-photography-video",
     "shortLabel": "Drone Media",
     "name": "Drone Photography & Video",
-    "shortDescription": "Aerial stills and motion for properties where the lot, setting, or surrounding neighborhood matters.",
-    "longDescription": "This is where the site should lean into aerial context and trust. The Base44 concept explicitly used the licensed drone pilot angle as a credibility driver.",
+    "shortDescription": "Aerial stills and motion for properties where the setting, lot, or neighborhood matters.",
+    "longDescription": "Drone photography and video add context that ground-level images cannot capture, especially for waterfront homes, acreage, large lots, and properties where the surrounding area helps tell the story.",
     "startingPrice": "$200",
     "icon": "DR",
     "features": [
       "Aerial still imagery",
       "Neighborhood and lot context",
-      "FAA Part 107 licensed operation",
+      "Licensed drone operation",
       "Useful for waterfront, acreage, and luxury properties"
     ],
     "pricingRows": [
@@ -44,13 +44,13 @@
     "slug": "video-walkthroughs",
     "shortLabel": "Walkthrough Video",
     "name": "Video Walkthroughs",
-    "shortDescription": "Simple, polished walkthrough coverage built for websites, social posting, and listing promotion.",
-    "longDescription": "The Base44 concept showed tiered walkthrough pricing. Keep this service clear and practical rather than overproduced unless the real offer becomes more premium.",
+    "shortDescription": "Polished walkthrough coverage built for websites, social posting, and listing promotion.",
+    "longDescription": "Video walkthroughs give buyers a more natural sense of flow, scale, and layout. They are useful for social media, listing pages, and marketing packages that need more than still photography.",
     "startingPrice": "$250",
     "icon": "VD",
     "features": [
-      "Walkthrough coverage for listing promotion",
-      "Optimized for online sharing",
+      "Smooth interior and exterior walkthrough coverage",
+      "Optimized for social media, websites, and listing promotion",
       "Clear pricing by size or scope",
       "Simple add-on logic to pair with photo packages"
     ],

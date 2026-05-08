@@ -7,7 +7,7 @@
     "image": "/images/portfolio/interior-living.svg",
     "location": "Beaufort, SC",
     "featured": true,
-    "alt": "Placeholder interior living room image"
+    "alt": "Bright modern living room prepared for a real estate listing"
     },
     {
     "id": "exterior-waterfront-home",
@@ -16,7 +16,7 @@
     "image": "/images/portfolio/exterior-waterfront.svg",
     "location": "Hilton Head, SC",
     "featured": true,
-    "alt": "Placeholder waterfront exterior image"
+    "alt": "Waterfront home exterior photographed for a real estate listing"
     },
     {
     "id": "drone-marsh-view",
@@ -25,7 +25,7 @@
     "image": "/images/portfolio/drone-marsh.svg",
     "location": "Bluffton, SC",
     "featured": true,
-    "alt": "Placeholder aerial marsh image"
+    "alt": "Aerial view of marsh and Lowcountry landscape"
     },
     {
     "id": "video-tour-preview",
@@ -34,7 +34,7 @@
     "image": "/images/portfolio/video-tour.svg",
     "location": "Lowcountry",
     "featured": true,
-    "alt": "Placeholder walkthrough preview image"
+    "alt": "Video walkthrough preview for a real estate listing"
     },
     {
     "id": "interior-bedroom-suite",
@@ -43,7 +43,7 @@
     "image": "/images/portfolio/interior-bedroom.svg",
     "location": "Beaufort, SC",
     "featured": false,
-    "alt": "Placeholder bedroom suite image"
+    "alt": "Primary bedroom suite photographed for a real estate listing"
     },
     {
     "id": "exterior-front-approach",
@@ -52,7 +52,7 @@
     "image": "/images/portfolio/exterior-front.svg",
     "location": "Bluffton, SC",
     "featured": false,
-    "alt": "Placeholder front approach image"
+    "alt": "Front exterior approach of a residential listing"
     }
   ]
 }

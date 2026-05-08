@@ -6,6 +6,7 @@ Use this before pointing a real domain at the site or sharing it publicly.
 
 - Replace placeholder hero, portfolio, and about images.
 - Replace placeholder business copy, testimonial names, and credential text with real approved copy.
+- Replace all `Sample Client` testimonials with real testimonials or remove that section until real feedback is available.
 - Add the real Calendly event URL in `Site Settings -> Booking -> Calendly URL`.
 - Configure production email delivery for `/api/intake`.
 - Submit one real end-to-end booking test: form submit, email received, Calendly booking created.
