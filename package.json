@@ -12,6 +12,8 @@
     "astro": "astro",
     "typecheck": "astro check && tsc --noEmit",
     "verify:admin": "node scripts/verify-admin-content.mjs",
+    "verify:prod": "node scripts/verify-production-smoke.mjs",
+    "verify:prod:intake": "node scripts/verify-production-smoke.mjs --send-intake",
     "verify": "npm run typecheck && npm run build && npm run verify:admin"
   },
   "dependencies": {

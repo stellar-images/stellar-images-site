@@ -15,6 +15,7 @@ Use this before pointing a real domain at the site or sharing it publicly.
 - Confirm `https://final-domain.com/robots.txt` allows crawling after launch.
 
 Current note: the full integration path was tested in production on May 8, 2026 with Lyle's temporary Calendly and Resend values. Repeat the same smoke test after swapping to the owner-controlled Calendly account, sender domain, and inquiry inbox.
+Use `OWNER_INTEGRATION_HANDOFF.md` for that account swap and final proof sequence.
 
 ## Recommended Content QA
 
@@ -43,3 +44,10 @@ Current note: the full integration path was tested in production on May 8, 2026 
 6. Confirm the Calendly booking appears on the owner calendar.
 7. Publish a small CMS copy edit and confirm Vercel redeploys.
 8. Revert that copy edit if it was only a test.
+
+Automated production checks:
+
+```sh
+npm run verify:prod
+npm run verify:prod:intake
+```

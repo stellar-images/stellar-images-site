@@ -55,11 +55,30 @@ npx --yes vercel@latest ls stellar-images-site --scope lylej312s-projects
 Then check:
 
 ```sh
-curl -I https://stellar-images-site.vercel.app/admin/
-curl -s -D - -o /dev/null https://stellar-images-site.vercel.app/api/auth
-curl -fsSL https://stellar-images-site.vercel.app/robots.txt
-curl -fsSL https://stellar-images-site.vercel.app/sitemap.xml
+npm run verify:prod
 ```
+
+To verify the live intake email path, run:
+
+```sh
+npm run verify:prod:intake
+```
+
+This sends a real production test inquiry email to the currently configured `INTAKE_TO_EMAIL` recipient.
+
+After owner integration swap, also run:
+
+```sh
+npm run verify:prod -- --calendly-url "https://calendly.com/OWNER/EVENT"
+npm run verify:prod:intake -- --calendly-url "https://calendly.com/OWNER/EVENT"
+```
+
+Manual checks still required for full handoff:
+
+- submit the live order form and confirm the owner inbox receives it
+- book one dummy Calendly slot from the live contact page
+- confirm the booking appears on the owner's Google Calendar
+- cancel the dummy booking and confirm cancellation propagation
 
 ## CMS Safety
 

@@ -37,6 +37,7 @@ Target owner flow:
 
 See `EDITOR_GUIDE.md` for the non-technical editing guide.
 See `LAUNCH_CHECKLIST.md` before sharing the site publicly.
+See `OWNER_INTEGRATION_HANDOFF.md` for the exact owner account swap and verification sequence.
 
 ## Current State
 
@@ -91,6 +92,8 @@ Current temporary test values:
 - `RESEND_API_KEY`: set in Vercel Production as an encrypted secret
 
 Do not treat these as final owner values. They are intentionally maintainer-owned so the integration can be tested before Allex has final accounts/domain sender ready.
+
+Use `OWNER_INTEGRATION_HANDOFF.md` to replace these values. After the replacement, run `npm run verify`, `npm run verify:prod`, and `npm run verify:prod:intake`, then do one manual Calendly booking/cancellation test against the live contact page.
 
 ## Decap Auth And Maintenance Access
 

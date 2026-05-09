@@ -16,6 +16,8 @@ Astro site for a real estate photography business. The project is structured aro
 - `npm run preview`
 - `npm run typecheck`
 - `npm run verify`
+- `npm run verify:prod`
+- `npm run verify:prod:intake` sends a real production test inquiry email
 - `npx vercel dev` for local testing that includes Vercel `/api` functions
 
 ## Project Structure
@@ -38,7 +40,8 @@ Astro site for a real estate photography business. The project is structured aro
 ├── EDITOR_GUIDE.md
 ├── HANDOFF.md
 ├── LAUNCH_CHECKLIST.md
-└── MAINTAINER_CHECKLIST.md
+├── MAINTAINER_CHECKLIST.md
+└── OWNER_INTEGRATION_HANDOFF.md
 ```
 
 ## Content Editing
@@ -79,6 +82,7 @@ Production has been end-to-end tested with temporary maintainer-owned integratio
 - verified on May 8, 2026: live form submission, Resend delivery, Calendly booking creation, Google Calendar sync, and dummy booking cancellation
 
 Before handing the site to the owner or sharing it publicly, replace those values with owner-controlled Calendly and email delivery settings.
+Use [OWNER_INTEGRATION_HANDOFF.md](/Users/lylejens/Documents/Codex/2026-05-06/files-mentioned-by-the-user-3100/OWNER_INTEGRATION_HANDOFF.md) for the exact swap and verification sequence.
 
 ## Repo Visibility
 
@@ -129,5 +133,6 @@ These files are intended to be managed by Decap rather than edited by hand in no
 - The implementation plan is documented in [BUILD_BRIEF.md](/Users/lylejens/Documents/Codex/2026-05-06/files-mentioned-by-the-user-3100/BUILD_BRIEF.md).
 - The Decap production login setup is documented in [DECAP_AUTH_PLAN.md](/Users/lylejens/Documents/Codex/2026-05-06/files-mentioned-by-the-user-3100/DECAP_AUTH_PLAN.md).
 - The owner editing flow is documented in [EDITOR_GUIDE.md](/Users/lylejens/Documents/Codex/2026-05-06/files-mentioned-by-the-user-3100/EDITOR_GUIDE.md).
+- The final integration handoff is documented in [OWNER_INTEGRATION_HANDOFF.md](/Users/lylejens/Documents/Codex/2026-05-06/files-mentioned-by-the-user-3100/OWNER_INTEGRATION_HANDOFF.md).
 - Launch readiness is documented in [LAUNCH_CHECKLIST.md](/Users/lylejens/Documents/Codex/2026-05-06/files-mentioned-by-the-user-3100/LAUNCH_CHECKLIST.md).
 - Maintainer verification is documented in [MAINTAINER_CHECKLIST.md](/Users/lylejens/Documents/Codex/2026-05-06/files-mentioned-by-the-user-3100/MAINTAINER_CHECKLIST.md).
