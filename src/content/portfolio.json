@@ -1,142 +1,227 @@
 {
   "portfolio": [
     {
-      "id": "interior-modern-living-room",
+      "id": "open-concept-interior",
       "published": true,
       "sortOrder": 10,
-      "title": "Modern Living Room",
+      "title": "Open Concept Interior",
       "category": "Interior",
-      "summary": "Bright, balanced interior photography that makes the living space feel open, polished, and listing-ready.",
-      "description": "Interior coverage focuses on clean composition, natural-feeling light, and accurate room flow so buyers can understand the home before they ever step inside.",
-      "image": "/images/placeholders/interior-living.jpg",
-      "alt": "Bright modern living room prepared for a real estate listing",
+      "summary": "Bright interior coverage that shows the relationship between living, dining, and kitchen spaces.",
+      "description": "This example shows how a listing gallery can lead with clean composition, natural-feeling light, and a clear sense of room flow. It is a strong placeholder for homes where the main living area is the primary selling point.",
+      "image": "/images/demo-portfolio/interior-open-living.jpg",
+      "alt": "Open concept living room with large windows and modern furniture",
       "location": "Beaufort, SC",
       "featured": true,
       "gallery": [
         {
-          "image": "/images/placeholders/interior-living.jpg",
-          "alt": "Wide living room view with natural light",
-          "caption": "Wide-angle living room coverage"
+          "image": "/images/demo-portfolio/interior-open-living.jpg",
+          "alt": "Wide open living room view with modern seating and natural light",
+          "caption": "Main living area hero angle"
         },
         {
-          "image": "/images/placeholders/interior-kitchen.jpg",
-          "alt": "Kitchen and dining detail prepared for a real estate listing",
-          "caption": "Supporting interior detail"
+          "image": "/images/demo-portfolio/interior-kitchen-dining.jpg",
+          "alt": "Kitchen and dining area photographed for a real estate listing",
+          "caption": "Connected kitchen and dining coverage"
+        },
+        {
+          "image": "/images/demo-portfolio/video-kitchen-walkthrough.jpg",
+          "alt": "Bright kitchen and hallway view used as a walkthrough preview",
+          "caption": "Walkthrough-ready interior perspective"
         }
       ]
     },
     {
-      "id": "exterior-waterfront-home",
+      "id": "twilight-exterior-showcase",
       "published": true,
       "sortOrder": 20,
-      "title": "Waterfront Exterior",
+      "title": "Twilight Exterior Showcase",
       "category": "Exterior",
-      "summary": "Exterior listing imagery that highlights curb appeal, setting, and the first impression buyers see online.",
-      "description": "Exterior sessions are built around the strongest angles of the property, with attention to light, approach, landscaping, and the features that make the listing stand out.",
-      "image": "/images/placeholders/exterior-luxury.jpg",
-      "alt": "Waterfront home exterior photographed for a real estate listing",
+      "summary": "Exterior photography built around curb appeal, architectural lighting, and a premium evening feel.",
+      "description": "This example gives the portfolio a polished exterior case study. It is useful for showing how twilight-style images can make a listing feel elevated without needing a long gallery.",
+      "image": "/images/demo-portfolio/exterior-twilight-modern.jpg",
+      "alt": "Modern home exterior photographed at twilight with warm interior lights",
       "location": "Hilton Head, SC",
       "featured": true,
       "gallery": [
         {
-          "image": "/images/placeholders/exterior-luxury.jpg",
-          "alt": "Waterfront home exterior from the listing approach",
-          "caption": "Primary exterior listing image"
+          "image": "/images/demo-portfolio/exterior-twilight-modern.jpg",
+          "alt": "Modern home exterior at twilight with large windows and warm lighting",
+          "caption": "Twilight hero exterior"
         },
         {
-          "image": "/images/placeholders/exterior-front.jpg",
-          "alt": "Front exterior approach of a residential listing",
-          "caption": "Front approach and curb appeal"
+          "image": "/images/demo-portfolio/exterior-modern-front.jpg",
+          "alt": "Modern home front exterior with landscaping and driveway",
+          "caption": "Daylight front approach"
+        },
+        {
+          "image": "/images/demo-portfolio/exterior-courtyard-entry.jpg",
+          "alt": "Modern courtyard entry and driveway photographed from the street",
+          "caption": "Entry and arrival detail"
         }
       ]
     },
     {
-      "id": "drone-marsh-view",
+      "id": "lowcountry-drone-context",
       "published": true,
       "sortOrder": 30,
-      "title": "Marsh View Aerial",
+      "title": "Lowcountry Drone Context",
       "category": "Drone",
-      "summary": "FAA-licensed drone imagery that gives buyers a clearer sense of land, water, location, and surrounding context.",
-      "description": "Aerial media is especially useful for waterfront homes, acreage, golf communities, and properties where the location is part of the value story.",
-      "image": "/images/placeholders/hero-aerial.jpg",
-      "alt": "Aerial view of marsh and Lowcountry landscape",
+      "summary": "Aerial coverage that gives buyers a better sense of neighborhood, lot position, and surrounding context.",
+      "description": "Drone imagery is especially valuable when the property setting matters. This example demonstrates the kind of top-down and community-level context that complements ground photography.",
+      "image": "/images/demo-portfolio/drone-community-overview.jpg",
+      "alt": "Aerial view of a residential neighborhood surrounded by trees",
       "location": "Bluffton, SC",
       "featured": true,
       "gallery": [
         {
-          "image": "/images/placeholders/hero-aerial.jpg",
-          "alt": "Aerial view of marsh and Lowcountry landscape",
-          "caption": "Lowcountry aerial context"
+          "image": "/images/demo-portfolio/drone-community-overview.jpg",
+          "alt": "Aerial neighborhood view with houses and tree canopy",
+          "caption": "Neighborhood context"
         },
         {
-          "image": "/images/placeholders/exterior-luxury.jpg",
-          "alt": "Waterfront property exterior supporting the aerial story",
-          "caption": "Exterior context from ground level"
+          "image": "/images/demo-portfolio/drone-neighborhood-topdown.jpg",
+          "alt": "Top-down aerial view of homes and backyards",
+          "caption": "Top-down lot relationship"
+        },
+        {
+          "image": "/images/demo-portfolio/exterior-pool-home.jpg",
+          "alt": "Exterior pool home used to connect aerial and ground-level coverage",
+          "caption": "Ground-level support angle"
         }
       ]
     },
     {
-      "id": "video-tour-preview",
+      "id": "walkthrough-video-preview",
       "published": true,
       "sortOrder": 40,
-      "title": "Walkthrough Coverage",
+      "title": "Walkthrough Video Preview",
       "category": "Video",
-      "summary": "Smooth walkthrough coverage that helps buyers understand layout, movement, and the feel of the home.",
-      "description": "Video walkthroughs are structured to move through the property naturally, giving agents a stronger asset for MLS, social media, and listing pages.",
-      "image": "/images/placeholders/interior-kitchen.jpg",
-      "alt": "Video walkthrough preview for a real estate listing",
+      "summary": "Video-style preview frames that show movement through the property and help clients picture a full walkthrough.",
+      "description": "This example gives the Video category a concrete placeholder. It uses still frames to represent the kind of smooth walkthrough coverage that can be used on MLS, social media, and listing pages.",
+      "image": "/images/demo-portfolio/video-kitchen-walkthrough.jpg",
+      "alt": "Bright kitchen and hallway view used as a real estate walkthrough video preview",
       "location": "Lowcountry",
       "featured": true,
       "gallery": [
         {
-          "image": "/images/placeholders/interior-kitchen.jpg",
-          "alt": "Kitchen view used as a video walkthrough preview",
-          "caption": "Walkthrough preview frame"
+          "image": "/images/demo-portfolio/video-kitchen-walkthrough.jpg",
+          "alt": "Bright kitchen and hallway frame for a walkthrough video",
+          "caption": "Interior movement frame"
         },
         {
-          "image": "/images/placeholders/interior-living.jpg",
-          "alt": "Living room view connected to walkthrough coverage",
-          "caption": "Interior flow coverage"
+          "image": "/images/demo-portfolio/interior-open-living.jpg",
+          "alt": "Living area frame used to preview video flow",
+          "caption": "Living area transition"
+        },
+        {
+          "image": "/images/demo-portfolio/video-exterior-establishing.jpg",
+          "alt": "Exterior establishing shot for a property video",
+          "caption": "Exterior establishing frame"
         }
       ]
     },
     {
-      "id": "interior-bedroom-suite",
+      "id": "kitchen-dining-detail",
       "published": true,
       "sortOrder": 50,
-      "title": "Primary Bedroom Suite",
+      "title": "Kitchen & Dining Detail",
       "category": "Interior",
-      "summary": "Interior detail coverage for private spaces, suites, and secondary rooms that still need to feel intentional.",
-      "description": "Secondary interior coverage keeps the full listing consistent, using clean angles and balanced editing so each room contributes to the overall presentation.",
-      "image": "/images/placeholders/interior-kitchen.jpg",
-      "alt": "Primary bedroom suite photographed for a real estate listing",
+      "summary": "Detail-focused interior photography for kitchens, dining areas, finishes, and natural gathering spaces.",
+      "description": "A strong real estate portfolio should show more than wide rooms. This example demonstrates how detail and lifestyle-adjacent images can support the main listing gallery.",
+      "image": "/images/demo-portfolio/interior-kitchen-dining.jpg",
+      "alt": "Warm kitchen and dining area with island seating",
       "location": "Beaufort, SC",
       "featured": false,
       "gallery": [
         {
-          "image": "/images/placeholders/interior-kitchen.jpg",
-          "alt": "Interior room detail photographed for a listing",
-          "caption": "Interior detail placeholder"
+          "image": "/images/demo-portfolio/interior-kitchen-dining.jpg",
+          "alt": "Kitchen island and dining area photographed with warm interior light",
+          "caption": "Kitchen and dining detail"
+        },
+        {
+          "image": "/images/demo-portfolio/video-kitchen-walkthrough.jpg",
+          "alt": "Bright kitchen walkway photographed for listing flow",
+          "caption": "Kitchen flow perspective"
         }
       ]
     },
     {
-      "id": "exterior-front-approach",
+      "id": "poolside-coastal-exterior",
       "published": true,
       "sortOrder": 60,
-      "title": "Front Approach",
+      "title": "Poolside Coastal Exterior",
       "category": "Exterior",
-      "summary": "Clean front-exterior imagery for MLS thumbnails, listing headers, and the first photo buyers notice.",
-      "description": "The front approach is often the most important listing image. This coverage is designed to create a clear, inviting first impression.",
-      "image": "/images/placeholders/exterior-front.jpg",
-      "alt": "Front exterior approach of a residential listing",
+      "summary": "Outdoor living photography for pool homes, patios, and resort-style listing amenities.",
+      "description": "This example gives the Exterior category a second style: bright daytime amenity coverage. It helps show how exterior photography can sell lifestyle as well as structure.",
+      "image": "/images/demo-portfolio/exterior-pool-home.jpg",
+      "alt": "White coastal home with swimming pool and landscaped outdoor area",
+      "location": "Hilton Head, SC",
+      "featured": false,
+      "gallery": [
+        {
+          "image": "/images/demo-portfolio/exterior-pool-home.jpg",
+          "alt": "Poolside exterior of a white coastal home",
+          "caption": "Pool and outdoor living"
+        },
+        {
+          "image": "/images/demo-portfolio/exterior-courtyard-entry.jpg",
+          "alt": "Modern entry and driveway exterior detail",
+          "caption": "Entry detail"
+        }
+      ]
+    },
+    {
+      "id": "top-down-lot-study",
+      "published": true,
+      "sortOrder": 70,
+      "title": "Top-Down Lot Study",
+      "category": "Drone",
+      "summary": "Straight-down aerial imagery that clarifies lot layout, neighboring homes, yards, and access points.",
+      "description": "This example is useful for larger lots, corner lots, planned communities, and properties where buyers need to understand scale or placement from above.",
+      "image": "/images/demo-portfolio/drone-neighborhood-topdown.jpg",
+      "alt": "Top-down drone view of homes, yards, and residential lots",
       "location": "Bluffton, SC",
       "featured": false,
       "gallery": [
         {
-          "image": "/images/placeholders/exterior-front.jpg",
-          "alt": "Front exterior approach of a residential listing",
-          "caption": "Primary MLS exterior placeholder"
+          "image": "/images/demo-portfolio/drone-neighborhood-topdown.jpg",
+          "alt": "Top-down aerial view showing lot layout and neighboring homes",
+          "caption": "Top-down property context"
+        },
+        {
+          "image": "/images/demo-portfolio/drone-community-overview.jpg",
+          "alt": "Aerial view of a residential community from above",
+          "caption": "Community-level aerial view"
+        }
+      ]
+    },
+    {
+      "id": "social-reel-exterior-preview",
+      "published": true,
+      "sortOrder": 80,
+      "title": "Social Reel Exterior Preview",
+      "category": "Video",
+      "summary": "Short-form video preview coverage designed for social media, reels, and high-impact listing teasers.",
+      "description": "This example rounds out the Video category with a social-first use case. It shows how an exterior establishing frame can support a quick reel, teaser, or listing announcement.",
+      "image": "/images/demo-portfolio/video-exterior-establishing.jpg",
+      "alt": "Tall exterior establishing shot of a modern residential building",
+      "location": "Lowcountry",
+      "featured": false,
+      "gallery": [
+        {
+          "image": "/images/demo-portfolio/video-exterior-establishing.jpg",
+          "alt": "Exterior establishing frame for a social real estate video",
+          "caption": "Vertical-friendly exterior frame"
+        },
+        {
+          "image": "/images/demo-portfolio/exterior-modern-front.jpg",
+          "alt": "Modern front exterior used as a listing teaser frame",
+          "caption": "Front approach teaser"
+        },
+        {
+          "image": "/images/demo-portfolio/exterior-twilight-modern.jpg",
+          "alt": "Twilight exterior used as a social video opening frame",
+          "caption": "Twilight opening frame"
         }
       ]
     }

@@ -4,7 +4,7 @@
     "siteUrl": "https://stellar-images-site.vercel.app",
     "defaultTitle": "Stellar Images | Real Estate Photography",
     "defaultDescription": "Professional listing photos, drone media, and video that help homes sell faster.",
-    "socialImage": "/images/placeholders/hero-aerial.jpg",
+    "socialImage": "/images/demo-portfolio/exterior-twilight-modern.jpg",
     "noIndex": true
   },
   "hero": {
