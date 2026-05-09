@@ -12,7 +12,69 @@
   <body>
     <script is:inline>
       (() => {
+        const authStorageKeys = [
+          "decap-cms-user",
+          "netlify-cms-user",
+          "cms-user",
+        ];
+        const resetParam = "reset-login";
         const nativeOpen = window.open.bind(window);
+
+        function clearAdminAuthState() {
+          for (const storage of [window.localStorage, window.sessionStorage]) {
+            for (let index = storage.length - 1; index >= 0; index -= 1) {
+              const key = storage.key(index);
+              if (!key) continue;
+
+              const normalizedKey = key.toLowerCase();
+              if (
+                authStorageKeys.includes(key) ||
+                normalizedKey.includes("decap") ||
+                normalizedKey.includes("netlify-cms")
+              ) {
+                storage.removeItem(key);
+              }
+            }
+          }
+        }
+
+        function resetAdminLogin() {
+          clearAdminAuthState();
+          window.location.replace("/admin/#/");
+        }
+
+        function addResetButton() {
+          if (document.querySelector("[data-admin-reset-login]")) return;
+
+          const button = document.createElement("button");
+          button.type = "button";
+          button.textContent = "Reset CMS Login";
+          button.setAttribute("data-admin-reset-login", "");
+          button.setAttribute("aria-label", "Reset CMS login and reload the admin page");
+          button.style.cssText = [
+            "position:fixed",
+            "right:16px",
+            "bottom:16px",
+            "z-index:2147483647",
+            "border:0",
+            "border-radius:999px",
+            "background:#1f2937",
+            "color:#fff",
+            "font:600 13px/1 system-ui,sans-serif",
+            "padding:10px 14px",
+            "box-shadow:0 8px 24px rgba(0,0,0,.18)",
+            "cursor:pointer",
+          ].join(";");
+          button.addEventListener("click", resetAdminLogin);
+          document.body.append(button);
+        }
+
+        if (new URLSearchParams(window.location.search).has(resetParam)) {
+          resetAdminLogin();
+          return;
+        }
+
+        window.addEventListener("load", addResetButton);
 
         window.open = (url, target, features) => {
           const popup = nativeOpen(url, target, features);
@@ -146,6 +208,6 @@
         window.addEventListener("hashchange", scheduleEntryHealthCheck);
       })();
     </script>
-    <script is:inline src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script is:inline src="https://unpkg.com/decap-cms@3.12.2/dist/decap-cms.js"></script>
   </body>
 </html>

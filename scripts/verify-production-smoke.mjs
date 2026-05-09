@@ -41,7 +41,11 @@ if (contactHtml) {
   expect(contactHtml.includes('title="Schedule your shoot"'), true, "/contact should render the scheduling iframe");
 }
 
-await checkHtml("/admin/", []);
+const adminHtml = await checkHtml("/admin/", []);
+if (adminHtml) {
+  expect(adminHtml.includes("Reset CMS Login"), true, "/admin/ should include the CMS login reset control");
+  expect(adminHtml.includes("decap-cms@3.12.2"), true, "/admin/ should pin the Decap CMS script version");
+}
 await checkText("/robots.txt", ["User-agent"]);
 await checkText("/sitemap.xml", ["<urlset"]);
 await checkAuthStart();
