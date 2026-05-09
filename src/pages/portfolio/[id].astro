@@ -1,0 +1,88 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import CallToAction from "../../components/CallToAction.astro";
+import site from "../../content/site.json";
+import pages from "../../content/pages.json";
+import { portfolioItems, type PortfolioItem } from "../../lib/portfolio";
+
+export function getStaticPaths() {
+  return portfolioItems.map((item) => ({
+    params: { id: item.id },
+    props: { item },
+  }));
+}
+
+interface Props {
+  item: PortfolioItem;
+}
+
+const { item } = Astro.props;
+const gallery = item.gallery?.length ? item.gallery : [{ image: item.image, alt: item.alt, caption: item.title }];
+const description = item.description || item.summary;
+---
+
+<BaseLayout title={`${item.title} | ${site.businessName}`} description={item.summary}>
+  <Header currentPath="/portfolio" />
+  <main id="main-content">
+    <section class="page-hero page-hero-image portfolio-detail-hero" style={`--detail-hero-image: url("${item.image}")`}>
+      <div class="container stack-md">
+        <a class="breadcrumb-link" href="/portfolio">Portfolio</a>
+        <p class="eyebrow">{item.category}</p>
+        <h1>{item.title}</h1>
+        <p class="hero-copy">{item.summary}</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container portfolio-detail-layout">
+        <div class="portfolio-detail-main stack-lg">
+          <img class="portfolio-detail-cover" src={item.image} alt={item.alt} />
+
+          <div class="prose stack-sm">
+            <p>{description}</p>
+          </div>
+
+          <div class="portfolio-gallery">
+            {gallery.map((image) => (
+              <figure>
+                <img src={image.image} alt={image.alt} />
+                {image.caption && <figcaption>{image.caption}</figcaption>}
+              </figure>
+            ))}
+          </div>
+        </div>
+
+        <aside class="portfolio-detail-sidebar card stack-md" aria-label="Portfolio project details">
+          <div>
+            <p class="eyebrow">Location</p>
+            <p>{item.location}</p>
+          </div>
+          <div>
+            <p class="eyebrow">Category</p>
+            <p>{item.category}</p>
+          </div>
+          <div>
+            <p class="eyebrow">Website Placement</p>
+            <p>{item.featured ? "Featured on the homepage" : "Shown on the portfolio page"}</p>
+          </div>
+          <a class="button button-primary" href="/contact">Book a Similar Shoot</a>
+          <a class="inline-link" href="/portfolio">Back to Portfolio</a>
+        </aside>
+      </div>
+    </section>
+
+    <CallToAction
+      eyebrow={pages.portfolio.cta.eyebrow}
+      title={pages.portfolio.cta.title}
+      description={pages.portfolio.cta.description}
+      primaryHref="/contact"
+      primaryLabel={pages.portfolio.cta.primaryLabel}
+      secondaryHref="/services"
+      secondaryLabel={pages.portfolio.cta.secondaryLabel}
+    />
+  </main>
+  <Footer />
+</BaseLayout>
+

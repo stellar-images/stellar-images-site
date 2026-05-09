@@ -305,15 +305,30 @@ collections:
           - label: Portfolio Items
             name: portfolio
             widget: list
-            summary: "{{fields.title}}"
+            summary: "{{fields.sortOrder}} - {{fields.title}}"
+            hint: Each item becomes a portfolio card and its own detail page. Drag items or edit Sort Order to control display order.
             fields:
               - { label: "Advanced: Card ID", name: id, widget: string, hint: Unique internal card ID. Keep lowercase with hyphens and avoid changing after launch. }
+              - { label: Published, name: published, widget: boolean, default: true, hint: Turn off to hide the project while keeping the draft in the admin editor. }
+              - { label: Sort Order, name: sortOrder, widget: number, value_type: int, default: 10, hint: Lower numbers appear first. Use 10, 20, 30 so new projects can fit between existing ones. }
               - { label: Title, name: title, widget: string }
               - { label: Category, name: category, widget: select, options: ["Interior", "Exterior", "Drone", "Video"] }
+              - { label: Short Summary, name: summary, widget: text, hint: Appears on portfolio cards and at the top of the detail page. }
+              - { label: Detail Page Description, name: description, widget: text, required: false, hint: Optional longer explanation for the project detail page. }
               - { label: Image, name: image, widget: image, hint: Upload compressed JPG or WebP photos when real portfolio assets are ready. }
               - { label: Alt Text, name: alt, widget: string, hint: Plain-language description of the photo. }
               - { label: Location, name: location, widget: string }
               - { label: Featured, name: featured, widget: boolean, default: false, hint: Featured items appear on the homepage. }
+              - label: Gallery Images
+                name: gallery
+                widget: list
+                required: false
+                summary: "{{fields.caption}}"
+                hint: Optional extra images shown on the project's detail page.
+                fields:
+                  - { label: Image, name: image, widget: image }
+                  - { label: Alt Text, name: alt, widget: string }
+                  - { label: Caption, name: caption, widget: string, required: false }
 
   - name: testimonials
     label: Testimonials

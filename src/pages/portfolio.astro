@@ -5,10 +5,10 @@ import Footer from "../components/Footer.astro";
 import PortfolioCard from "../components/PortfolioCard.astro";
 import CallToAction from "../components/CallToAction.astro";
 import site from "../content/site.json";
-import portfolio from "../content/portfolio.json";
 import pages from "../content/pages.json";
+import { portfolioCategories, portfolioItems } from "../lib/portfolio";
 
-const categories = ["All", "Interior", "Exterior", "Drone", "Video"];
+const categories = portfolioCategories;
 ---
 
 <BaseLayout title={`Portfolio | ${site.businessName}`} description="Browse real estate photography, drone imagery, and listing visuals.">
@@ -37,7 +37,7 @@ const categories = ["All", "Interior", "Exterior", "Drone", "Video"];
         </div>
 
         <div class="grid cards-2" data-portfolio-grid>
-          {portfolio.portfolio.map((item) => <PortfolioCard item={item} />)}
+          {portfolioItems.map((item) => <PortfolioCard item={item} />)}
         </div>
       </div>
     </section>

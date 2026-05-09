@@ -1,7 +1,7 @@
 {
   "intro": "Fill out the form and we'll get back to you within 24 hours with a quote and available shooting times.",
   "note": "After sending the property details, finish the request by choosing a time in Calendly below.",
-  "submitLabel": "Schedule Your Shoot",
+  "submitLabel": "Send Property Details",
   "fields": [
     {
       "name": "fullName",

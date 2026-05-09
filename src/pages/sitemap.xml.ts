@@ -1,6 +1,7 @@
 import site from "../content/site.json";
+import { portfolioItems } from "../lib/portfolio";
 
-const routes = ["/", "/portfolio", "/services", "/about", "/contact"];
+const routes = ["/", "/portfolio", "/services", "/about", "/contact", ...portfolioItems.map((item) => `/portfolio/${item.id}/`)];
 
 export function GET() {
   const urls = routes

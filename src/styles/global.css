@@ -350,6 +350,8 @@ h3 {
 .prose p,
 .service-detail p,
 .card p,
+.portfolio-card p,
+.portfolio-detail-sidebar p,
 .contact-info-list p {
   color: var(--ink-soft);
   line-height: 1.65;
@@ -467,6 +469,10 @@ h3 {
   background-image: url("/images/placeholders/hero-aerial.jpg");
 }
 
+.portfolio-detail-hero {
+  background-image: var(--detail-hero-image);
+}
+
 .page-hero-services {
   background-image: url("/images/placeholders/interior-living.jpg");
 }
@@ -565,6 +571,16 @@ h3 {
   overflow: hidden;
 }
 
+.portfolio-card-link {
+  display: grid;
+  height: 100%;
+  color: inherit;
+}
+
+.portfolio-card-link:hover .portfolio-card-action {
+  color: var(--navy);
+}
+
 .portfolio-card img {
   width: 100%;
   aspect-ratio: 4 / 3;
@@ -579,7 +595,82 @@ h3 {
 }
 
 .portfolio-card-body {
+  display: grid;
+  align-content: start;
   padding: 1.15rem 1.1rem 1.3rem;
+}
+
+.portfolio-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.85rem;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.portfolio-card-meta span,
+.portfolio-card-action,
+.breadcrumb-link,
+.portfolio-gallery figcaption {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.portfolio-card-action {
+  align-self: end;
+  color: var(--accent-deep);
+  font-weight: 800;
+}
+
+.breadcrumb-link {
+  color: rgba(255, 255, 255, 0.84);
+  font-weight: 800;
+}
+
+.breadcrumb-link:hover {
+  color: white;
+}
+
+.portfolio-detail-layout {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.portfolio-detail-cover {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.portfolio-detail-sidebar {
+  align-self: start;
+}
+
+.portfolio-gallery {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+.portfolio-gallery figure {
+  margin: 0;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid rgba(24, 50, 77, 0.07);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+}
+
+.portfolio-gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.portfolio-gallery figcaption {
+  padding: 0.9rem 1rem 1rem;
 }
 
 .stars {
@@ -834,6 +925,15 @@ h3 {
 
   .section-heading-row {
     display: flex;
+  }
+
+  .portfolio-detail-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.34fr);
+    align-items: start;
+  }
+
+  .portfolio-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .booking-form {

@@ -167,6 +167,21 @@ function loadBuiltPages() {
   return pages;
 }
 
+function loadBuiltPage(file) {
+  if (!exists(file)) {
+    addError(`${file} is missing. Run npm run build before npm run verify:admin.`);
+    return undefined;
+  }
+
+  const html = readText(file);
+  return {
+    file,
+    raw: html,
+    rawNormalized: normalize(html),
+    textNormalized: normalize(visibleText(html)),
+  };
+}
+
 function assertText(pages, pageName, value, label) {
   if (isBlank(value)) return;
   const page = pages[pageName];
@@ -234,6 +249,7 @@ function validateBusinessRules() {
   assertUnique(portfolio.portfolio, "id", "Portfolio");
 
   const serviceNames = new Set(services.services.map((service) => service.name));
+  const publishedPortfolio = portfolio.portfolio.filter((item) => item.published !== false);
   const requiredFormFields = new Set(["fullName", "email", "propertyAddress", "city", "state", "zipCode", "servicesNeeded"]);
   const allowedFieldTypes = new Set(["text", "email", "tel", "number", "select", "textarea", "checkbox-group"]);
   const formNames = new Set();
@@ -264,8 +280,18 @@ function validateBusinessRules() {
     }
   });
 
-  if (!portfolio.portfolio.some((item) => item.featured)) {
-    addError("Portfolio: at least one item should be featured for the homepage.");
+  for (const item of portfolio.portfolio) {
+    if (!Number.isInteger(item.sortOrder)) {
+      addError(`Portfolio: ${item.id} needs an integer sortOrder.`);
+    }
+
+    if (item.published !== undefined && typeof item.published !== "boolean") {
+      addError(`Portfolio: ${item.id} published should be true or false.`);
+    }
+  }
+
+  if (!publishedPortfolio.some((item) => item.featured)) {
+    addError("Portfolio: at least one published item should be featured for the homepage.");
   }
 
   for (const testimonial of testimonials.testimonials) {
@@ -302,6 +328,9 @@ function validateBuiltContent() {
   const pageCopy = dataByFile.get("src/content/pages.json");
   const services = dataByFile.get("src/content/services.json").services;
   const portfolio = dataByFile.get("src/content/portfolio.json").portfolio;
+  const publishedPortfolio = portfolio
+    .filter((item) => item.published !== false)
+    .toSorted((a, b) => (a.sortOrder ?? 9999) - (b.sortOrder ?? 9999));
   const testimonials = dataByFile.get("src/content/testimonials.json").testimonials;
   const credentials = dataByFile.get("src/content/credentials.json").credentials;
   const form = dataByFile.get("src/content/form-config.json");
@@ -335,11 +364,13 @@ function validateBuiltContent() {
     assertText(pages, "home", service.startingPrice, `home service ${service.slug} startingPrice`);
   });
 
-  portfolio.filter((item) => item.featured).slice(0, 4).forEach((item) => {
+  publishedPortfolio.filter((item) => item.featured).slice(0, 4).forEach((item) => {
     assertText(pages, "home", item.title, `home portfolio ${item.id} title`);
     assertText(pages, "home", item.location, `home portfolio ${item.id} location`);
+    assertText(pages, "home", item.summary, `home portfolio ${item.id} summary`);
     assertRaw(pages, "home", item.image, `home portfolio ${item.id} image`);
     assertRaw(pages, "home", item.alt, `home portfolio ${item.id} alt`);
+    assertRaw(pages, "home", `/portfolio/${item.id}/`, `home portfolio ${item.id} link`);
   });
 
   testimonials.slice(0, 3).forEach((testimonial) => {
@@ -354,13 +385,33 @@ function validateBuiltContent() {
   });
 
   collectStrings(pageCopy.portfolio, (value, pointer) => assertText(pages, "portfolio", value, `pages.portfolio.${pointer}`));
-  portfolio.forEach((item) => {
+  publishedPortfolio.forEach((item) => {
     assertRaw(pages, "portfolio", `id="${item.id}"`, `portfolio ${item.id} id`);
     assertText(pages, "portfolio", item.title, `portfolio ${item.id} title`);
     assertText(pages, "portfolio", item.category, `portfolio ${item.id} category`);
     assertText(pages, "portfolio", item.location, `portfolio ${item.id} location`);
+    assertText(pages, "portfolio", item.summary, `portfolio ${item.id} summary`);
     assertRaw(pages, "portfolio", item.image, `portfolio ${item.id} image`);
     assertRaw(pages, "portfolio", item.alt, `portfolio ${item.id} alt`);
+    assertRaw(pages, "portfolio", `/portfolio/${item.id}/`, `portfolio ${item.id} link`);
+
+    const detailPageName = `portfolio-${item.id}`;
+    const detailPages = {
+      [detailPageName]: loadBuiltPage(`dist/portfolio/${item.id}/index.html`),
+    };
+
+    assertText(detailPages, detailPageName, item.title, `portfolio detail ${item.id} title`);
+    assertText(detailPages, detailPageName, item.category, `portfolio detail ${item.id} category`);
+    assertText(detailPages, detailPageName, item.location, `portfolio detail ${item.id} location`);
+    assertText(detailPages, detailPageName, item.summary, `portfolio detail ${item.id} summary`);
+    assertText(detailPages, detailPageName, item.description, `portfolio detail ${item.id} description`);
+    assertRaw(detailPages, detailPageName, item.image, `portfolio detail ${item.id} cover image`);
+    assertRaw(detailPages, detailPageName, item.alt, `portfolio detail ${item.id} cover alt`);
+    item.gallery?.forEach((image, index) => {
+      assertRaw(detailPages, detailPageName, image.image, `portfolio detail ${item.id} gallery[${index}] image`);
+      assertRaw(detailPages, detailPageName, image.alt, `portfolio detail ${item.id} gallery[${index}] alt`);
+      assertText(detailPages, detailPageName, image.caption, `portfolio detail ${item.id} gallery[${index}] caption`);
+    });
   });
 
   collectStrings(pageCopy.services, (value, pointer) => assertText(pages, "services", value, `pages.services.${pointer}`));

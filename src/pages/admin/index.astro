@@ -8,8 +8,156 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
     <title>Content Manager</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --admin-note-bg: #f6f1e7;
+        --admin-note-border: #d9c5a1;
+        --admin-note-ink: #241f17;
+        --admin-note-muted: #6f6250;
+        --admin-note-accent: #8d5c2f;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      .admin-help {
+        background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.86), rgba(246, 241, 231, 0.96)),
+          var(--admin-note-bg);
+        border-bottom: 1px solid var(--admin-note-border);
+        color: var(--admin-note-ink);
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        padding: 14px clamp(16px, 3vw, 36px);
+      }
+
+      .admin-help__summary {
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+        gap: 12px;
+        list-style: none;
+      }
+
+      .admin-help__summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .admin-help__summary::after {
+        border: solid var(--admin-note-accent);
+        border-width: 0 2px 2px 0;
+        content: "";
+        height: 8px;
+        margin-left: auto;
+        transform: rotate(45deg);
+        transform-origin: center;
+        transition: transform 160ms ease;
+        width: 8px;
+      }
+
+      .admin-help[open] .admin-help__summary::after {
+        transform: rotate(-135deg);
+      }
+
+      .admin-help__eyebrow {
+        color: var(--admin-note-accent);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .admin-help__title {
+        font-size: clamp(16px, 2vw, 20px);
+        font-weight: 800;
+        line-height: 1.2;
+      }
+
+      .admin-help__body {
+        display: grid;
+        gap: 18px;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        margin-top: 12px;
+        max-width: 1120px;
+      }
+
+      .admin-help__section {
+        background: rgba(255, 255, 255, 0.58);
+        border: 1px solid rgba(217, 197, 161, 0.82);
+        border-radius: 14px;
+        padding: 14px 16px;
+      }
+
+      .admin-help h2 {
+        font-size: 13px;
+        letter-spacing: 0.04em;
+        margin: 0 0 8px;
+        text-transform: uppercase;
+      }
+
+      .admin-help ol,
+      .admin-help ul {
+        margin: 0;
+        padding-left: 20px;
+      }
+
+      .admin-help li {
+        color: var(--admin-note-muted);
+        font-size: 13px;
+        line-height: 1.45;
+        margin: 5px 0;
+      }
+
+      .admin-help strong {
+        color: var(--admin-note-ink);
+      }
+
+      @media (max-width: 760px) {
+        .admin-help__body {
+          grid-template-columns: 1fr;
+        }
+
+        .admin-help__summary {
+          align-items: flex-start;
+        }
+      }
+    </style>
   </head>
   <body>
+    <details class="admin-help" open>
+      <summary class="admin-help__summary">
+        <span class="admin-help__eyebrow">Admin notes</span>
+        <span class="admin-help__title">How edits become website updates</span>
+      </summary>
+
+      <div class="admin-help__body">
+        <section class="admin-help__section" aria-labelledby="admin-publishing-flow-title">
+          <h2 id="admin-publishing-flow-title">Publishing Flow</h2>
+          <ol>
+            <li>Edit the content fields in this admin panel.</li>
+            <li>Click <strong>Publish</strong> so the CMS saves the change to GitHub.</li>
+            <li>Vercel sees the GitHub update, rebuilds the site, and publishes the new version.</li>
+            <li>Wait a few minutes, then refresh the public website to confirm the change.</li>
+          </ol>
+        </section>
+
+        <section class="admin-help__section" aria-labelledby="admin-update-quirks-title">
+          <h2 id="admin-update-quirks-title">Important Quirks</h2>
+          <ul>
+            <li>This is a structured form editor, not a drag-and-drop page builder or instant live preview.</li>
+            <li>The admin form follows a fixed site schema. If a field is missing here, the schema has to be updated before that content can be edited.</li>
+            <li>Portfolio entries become public cards and detail pages when <strong>Published</strong> is enabled.</li>
+            <li>Use <strong>Sort Order</strong> values like 10, 20, and 30 so new portfolio projects can be inserted later without renumbering everything.</li>
+            <li>Fields marked <strong>Advanced</strong> control form behavior and email payloads. Change them only intentionally.</li>
+            <li>Uploaded images and text become public website content. Do not add passwords, private client notes, or account secrets.</li>
+            <li>Use web-ready portfolio images, not full-resolution client delivery folders.</li>
+            <li>If login gets stuck or the editor looks empty, use <strong>Reset CMS Login</strong> and try again.</li>
+          </ul>
+        </section>
+      </div>
+    </details>
+
     <script is:inline>
       (() => {
         const authStorageKeys = [

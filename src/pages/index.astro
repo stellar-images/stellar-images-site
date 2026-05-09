@@ -11,12 +11,11 @@ import CredentialCard from "../components/CredentialCard.astro";
 import CallToAction from "../components/CallToAction.astro";
 import site from "../content/site.json";
 import services from "../content/services.json";
-import portfolio from "../content/portfolio.json";
 import testimonials from "../content/testimonials.json";
 import credentials from "../content/credentials.json";
 import pages from "../content/pages.json";
+import { featuredPortfolioItems } from "../lib/portfolio";
 
-const featuredWork = portfolio.portfolio.filter((item) => item.featured).slice(0, 4);
 const featuredTestimonials = testimonials.testimonials.slice(0, 3);
 const featuredCredentials = credentials.credentials.slice(0, 4);
 ---
@@ -74,7 +73,7 @@ const featuredCredentials = credentials.credentials.slice(0, 4);
           <a class="inline-link" href="/portfolio">{pages.home.portfolioSection.linkLabel}</a>
         </div>
         <div class="grid cards-2">
-          {featuredWork.map((item) => <PortfolioCard item={item} />)}
+          {featuredPortfolioItems.map((item) => <PortfolioCard item={item} />)}
         </div>
       </div>
     </section>

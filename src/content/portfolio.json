@@ -1,58 +1,144 @@
 {
   "portfolio": [
     {
-    "id": "interior-modern-living-room",
-    "title": "Modern Living Room",
-    "category": "Interior",
-    "image": "/images/placeholders/interior-living.jpg",
-    "location": "Beaufort, SC",
-    "featured": true,
-    "alt": "Bright modern living room prepared for a real estate listing"
+      "id": "interior-modern-living-room",
+      "published": true,
+      "sortOrder": 10,
+      "title": "Modern Living Room",
+      "category": "Interior",
+      "summary": "Bright, balanced interior photography that makes the living space feel open, polished, and listing-ready.",
+      "description": "Interior coverage focuses on clean composition, natural-feeling light, and accurate room flow so buyers can understand the home before they ever step inside.",
+      "image": "/images/placeholders/interior-living.jpg",
+      "alt": "Bright modern living room prepared for a real estate listing",
+      "location": "Beaufort, SC",
+      "featured": true,
+      "gallery": [
+        {
+          "image": "/images/placeholders/interior-living.jpg",
+          "alt": "Wide living room view with natural light",
+          "caption": "Wide-angle living room coverage"
+        },
+        {
+          "image": "/images/placeholders/interior-kitchen.jpg",
+          "alt": "Kitchen and dining detail prepared for a real estate listing",
+          "caption": "Supporting interior detail"
+        }
+      ]
     },
     {
-    "id": "exterior-waterfront-home",
-    "title": "Waterfront Exterior",
-    "category": "Exterior",
-    "image": "/images/placeholders/exterior-luxury.jpg",
-    "location": "Hilton Head, SC",
-    "featured": true,
-    "alt": "Waterfront home exterior photographed for a real estate listing"
+      "id": "exterior-waterfront-home",
+      "published": true,
+      "sortOrder": 20,
+      "title": "Waterfront Exterior",
+      "category": "Exterior",
+      "summary": "Exterior listing imagery that highlights curb appeal, setting, and the first impression buyers see online.",
+      "description": "Exterior sessions are built around the strongest angles of the property, with attention to light, approach, landscaping, and the features that make the listing stand out.",
+      "image": "/images/placeholders/exterior-luxury.jpg",
+      "alt": "Waterfront home exterior photographed for a real estate listing",
+      "location": "Hilton Head, SC",
+      "featured": true,
+      "gallery": [
+        {
+          "image": "/images/placeholders/exterior-luxury.jpg",
+          "alt": "Waterfront home exterior from the listing approach",
+          "caption": "Primary exterior listing image"
+        },
+        {
+          "image": "/images/placeholders/exterior-front.jpg",
+          "alt": "Front exterior approach of a residential listing",
+          "caption": "Front approach and curb appeal"
+        }
+      ]
     },
     {
-    "id": "drone-marsh-view",
-    "title": "Marsh View Aerial",
-    "category": "Drone",
-    "image": "/images/placeholders/hero-aerial.jpg",
-    "location": "Bluffton, SC",
-    "featured": true,
-    "alt": "Aerial view of marsh and Lowcountry landscape"
+      "id": "drone-marsh-view",
+      "published": true,
+      "sortOrder": 30,
+      "title": "Marsh View Aerial",
+      "category": "Drone",
+      "summary": "FAA-licensed drone imagery that gives buyers a clearer sense of land, water, location, and surrounding context.",
+      "description": "Aerial media is especially useful for waterfront homes, acreage, golf communities, and properties where the location is part of the value story.",
+      "image": "/images/placeholders/hero-aerial.jpg",
+      "alt": "Aerial view of marsh and Lowcountry landscape",
+      "location": "Bluffton, SC",
+      "featured": true,
+      "gallery": [
+        {
+          "image": "/images/placeholders/hero-aerial.jpg",
+          "alt": "Aerial view of marsh and Lowcountry landscape",
+          "caption": "Lowcountry aerial context"
+        },
+        {
+          "image": "/images/placeholders/exterior-luxury.jpg",
+          "alt": "Waterfront property exterior supporting the aerial story",
+          "caption": "Exterior context from ground level"
+        }
+      ]
     },
     {
-    "id": "video-tour-preview",
-    "title": "Walkthrough Coverage",
-    "category": "Video",
-    "image": "/images/placeholders/interior-kitchen.jpg",
-    "location": "Lowcountry",
-    "featured": true,
-    "alt": "Video walkthrough preview for a real estate listing"
+      "id": "video-tour-preview",
+      "published": true,
+      "sortOrder": 40,
+      "title": "Walkthrough Coverage",
+      "category": "Video",
+      "summary": "Smooth walkthrough coverage that helps buyers understand layout, movement, and the feel of the home.",
+      "description": "Video walkthroughs are structured to move through the property naturally, giving agents a stronger asset for MLS, social media, and listing pages.",
+      "image": "/images/placeholders/interior-kitchen.jpg",
+      "alt": "Video walkthrough preview for a real estate listing",
+      "location": "Lowcountry",
+      "featured": true,
+      "gallery": [
+        {
+          "image": "/images/placeholders/interior-kitchen.jpg",
+          "alt": "Kitchen view used as a video walkthrough preview",
+          "caption": "Walkthrough preview frame"
+        },
+        {
+          "image": "/images/placeholders/interior-living.jpg",
+          "alt": "Living room view connected to walkthrough coverage",
+          "caption": "Interior flow coverage"
+        }
+      ]
     },
     {
-    "id": "interior-bedroom-suite",
-    "title": "Primary Bedroom Suite",
-    "category": "Interior",
-    "image": "/images/placeholders/interior-kitchen.jpg",
-    "location": "Beaufort, SC",
-    "featured": false,
-    "alt": "Primary bedroom suite photographed for a real estate listing"
+      "id": "interior-bedroom-suite",
+      "published": true,
+      "sortOrder": 50,
+      "title": "Primary Bedroom Suite",
+      "category": "Interior",
+      "summary": "Interior detail coverage for private spaces, suites, and secondary rooms that still need to feel intentional.",
+      "description": "Secondary interior coverage keeps the full listing consistent, using clean angles and balanced editing so each room contributes to the overall presentation.",
+      "image": "/images/placeholders/interior-kitchen.jpg",
+      "alt": "Primary bedroom suite photographed for a real estate listing",
+      "location": "Beaufort, SC",
+      "featured": false,
+      "gallery": [
+        {
+          "image": "/images/placeholders/interior-kitchen.jpg",
+          "alt": "Interior room detail photographed for a listing",
+          "caption": "Interior detail placeholder"
+        }
+      ]
     },
     {
-    "id": "exterior-front-approach",
-    "title": "Front Approach",
-    "category": "Exterior",
-    "image": "/images/placeholders/exterior-front.jpg",
-    "location": "Bluffton, SC",
-    "featured": false,
-    "alt": "Front exterior approach of a residential listing"
+      "id": "exterior-front-approach",
+      "published": true,
+      "sortOrder": 60,
+      "title": "Front Approach",
+      "category": "Exterior",
+      "summary": "Clean front-exterior imagery for MLS thumbnails, listing headers, and the first photo buyers notice.",
+      "description": "The front approach is often the most important listing image. This coverage is designed to create a clear, inviting first impression.",
+      "image": "/images/placeholders/exterior-front.jpg",
+      "alt": "Front exterior approach of a residential listing",
+      "location": "Bluffton, SC",
+      "featured": false,
+      "gallery": [
+        {
+          "image": "/images/placeholders/exterior-front.jpg",
+          "alt": "Front exterior approach of a residential listing",
+          "caption": "Primary MLS exterior placeholder"
+        }
+      ]
     }
   ]
 }

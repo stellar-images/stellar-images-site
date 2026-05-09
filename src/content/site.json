@@ -12,14 +12,13 @@
     "heading": "Beaufort's Premier Real Estate Photography",
     "description": "Professional listing photos, drone media, and video that help homes sell faster.",
     "image": {
-      "src": "/images/placeholders/hero-aerial.jpg",
-      "alt": "Aerial Lowcountry waterfront property at golden hour"
+      "src": "/images/placeholders/hero-high-res-home.jpg",
+      "alt": "Bright exterior real estate photograph of a large white home"
     }
   },
   "aboutPreview": {
     "heading": "Capturing Properties at Their Absolute Best",
     "paragraphs": [
-      "Founded in Beaufort, Stellar Images Photography combines precision, professionalism, and a passion for showcasing properties in their finest light. As a veteran-owned business and licensed drone pilot, we bring a unique perspective to every listing - helping realtors, brokers, and property managers sell homes faster with stunning visual media.",
       "Founded in Beaufort, Stellar Images Photography combines precision, professionalism, and a passion for capturing properties at their best. With a background in the U.S. Navy, I bring the same discipline and attention to detail to every shoot.",
       "As a licensed drone pilot (FAA Part 107) and private pilot, I offer a unique aerial perspective that most photographers simply can't match. Every image is crafted to showcase a property's best features and help it sell faster.",
       "Whether it's a cozy cottage on Lady's Island or a luxury waterfront estate on Hilton Head, I'm committed to delivering stunning visual media that exceeds expectations."
@@ -32,7 +31,7 @@
     "captionText": "Precision, Professionalism, and Passion"
   },
   "contact": {
-    "intro": "Fill out the form and we'll get back to you within 24 hours with a quote and available shooting times.",
+    "intro": "Questions, custom packages, or scheduling details? Reach out directly, or use the booking form to send property information.",
     "phone": "(925) 518-8677",
     "email": "alexandra.v.maass@gmail.com",
     "hours": "Mon - Fri, 8am - 6pm",

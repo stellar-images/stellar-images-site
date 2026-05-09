@@ -6,6 +6,10 @@ const args = parseArgs(process.argv.slice(2));
 const site = readJson(new URL("../src/content/site.json", import.meta.url));
 const pages = readJson(new URL("../src/content/pages.json", import.meta.url));
 const formConfig = readJson(new URL("../src/content/form-config.json", import.meta.url));
+const portfolio = readJson(new URL("../src/content/portfolio.json", import.meta.url));
+const firstPortfolioItem = portfolio.portfolio
+  .filter((item) => item.published !== false)
+  .toSorted((a, b) => (a.sortOrder ?? 9999) - (b.sortOrder ?? 9999))[0];
 
 const baseUrl = String(args.values.url ?? site.seo?.siteUrl ?? "https://stellar-images-site.vercel.app").replace(
   /\/+$/,
@@ -24,7 +28,19 @@ if (sendIntake) {
 }
 
 await checkHtml("/", [site.businessName, site.hero.heading, pages.home.cta.primaryLabel]);
-await checkHtml("/portfolio", [pages.portfolio.hero.heading, pages.portfolio.hero.description]);
+await checkHtml("/portfolio", [
+  pages.portfolio.hero.heading,
+  pages.portfolio.hero.description,
+  firstPortfolioItem?.title,
+  firstPortfolioItem?.summary,
+]);
+if (firstPortfolioItem) {
+  await checkHtml(`/portfolio/${firstPortfolioItem.id}/`, [
+    firstPortfolioItem.title,
+    firstPortfolioItem.summary,
+    firstPortfolioItem.location,
+  ]);
+}
 await checkHtml("/services", [pages.services.hero.heading, pages.services.overview.title]);
 await checkHtml("/about", [pages.about.hero.heading, site.aboutImage.captionTitle]);
 const contactHtml = await checkHtml("/contact", [
