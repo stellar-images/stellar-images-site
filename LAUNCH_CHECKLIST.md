@@ -14,7 +14,7 @@ Use this before pointing a real domain at the site or sharing it publicly.
 - Turn off `Site Settings -> SEO -> Hide From Search Engines Until Launch`.
 - Confirm `https://final-domain.com/robots.txt` allows crawling after launch.
 
-Current note: the full integration path was tested in production on May 8, 2026 with Lyle's temporary Calendly and Resend values. Repeat the same smoke test after swapping to the owner-controlled Calendly account, sender domain, and inquiry inbox.
+Current note: the full integration path was tested in production on May 8, 2026 with temporary integration values. Repeat the same smoke test after swapping to the owner-controlled Calendly account, sender domain, and inquiry inbox.
 Use `OWNER_INTEGRATION_HANDOFF.md` for that account swap and final proof sequence.
 
 ## Recommended Content QA

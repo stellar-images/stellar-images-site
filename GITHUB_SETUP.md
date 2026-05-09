@@ -4,7 +4,7 @@
 
 - GitHub organization owns the repository.
 - Her GitHub account is an organization owner.
-- `lylecodes` is an organization owner during setup, then can remain owner or be reduced to repo admin/maintainer.
+- The maintainer account is an organization owner during setup, then can remain owner or be reduced to repo admin/maintainer.
 - Vercel connects to the organization repository.
 - Decap CMS points to the organization repository.
 
@@ -18,11 +18,11 @@ GitHub organization creation is a web UI flow.
 4. Choose New organization.
 5. Choose the free plan unless a paid plan is needed later.
 6. Pick the organization slug carefully because it becomes part of the repo URL.
-7. Invite `lylecodes` as an owner or admin-level collaborator for setup.
+7. Invite the maintainer account as an owner or admin-level collaborator for setup.
 
 Suggested slug pattern:
 
-- `allex-photography`
+- `owner-photography`
 - `stellar-images-photo`
 - her final business name in lowercase with hyphens
 
@@ -34,7 +34,7 @@ The organization slug is:
 stellar-images
 ```
 
-After the organization exists and `lylecodes` has permission to create repos there, this repo was created and pushed as:
+After the organization exists and the maintainer has permission to create repos there, this repo was created and pushed as:
 
 ```sh
 gh repo create stellar-images/stellar-images-site \
@@ -67,7 +67,7 @@ Then commit and push that config update.
 Decap's GitHub backend requires CMS users to have push access to the content repository. With an organization:
 
 - she can log into Decap with her GitHub account if she has write/admin access
-- you can log into Decap with `lylecodes` if that account has write/admin access
+- the maintainer can log into Decap if that account has write/admin access
 - Decap commits content edits as the logged-in GitHub user
 - Vercel redeploys from those commits
 

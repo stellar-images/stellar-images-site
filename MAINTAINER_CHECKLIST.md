@@ -49,7 +49,7 @@ Astro dev and production both serve the CMS at `/admin/`.
 After pushing to `main`, confirm Vercel deploys successfully:
 
 ```sh
-npx --yes vercel@latest ls stellar-images-site --scope lylej312s-projects
+npx --yes vercel@latest ls stellar-images-site --scope <VERCEL_SCOPE>
 ```
 
 Then check:

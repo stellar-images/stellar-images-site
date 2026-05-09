@@ -1,12 +1,12 @@
 # Base44 Reference
 
-This document captures the details visible in `/Users/lylejens/workplace/allex_portfolio_website_base44.mp4` so the project has a quick reference for structure, content, and design direction.
+This document captures the details visible in the Base44 reference recording so the project has a quick reference for structure, content, and design direction.
 
 ## Source
 
-- Video: `/Users/lylejens/workplace/allex_portfolio_website_base44.mp4`
-- Extracted frames: `/Users/lylejens/Documents/Codex/2026-05-06/files-mentioned-by-the-user-3100/base44_frames/`
-- Dense second-pass frames: `/Users/lylejens/Documents/Codex/2026-05-06/files-mentioned-by-the-user-3100/base44_frames_dense/`
+- Video: private reference recording, not committed
+- Extracted frames: local review artifact, not committed
+- Dense second-pass frames: local review artifact, not committed
 
 ## Confidence Notes
 

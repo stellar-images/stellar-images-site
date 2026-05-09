@@ -41,6 +41,7 @@ Astro site for a real estate photography business. The project is structured aro
 ├── HANDOFF.md
 ├── LAUNCH_CHECKLIST.md
 ├── MAINTAINER_CHECKLIST.md
+├── SECURITY.md
 └── OWNER_INTEGRATION_HANDOFF.md
 ```
 
@@ -58,8 +59,8 @@ Current Decap status:
 - the production Git backend points at `stellar-images/stellar-images-site`
 - Vercel is connected to the GitHub repo for automatic deploys from `main`
 - a CMS publish test was completed and verified against GitHub/Vercel
-- Allex's GitHub account `allex5937` has owner/admin access through the `stellar-images` organization
-- Vercel is currently maintainer-managed on Hobby; Vercel team-member invites require Pro or a project move/recreate under the owner's Vercel account
+- owner/editor GitHub access is configured outside this public README
+- Vercel team access depends on the active Vercel plan and should be handled in the Vercel dashboard or private handoff notes
 
 Important:
 
@@ -69,22 +70,23 @@ Important:
 
 ## Current Gaps
 
-- production integrations are currently wired to Lyle's test Calendly/Resend accounts
-- final owner-controlled Calendly, Resend sender domain, and inquiry inbox still need to replace the test values before public launch
+- final owner-controlled Calendly, Resend sender domain, and inquiry inbox must be confirmed before public launch
 - placeholder content and placeholder artwork need to be replaced
 - the launch SEO flag should stay set to `noindex` until final launch
 
 ## Current Integration Status
 
-Production has been end-to-end tested with temporary maintainer-owned integration values:
+Production has been end-to-end tested with temporary integration values.
 
-- public booking URL: `https://calendly.com/lyle-jensen95/30min`
-- email sender: `onboarding@resend.dev`
-- inquiry recipient: `lyle.jensen95@gmail.com`
-- verified on May 8, 2026: live form submission, Resend delivery, Calendly booking creation, Google Calendar sync, and dummy booking cancellation
+Verified on May 8, 2026:
 
-Before handing the site to the owner or sharing it publicly, replace those values with owner-controlled Calendly and email delivery settings.
-Use [OWNER_INTEGRATION_HANDOFF.md](/Users/lylejens/Documents/Codex/2026-05-06/files-mentioned-by-the-user-3100/OWNER_INTEGRATION_HANDOFF.md) for the exact swap and verification sequence.
+- live form submission
+- Resend delivery
+- Calendly booking creation
+- Google Calendar sync
+- dummy booking cancellation
+
+Do not document live account emails, API keys, OAuth client secrets, or temporary maintainer account details in this public repo. Use [OWNER_INTEGRATION_HANDOFF.md](OWNER_INTEGRATION_HANDOFF.md) for the safe swap and verification sequence.
 
 ## Repo Visibility
 
@@ -94,6 +96,7 @@ The repository is public so Vercel Hobby can auto-deploy from the `stellar-image
 - `.vercel/` is ignored
 - `.env.example` contains placeholder variable names only
 - production secrets belong in Vercel Environment Variables
+- operational account details belong in private handoff notes, not committed docs
 
 If the repo is made private again while it remains under the organization, Vercel auto-deploys will require Vercel Pro or a move to a personal GitHub repo.
 
@@ -131,10 +134,11 @@ These files are intended to be managed by Decap rather than edited by hand in no
 
 ## Notes
 
-- The design direction is based on the Base44 recording documented in [BASE44_REFERENCE.md](/Users/lylejens/Documents/Codex/2026-05-06/files-mentioned-by-the-user-3100/BASE44_REFERENCE.md).
-- The implementation plan is documented in [BUILD_BRIEF.md](/Users/lylejens/Documents/Codex/2026-05-06/files-mentioned-by-the-user-3100/BUILD_BRIEF.md).
-- The Decap production login setup is documented in [DECAP_AUTH_PLAN.md](/Users/lylejens/Documents/Codex/2026-05-06/files-mentioned-by-the-user-3100/DECAP_AUTH_PLAN.md).
-- The owner editing flow is documented in [EDITOR_GUIDE.md](/Users/lylejens/Documents/Codex/2026-05-06/files-mentioned-by-the-user-3100/EDITOR_GUIDE.md).
-- The final integration handoff is documented in [OWNER_INTEGRATION_HANDOFF.md](/Users/lylejens/Documents/Codex/2026-05-06/files-mentioned-by-the-user-3100/OWNER_INTEGRATION_HANDOFF.md).
-- Launch readiness is documented in [LAUNCH_CHECKLIST.md](/Users/lylejens/Documents/Codex/2026-05-06/files-mentioned-by-the-user-3100/LAUNCH_CHECKLIST.md).
-- Maintainer verification is documented in [MAINTAINER_CHECKLIST.md](/Users/lylejens/Documents/Codex/2026-05-06/files-mentioned-by-the-user-3100/MAINTAINER_CHECKLIST.md).
+- The design direction is based on the Base44 recording documented in [BASE44_REFERENCE.md](BASE44_REFERENCE.md).
+- The implementation plan is documented in [BUILD_BRIEF.md](BUILD_BRIEF.md).
+- The Decap production login setup is documented in [DECAP_AUTH_PLAN.md](DECAP_AUTH_PLAN.md).
+- The owner editing flow is documented in [EDITOR_GUIDE.md](EDITOR_GUIDE.md).
+- The final integration handoff is documented in [OWNER_INTEGRATION_HANDOFF.md](OWNER_INTEGRATION_HANDOFF.md).
+- Launch readiness is documented in [LAUNCH_CHECKLIST.md](LAUNCH_CHECKLIST.md).
+- Maintainer verification is documented in [MAINTAINER_CHECKLIST.md](MAINTAINER_CHECKLIST.md).
+- Security expectations are documented in [SECURITY.md](SECURITY.md).

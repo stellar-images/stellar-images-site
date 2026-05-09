@@ -1,10 +1,10 @@
 # Owner Integration Handoff
 
-Use this when replacing the temporary maintainer-owned integrations with owner-controlled accounts before public launch.
+Use this when replacing temporary integrations with owner-controlled accounts before public launch.
 
 ## Goal
 
-The site is already deployed and production-tested with temporary values. The final handoff is complete only when Allex controls:
+The site is already deployed and production-tested. The final handoff is complete only when the owner controls:
 
 - the Calendly event used on the contact page
 - the Google Calendar connected to that Calendly event
@@ -15,18 +15,13 @@ The site is already deployed and production-tested with temporary values. The fi
 
 ## Current Temporary Production Values
 
-These are working test values, not launch values:
-
-- Calendly URL: `https://calendly.com/lyle-jensen95/30min`
-- `INTAKE_TO_EMAIL`: `lyle.jensen95@gmail.com`
-- `INTAKE_FROM_EMAIL`: `onboarding@resend.dev`
-- `RESEND_API_KEY`: set in Vercel Production as an encrypted secret
+Temporary production values may exist in CMS content and Vercel Environment Variables. Do not document account emails, API keys, OAuth secrets, or temporary maintainer URLs in this public repo.
 
 Do not commit real API keys or `.env` files. Production secrets belong in Vercel Environment Variables only.
 
 ## Owner Setup Checklist
 
-1. Create or confirm Allex's Calendly account.
+1. Create or confirm the owner's Calendly account.
 2. Connect Calendly to the Google Calendar she wants bookings to land on.
 3. Create the final real estate photography event type.
 4. Set the Calendly event duration, availability, buffers, notifications, and cancellation/reschedule policy.
@@ -34,7 +29,7 @@ Do not commit real API keys or `.env` files. Production secrets belong in Vercel
 6. Create or confirm the owner inquiry inbox.
 7. Create or confirm the Resend account.
 8. Prefer a verified business/domain sender before launch, for example `bookings@example.com`.
-9. Confirm owner GitHub access remains active. Current state: `allex5937` is an active owner/admin in the `stellar-images` GitHub organization and has admin access to `stellar-images/stellar-images-site`.
+9. Confirm owner GitHub access remains active.
 10. Keep maintainer collaborator access for support.
 
 ## GitHub And Vercel Ownership State
@@ -43,17 +38,14 @@ GitHub is owner-ready:
 
 - GitHub org: `stellar-images`
 - Repo: `stellar-images/stellar-images-site`
-- Owner account: `allex5937`
-- Maintainer account: `lylecodes`
-- Both currently have admin access.
+- Owner and maintainer accounts currently have admin access.
 
 Vercel is still maintainer-managed on Hobby:
 
-- Current Vercel scope: `lylej312s-projects`
-- Attempted invite for `Alexandra.v.maass@gmail.com` on May 8, 2026.
+- Attempted owner invite on May 8, 2026.
 - Vercel rejected the invite because team members are not permitted on Hobby.
 - CMS edits still work without owner Vercel access because Decap writes to GitHub and Vercel auto-deploys from `main`.
-- For owner Vercel access, either upgrade the current Vercel team to Pro, transfer/recreate the project under Allex's Vercel account, or intentionally keep Vercel maintainer-managed.
+- For owner Vercel access, either upgrade the current Vercel team to Pro, transfer/recreate the project under the owner's Vercel account, or intentionally keep Vercel maintainer-managed.
 
 ## Swap Calendly
 
@@ -102,7 +94,7 @@ npx --yes vercel@latest env add INTAKE_TO_EMAIL production --value "owner@exampl
 
 npx --yes vercel@latest env add INTAKE_FROM_EMAIL production --value "bookings@example.com" --yes --no-sensitive --force
 
-npx --yes vercel@latest env add RESEND_API_KEY production --value "re_REPLACE_ME" --yes --force
+npx --yes vercel@latest env add RESEND_API_KEY production --value "<RESEND_API_KEY>" --yes --force
 ```
 
 Notes:
@@ -168,4 +160,4 @@ If the owner integrations fail during setup:
 3. Redeploy production.
 4. Re-run `npm run verify:prod`.
 
-Do not leave a partially swapped state live without documenting which account owns each integration.
+Do not leave a partially swapped state live without documenting ownership in private handoff notes.

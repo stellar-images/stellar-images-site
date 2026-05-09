@@ -58,12 +58,12 @@ Still needs final production setup:
 - final photos and content
 - custom domain
 - launch SEO flag turned off after final content is ready
-- final Vercel ownership/access decision: keep maintainer-managed on Hobby, upgrade to Pro for team access, or move/recreate under the owner's Vercel account
+- final Vercel ownership/access decision: keep maintainer-managed, upgrade for team access, or move/recreate under the owner's Vercel account
 
 Already configured:
 
 - GitHub repo under `stellar-images`
-- Allex GitHub account `allex5937` is an active owner/admin in the `stellar-images` organization and has admin access to `stellar-images/stellar-images-site`
+- owner GitHub access is active
 - Vercel production deployment
 - Vercel GitHub integration for automatic deploys from `main`
 - Vercel production env vars for Decap GitHub OAuth
@@ -81,19 +81,14 @@ Verified:
 - live `/contact` page rendered the Calendly iframe
 - live form submission returned the success state
 - live `/api/intake` returned `200 {"ok": true}`
-- Resend delivered production test emails to `lyle.jensen95@gmail.com`
+- Resend delivered production test emails
 - Calendly created a booking for the public event URL
 - Google Calendar showed the booking
 - the dummy booking was canceled afterward
 
-Current temporary test values:
+Current temporary test values are intentionally not documented in this public repo.
 
-- Calendly URL in content: `https://calendly.com/lyle-jensen95/30min`
-- `INTAKE_TO_EMAIL`: `lyle.jensen95@gmail.com`
-- `INTAKE_FROM_EMAIL`: `onboarding@resend.dev`
-- `RESEND_API_KEY`: set in Vercel Production as an encrypted secret
-
-Do not treat these as final owner values. They are intentionally maintainer-owned so the integration can be tested before Allex has final accounts/domain sender ready.
+Do not commit live account emails, API keys, OAuth client secrets, temporary maintainer URLs, or account-specific handoff details. Production secrets belong in Vercel Environment Variables, and public booking URLs are editable through CMS content.
 
 Use `OWNER_INTEGRATION_HANDOFF.md` to replace these values. After the replacement, run `npm run verify`, `npm run verify:prod`, and `npm run verify:prod:intake`, then do one manual Calendly booking/cancellation test against the live contact page.
 
@@ -136,11 +131,11 @@ Required variables:
 
 Current production state:
 
-- `INTAKE_TO_EMAIL` is currently set to `lyle.jensen95@gmail.com` for production testing
-- `INTAKE_FROM_EMAIL` is currently set to `onboarding@resend.dev` for production testing
+- `INTAKE_TO_EMAIL` is set in Vercel Production
+- `INTAKE_FROM_EMAIL` is set in Vercel Production
 - `RESEND_API_KEY` is set in Vercel Production as an encrypted secret
 
-The sender address must be allowed by the email delivery account. For public launch, use a verified domain sender rather than `onboarding@resend.dev`, then change `INTAKE_TO_EMAIL` to the owner's real inquiry inbox.
+The sender address must be allowed by the email delivery account. For public launch, use a verified domain sender, then change `INTAKE_TO_EMAIL` to the owner's real inquiry inbox.
 
 ## Vercel Deployment
 
@@ -148,14 +143,14 @@ The current production deployment is live at:
 
 - https://stellar-images-site.vercel.app
 
-The project currently lives under the Vercel scope `lylej312s-projects`.
+The project currently lives under a maintainer-controlled Vercel scope.
 
 Vercel access note:
 
-- Attempted owner invite for `Alexandra.v.maass@gmail.com` on May 8, 2026.
+- Attempted owner invite on May 8, 2026.
 - Vercel rejected the invite because team members are not permitted on the current Hobby plan.
-- This does not block CMS editing or automatic deploys. Allex can update the website through `/admin/`, Decap commits to GitHub, and Vercel deploys from `main`.
-- True owner Vercel access requires one of these paths: upgrade the current Vercel team to Pro, transfer/recreate the project under Allex's Vercel account, or keep Vercel maintainer-managed until launch needs justify the change.
+- This does not block CMS editing or automatic deploys. The owner can update the website through `/admin/`, Decap commits to GitHub, and Vercel deploys from `main`.
+- True owner Vercel access requires one of these paths: upgrade the current Vercel team to Pro, transfer/recreate the project under the owner's Vercel account, or keep Vercel maintainer-managed until launch needs justify the change.
 
 Git auto-deploy is connected to:
 
