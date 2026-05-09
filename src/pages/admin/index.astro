@@ -12,6 +12,31 @@
   <body>
     <script is:inline>
       (() => {
+        const nativeOpen = window.open.bind(window);
+
+        window.open = (url, target, features) => {
+          const popup = nativeOpen(url, target, features);
+
+          if (popup) {
+            return popup;
+          }
+
+          if (typeof url === "string" && url.includes("/api/auth")) {
+            window.location.assign(url);
+
+            return {
+              close() {},
+              focus() {},
+            };
+          }
+
+          return popup;
+        };
+      })();
+    </script>
+
+    <script is:inline>
+      (() => {
         const entryRoutePattern = /^#\/collections\/[^/]+\/entries\/[^/]+/;
         const reloadKeyPrefix = "stellar-admin-entry-health:";
         let healthCheckTimer;

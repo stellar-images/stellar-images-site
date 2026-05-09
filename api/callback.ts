@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from "./vercel-types.js";
-import { verifyState } from "./auth.js";
+import { getOrigin, verifyState } from "./auth.js";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "GET") {
@@ -21,6 +21,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return sendPopupError(res, "Invalid OAuth response.");
   }
 
+  const redirectUri = process.env.OAUTH_REDIRECT_URI || `${getOrigin(req)}/api/callback`;
   const tokenResponse = await fetch("https://github.com/login/oauth/access_token", {
     method: "POST",
     headers: {
@@ -31,7 +32,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       client_id: clientId,
       client_secret: clientSecret,
       code,
-      redirect_uri: process.env.OAUTH_REDIRECT_URI,
+      redirect_uri: redirectUri,
     }),
   });
 
@@ -49,6 +50,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 }
 
 function sendPopupSuccess(res: VercelResponse, token: string) {
+  const decapUser = {
+    backendName: "github",
+    token,
+  };
+
   res.setHeader("Content-Type", "text/html; charset=utf-8");
   res.setHeader("Cache-Control", "no-store");
   return res.status(200).send(`
@@ -57,13 +63,60 @@ function sendPopupSuccess(res: VercelResponse, token: string) {
       <body>
         <script>
           (function () {
+            var adminPath = '/admin/#/';
+            var decapUser = ${JSON.stringify(decapUser)};
             var message = 'authorization:github:success:' + JSON.stringify({ token: ${JSON.stringify(token)}, provider: 'github' });
+            var completed = false;
+
+            function storeUser(targetWindow) {
+              try {
+                targetWindow.localStorage.setItem('decap-cms-user', JSON.stringify(decapUser));
+                return true;
+              } catch (error) {
+                return false;
+              }
+            }
+
+            function sendUserToAdmin(targetWindow) {
+              try {
+                targetWindow.location.replace(adminPath);
+              } catch (error) {
+                targetWindow.location.href = adminPath;
+              }
+            }
+
             function receiveMessage(event) {
+              if (event.origin !== window.location.origin || event.data !== 'authorizing:github') {
+                return;
+              }
+
+              completed = true;
               window.opener && window.opener.postMessage(message, event.origin);
               window.close();
             }
-            window.addEventListener('message', receiveMessage, false);
-            window.opener && window.opener.postMessage('authorizing:github', '*');
+
+            if (window.opener && !window.opener.closed) {
+              window.addEventListener('message', receiveMessage, false);
+              window.opener.postMessage('authorizing:github', window.location.origin);
+
+              window.setTimeout(function () {
+                if (completed) return;
+
+                if (storeUser(window.opener)) {
+                  sendUserToAdmin(window.opener);
+                  window.close();
+                }
+              }, 1500);
+
+              return;
+            }
+
+            if (storeUser(window)) {
+              sendUserToAdmin(window);
+              return;
+            }
+
+            document.body.textContent = 'Authorization complete. Return to /admin/.';
           })();
         </script>
       </body>

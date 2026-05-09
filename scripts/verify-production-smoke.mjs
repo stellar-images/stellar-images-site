@@ -44,6 +44,7 @@ if (contactHtml) {
 await checkHtml("/admin/", []);
 await checkText("/robots.txt", ["User-agent"]);
 await checkText("/sitemap.xml", ["<urlset"]);
+await checkAuthStart();
 await checkApiGet();
 
 if (sendIntake) {
@@ -86,6 +87,18 @@ async function checkApiGet() {
   const response = await request("/api/intake", { headers: { Accept: "application/json" } });
   expect(response.status, 405, "/api/intake GET should return 405");
   expect(response.headers.get("allow")?.includes("POST"), true, "/api/intake GET should advertise Allow: POST");
+}
+
+async function checkAuthStart() {
+  const response = await request("/api/auth", {
+    headers: { Accept: "text/html" },
+    redirect: "manual",
+  });
+  const location = response.headers.get("location") ?? "";
+
+  expect([302, 307, 308].includes(response.status), true, "/api/auth should redirect to GitHub");
+  expect(location.startsWith("https://github.com/login/oauth/authorize"), true, "/api/auth should use GitHub OAuth");
+  expect(location.includes("redirect_uri="), true, "/api/auth should include a redirect URI");
 }
 
 async function checkIntakePost() {
