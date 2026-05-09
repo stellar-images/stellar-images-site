@@ -58,6 +58,8 @@ Current Decap status:
 - the production Git backend points at `stellar-images/stellar-images-site`
 - Vercel is connected to the GitHub repo for automatic deploys from `main`
 - a CMS publish test was completed and verified against GitHub/Vercel
+- Allex's GitHub account `allex5937` has owner/admin access through the `stellar-images` organization
+- Vercel is currently maintainer-managed on Hobby; Vercel team-member invites require Pro or a project move/recreate under the owner's Vercel account
 
 Important:
 

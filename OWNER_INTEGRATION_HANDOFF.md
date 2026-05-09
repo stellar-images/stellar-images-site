@@ -34,8 +34,26 @@ Do not commit real API keys or `.env` files. Production secrets belong in Vercel
 6. Create or confirm the owner inquiry inbox.
 7. Create or confirm the Resend account.
 8. Prefer a verified business/domain sender before launch, for example `bookings@example.com`.
-9. Give the owner GitHub write access so Decap CMS can publish edits.
+9. Confirm owner GitHub access remains active. Current state: `allex5937` is an active owner/admin in the `stellar-images` GitHub organization and has admin access to `stellar-images/stellar-images-site`.
 10. Keep maintainer collaborator access for support.
+
+## GitHub And Vercel Ownership State
+
+GitHub is owner-ready:
+
+- GitHub org: `stellar-images`
+- Repo: `stellar-images/stellar-images-site`
+- Owner account: `allex5937`
+- Maintainer account: `lylecodes`
+- Both currently have admin access.
+
+Vercel is still maintainer-managed on Hobby:
+
+- Current Vercel scope: `lylej312s-projects`
+- Attempted invite for `Alexandra.v.maass@gmail.com` on May 8, 2026.
+- Vercel rejected the invite because team members are not permitted on Hobby.
+- CMS edits still work without owner Vercel access because Decap writes to GitHub and Vercel auto-deploys from `main`.
+- For owner Vercel access, either upgrade the current Vercel team to Pro, transfer/recreate the project under Allex's Vercel account, or intentionally keep Vercel maintainer-managed.
 
 ## Swap Calendly
 

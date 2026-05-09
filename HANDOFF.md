@@ -58,10 +58,12 @@ Still needs final production setup:
 - final photos and content
 - custom domain
 - launch SEO flag turned off after final content is ready
+- final Vercel ownership/access decision: keep maintainer-managed on Hobby, upgrade to Pro for team access, or move/recreate under the owner's Vercel account
 
 Already configured:
 
 - GitHub repo under `stellar-images`
+- Allex GitHub account `allex5937` is an active owner/admin in the `stellar-images` organization and has admin access to `stellar-images/stellar-images-site`
 - Vercel production deployment
 - Vercel GitHub integration for automatic deploys from `main`
 - Vercel production env vars for Decap GitHub OAuth
@@ -147,6 +149,13 @@ The current production deployment is live at:
 - https://stellar-images-site.vercel.app
 
 The project currently lives under the Vercel scope `lylej312s-projects`.
+
+Vercel access note:
+
+- Attempted owner invite for `Alexandra.v.maass@gmail.com` on May 8, 2026.
+- Vercel rejected the invite because team members are not permitted on the current Hobby plan.
+- This does not block CMS editing or automatic deploys. Allex can update the website through `/admin/`, Decap commits to GitHub, and Vercel deploys from `main`.
+- True owner Vercel access requires one of these paths: upgrade the current Vercel team to Pro, transfer/recreate the project under Allex's Vercel account, or keep Vercel maintainer-managed until launch needs justify the change.
 
 Git auto-deploy is connected to:
 
