@@ -18,7 +18,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   if (!code || !verifyState(state, stateSecret)) {
-    return sendPopupError(res, "Invalid OAuth response.");
+    return sendPopupError(
+      res,
+      "GitHub login expired or was already used. Return to the admin page and click Login with GitHub again.",
+    );
   }
 
   const redirectUri = process.env.OAUTH_REDIRECT_URI || `${getOrigin(req)}/api/callback`;
@@ -130,6 +133,53 @@ function sendPopupError(res: VercelResponse, message: string) {
   return res.status(400).send(`
     <!doctype html>
     <html>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Admin login did not complete</title>
+        <style>
+          body {
+            align-items: center;
+            background: #f7f3ec;
+            color: #221f1a;
+            display: flex;
+            font-family: Georgia, serif;
+            justify-content: center;
+            margin: 0;
+            min-height: 100vh;
+            padding: 24px;
+          }
+
+          main {
+            background: #fffaf1;
+            border: 1px solid #d8c9ad;
+            border-radius: 18px;
+            box-shadow: 0 18px 50px rgb(70 55 35 / 14%);
+            max-width: 520px;
+            padding: 32px;
+          }
+
+          h1 {
+            font-size: clamp(1.75rem, 5vw, 2.5rem);
+            line-height: 1;
+            margin: 0 0 16px;
+          }
+
+          p {
+            font: 18px/1.55 ui-sans-serif, system-ui, sans-serif;
+            margin: 0 0 18px;
+          }
+
+          a {
+            background: #221f1a;
+            border-radius: 999px;
+            color: #fffaf1;
+            display: inline-block;
+            font: 700 15px/1 ui-sans-serif, system-ui, sans-serif;
+            padding: 14px 18px;
+            text-decoration: none;
+          }
+        </style>
+      </head>
       <body>
         <script>
           (function () {
@@ -138,7 +188,11 @@ function sendPopupError(res: VercelResponse, message: string) {
             window.close();
           })();
         </script>
-        <p>${escapeHtml(message)}</p>
+        <main>
+          <h1>Admin login did not complete</h1>
+          <p>${escapeHtml(message)}</p>
+          <a href="/admin/">Return to admin login</a>
+        </main>
       </body>
     </html>
   `);
