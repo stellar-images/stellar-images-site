@@ -107,6 +107,10 @@
         padding: 14px 16px;
       }
 
+      .admin-help__section--wide {
+        grid-column: 1 / -1;
+      }
+
       .admin-help h2 {
         font-size: 13px;
         letter-spacing: 0.04em;
@@ -129,6 +133,24 @@
 
       .admin-help strong {
         color: var(--admin-note-ink);
+      }
+
+      .admin-help__links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+      }
+
+      .admin-help__links a {
+        background: rgba(141, 92, 47, 0.1);
+        border: 1px solid rgba(141, 92, 47, 0.24);
+        border-radius: 999px;
+        color: var(--admin-note-accent);
+        font-size: 12px;
+        font-weight: 800;
+        padding: 8px 10px;
+        text-decoration: none;
       }
 
       @media (max-width: 760px) {
@@ -158,26 +180,41 @@
 
       <div class="admin-help__body">
         <section class="admin-help__section" aria-labelledby="admin-publishing-flow-title">
-          <h2 id="admin-publishing-flow-title">Publishing Flow</h2>
+          <h2 id="admin-publishing-flow-title">Edit To Live Site</h2>
           <ol>
             <li>Edit the content fields in this admin panel.</li>
             <li>Click <strong>Publish</strong> so the CMS saves the change to GitHub.</li>
             <li>Vercel sees the GitHub update, rebuilds the site, and publishes the new version.</li>
             <li>Wait a few minutes, then refresh the public website to confirm the change.</li>
           </ol>
+          <div class="admin-help__links" aria-label="Public site preview links">
+            <a href="/" target="_blank" rel="noreferrer">Open Site</a>
+            <a href="/portfolio/" target="_blank" rel="noreferrer">Portfolio</a>
+            <a href="/services/" target="_blank" rel="noreferrer">Services</a>
+            <a href="/contact/" target="_blank" rel="noreferrer">Booking Form</a>
+          </div>
         </section>
 
         <section class="admin-help__section" aria-labelledby="admin-update-quirks-title">
-          <h2 id="admin-update-quirks-title">Important Quirks</h2>
+          <h2 id="admin-update-quirks-title">Important Rules</h2>
           <ul>
             <li>This is a structured form editor, not a drag-and-drop page builder or instant live preview.</li>
             <li>The admin form follows a fixed site schema. If a field is missing here, the schema has to be updated before that content can be edited.</li>
-            <li>Portfolio entries become public cards and detail pages when <strong>Published</strong> is enabled.</li>
+            <li>Portfolio projects become public cards and detail pages when <strong>Published</strong> is enabled.</li>
             <li>Use <strong>Sort Order</strong> values like 10, 20, and 30 so new portfolio projects can be inserted later without renumbering everything.</li>
-            <li>Fields marked <strong>Advanced</strong> control form behavior and email payloads. Change them only intentionally.</li>
-            <li>Uploaded images and text become public website content. Do not add passwords, private client notes, or account secrets.</li>
-            <li>Use web-ready portfolio images, not full-resolution client delivery folders.</li>
-            <li>If login gets stuck or the editor looks empty, use <strong>Reset CMS Login</strong> and try again.</li>
+            <li>A portfolio project's public URL is <strong>/portfolio/[Portfolio URL ID]/</strong> after publishing.</li>
+            <li>Fields marked <strong>Advanced</strong> control form behavior, URLs, or email payloads. Change them only intentionally.</li>
+            <li>Uploaded images and text become public website content. Do not add passwords, private files, account screenshots, or internal notes.</li>
+          </ul>
+        </section>
+
+        <section class="admin-help__section admin-help__section--wide" aria-labelledby="admin-image-guidance-title">
+          <h2 id="admin-image-guidance-title">Image Checklist</h2>
+          <ul>
+            <li>Use polished JPG or WebP images, not screenshots.</li>
+            <li>Portfolio images should usually be at least <strong>1600px wide</strong>.</li>
+            <li>Add useful alt text that describes the image in plain language.</li>
+            <li>If login gets stuck or an editor unexpectedly shows 0 items, use <strong>Reset CMS Login</strong> and try again.</li>
           </ul>
         </section>
       </div>
@@ -242,12 +279,27 @@
           document.body.append(button);
         }
 
+        function hidePreviewCheckButton() {
+          document.querySelectorAll("button").forEach((button) => {
+            if (button.innerText.trim() !== "Check for Preview") return;
+
+            button.hidden = true;
+            button.setAttribute("aria-hidden", "true");
+          });
+        }
+
         if (new URLSearchParams(window.location.search).has(resetParam)) {
           resetAdminLogin();
           return;
         }
 
-        window.addEventListener("load", addResetButton);
+        const observer = new MutationObserver(hidePreviewCheckButton);
+
+        window.addEventListener("load", () => {
+          addResetButton();
+          hidePreviewCheckButton();
+          observer.observe(document.body, { childList: true, subtree: true });
+        });
 
         window.open = (url, target, features) => {
           const popup = nativeOpen(url, target, features);
@@ -344,6 +396,13 @@
 
           if (!bodyText) return true;
           if (/Loading (configuration|entry)/i.test(bodyText)) return true;
+          if (
+            /\b0 (form fields|service cards|portfolio projects|client testimonials|credentials \/ qualifications)\b/i.test(
+              bodyText,
+            )
+          ) {
+            return true;
+          }
           if (!bodyText.includes("Writing in")) return false;
 
           const fields = visibleValueFields();

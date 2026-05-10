@@ -31,18 +31,18 @@ The admin/content verifier checks:
 Optional local browser check:
 
 ```sh
-npm run dev -- --host 127.0.0.1 --port 4321
+npm run dev
 ```
 
 Open:
 
-- `http://127.0.0.1:4321/`
-- `http://127.0.0.1:4321/contact`
-- `http://127.0.0.1:4321/admin/`
-- `http://127.0.0.1:4321/admin/#/collections/site_settings/entries/site`
-- `http://127.0.0.1:4321/admin/#/collections/page_content/entries/pages`
+- `http://localhost:4321/`
+- `http://localhost:4321/contact`
+- `http://localhost:4321/admin/`
+- `http://localhost:4321/admin/#/collections/site_settings/entries/site`
+- `http://localhost:4321/admin/#/collections/page_content/entries/pages`
 
-Astro dev and production both serve the CMS at `/admin/`.
+`npm run dev` starts both Astro and the Decap local editing proxy. If the admin stays on "Loading configuration..." locally, confirm the proxy is running on port `8081` or run `npm run cms:proxy` in a second terminal.
 
 ## Production Verification
 

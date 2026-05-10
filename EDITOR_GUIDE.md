@@ -15,13 +15,35 @@ Publishing creates a GitHub commit and a Vercel deployment. It does not use GitH
 
 ## What Can Be Edited
 
-- `Site Settings`: business name, homepage hero, about preview, contact info, service area, footer, launch SEO flag, and public Calendly event URL.
+- `Site Basics & Launch`: business-wide details and launch settings.
 - `Page Content`: hero copy, section headings, descriptions, and CTA button labels for the main pages.
 - `Services`: service names, descriptions, features, starting prices, and pricing rows.
 - `Portfolio`: portfolio cards, categories, images, locations, alt text, and featured status.
 - `Testimonials`: quote text, name, role, and star rating.
 - `Credentials`: trust/qualification cards.
-- `Booking Form`: labels, placeholders, field requirements, options, intro text, and submit label.
+
+## Site Basics & Launch
+
+Use `Site Basics & Launch` for settings that affect the whole website.
+
+`Site Basics, Contact & Launch` includes:
+
+- business name
+- homepage hero text and hero image
+- about preview text and founder/about image
+- public phone, email, business hours, and service area
+- public Calendly event URL
+- footer description
+- browser title, link preview image, and launch/search settings
+
+`Booking / Order Form` includes:
+
+- intro text above the form
+- Calendly note below the form
+- submit button label
+- field labels, placeholders, required toggles, dropdown options, and checkbox options
+
+The launch toggle is `Keep Site Hidden From Google Until Launch`. When it is on, the site asks Google and other search engines not to list the site yet. Keep it on while placeholder content is still visible. Turn it off only at final launch.
 
 ## Adding Portfolio Photos
 
@@ -54,7 +76,7 @@ Use `Page Content` for page-level wording:
 - CTA text
 - button labels
 
-Use `Site Settings` for business-wide details:
+Use `Site Basics & Launch` for business-wide details:
 
 - business name
 - homepage hero image
@@ -64,9 +86,9 @@ Use `Site Settings` for business-wide details:
 - Calendly URL
 - SEO launch setting
 
-## Launch SEO Flag
+## Launch Search Setting
 
-`Site Settings -> SEO -> Hide From Search Engines Until Launch` is currently enabled because the site still has placeholder content. Turn it off only when the real photos, copy, Calendly link, email delivery, and domain are ready.
+`Site Basics & Launch -> Site Basics, Contact & Launch -> Launch & Search Settings -> Keep Site Hidden From Google Until Launch` is currently enabled because the site still has placeholder content. Turn it off only when the real photos, copy, Calendly link, email delivery, and domain are ready.
 
 ## What Not To Edit In The CMS
 

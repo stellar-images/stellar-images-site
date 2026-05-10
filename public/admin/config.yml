@@ -12,13 +12,14 @@ public_folder: /images/uploads
 
 collections:
   - name: site_settings
-    label: Site Settings
+    label: Site Basics & Launch
+    description: Brand, homepage hero, contact details, Calendly link, SEO, and launch visibility.
     delete: false
     editor:
       preview: false
     files:
       - name: site
-        label: Site Settings
+        label: Site Basics, Contact & Launch
         file: src/content/site.json
         format: json
         fields:
@@ -26,107 +27,125 @@ collections:
             name: businessName
             widget: string
             hint: Public brand name shown in the header and footer.
-          - label: SEO
+          - label: Launch & Search Settings
             name: seo
             widget: object
+            hint: Browser title, link previews, and whether Google should list the site. Keep the site hidden until real content and the final domain are ready.
             fields:
               - { label: Site URL, name: siteUrl, widget: string, hint: Use the final production domain after launch. }
-              - { label: Default Browser Title, name: defaultTitle, widget: string }
+              - { label: Default Browser Title, name: defaultTitle, widget: string, hint: Main browser/search title used when a page does not override it. }
               - { label: Default Description, name: defaultDescription, widget: text, hint: Short search/social description. Aim for one clear sentence. }
-              - { label: Social Share Image, name: socialImage, widget: image, hint: Used for link previews when someone shares the site. }
-              - { label: Hide From Search Engines Until Launch, name: noIndex, widget: boolean, default: true, hint: Keep enabled while placeholder content is visible. Turn off only at final launch. }
-          - label: Hero
+              - { label: Social Share Image, name: socialImage, widget: image, hint: Used for link previews when someone shares the site. Use a polished horizontal JPG/WebP. }
+              - { label: Keep Site Hidden From Google Until Launch, name: noIndex, widget: boolean, default: true, hint: When on, Google and other search engines are told not to list this site. Keep on while placeholder content is visible; turn off only at final launch. }
+          - label: Homepage Hero
             name: hero
             widget: object
+            hint: Main first impression on the homepage.
             fields:
               - { label: Eyebrow, name: eyebrow, widget: string, hint: Small all-caps text above the homepage headline. }
               - { label: Heading, name: heading, widget: string, hint: Main homepage headline. Keep this strong and concise. }
               - { label: Description, name: description, widget: text, hint: One or two sentences below the headline. }
-              - label: Image
+              - label: Hero Image
                 name: image
                 widget: object
+                hint: Use a high-resolution, horizontal, web-ready image.
                 fields:
-                  - { label: Image, name: src, widget: image, hint: Wide hero image. Horizontal photos work best. }
+                  - { label: Image, name: src, widget: image, hint: Wide hero image. Horizontal photos work best; avoid screenshots or low-resolution exports. }
                   - { label: Alt Text, name: alt, widget: string, hint: Describe the image for accessibility. }
-          - label: About Preview
+          - label: Homepage About Text
             name: aboutPreview
             widget: object
+            hint: Short biography/intro text used on the homepage and About page.
             fields:
-              - { label: Heading, name: heading, widget: string }
+              - { label: Heading, name: heading, widget: string, hint: Section headline above the intro paragraphs. }
               - label: Paragraphs
                 name: paragraphs
                 widget: list
+                summary: "{{fields.paragraph}}"
+                hint: Keep each paragraph short enough to scan. Add or remove paragraphs as needed.
                 field: { label: Paragraph, name: paragraph, widget: text }
-          - label: About Image
+          - label: About / Founder Image
             name: aboutImage
             widget: object
+            hint: Photo and caption used near the about text.
             fields:
-              - { label: Image, name: src, widget: image }
-              - { label: Alt Text, name: alt, widget: string }
-              - { label: Caption Title, name: captionTitle, widget: string }
-              - { label: Caption Text, name: captionText, widget: text }
-          - label: Contact
+              - { label: Image, name: src, widget: image, hint: Portrait or brand image. Use a clean web-ready JPG/WebP. }
+              - { label: Alt Text, name: alt, widget: string, hint: Describe the image for accessibility. }
+              - { label: Caption Title, name: captionTitle, widget: string, hint: Short bold caption line. }
+              - { label: Caption Text, name: captionText, widget: text, hint: Supporting caption below the title. }
+          - label: Contact Details
             name: contact
             widget: object
+            hint: Public contact details shown on the website.
             fields:
-              - { label: Intro Text, name: intro, widget: text }
-              - { label: Phone, name: phone, widget: string }
-              - { label: Email, name: email, widget: string }
-              - { label: Hours, name: hours, widget: string }
+              - { label: Intro Text, name: intro, widget: text, hint: Short note above the contact details. }
+              - { label: Public Phone, name: phone, widget: string, hint: Phone number displayed on the site. }
+              - { label: Public Email, name: email, widget: string, hint: Email address displayed on the site. }
+              - { label: Business Hours, name: hours, widget: string, hint: "Example: Mon - Fri, 8am - 6pm." }
               - label: Service Area
                 name: serviceArea
                 widget: list
+                summary: "{{fields.area}}"
+                hint: Areas shown on the contact page/footer.
                 field: { label: Area, name: area, widget: string }
-          - label: Booking
+          - label: Booking Link
             name: booking
             widget: object
+            hint: Public scheduling link clients use after sending property details.
             fields:
               - { label: Public Calendly Event URL, name: calendlyUrl, widget: string, required: false, hint: Paste the public booking page URL clients should use. Do not paste API keys, tokens, or private dashboard URLs. }
           - label: Footer
             name: footer
             widget: object
+            hint: Short description shown in the footer on every page.
             fields:
-              - { label: Description, name: description, widget: text }
+              - { label: Footer Description, name: description, widget: text, hint: One concise sentence about the business and service area. }
 
       - name: form_config
-        label: Booking Form
+        label: Booking / Order Form
         file: src/content/form-config.json
         format: json
         fields:
-          - { label: Intro, name: intro, widget: text }
-          - { label: Note, name: note, widget: text }
-          - { label: Submit Label, name: submitLabel, widget: string }
-          - label: Fields
+          - { label: Intro Text, name: intro, widget: text, hint: Text shown above the property/order form. }
+          - { label: Calendly Note, name: note, widget: text, hint: Text explaining that the client should finish by choosing a time in Calendly. }
+          - { label: Submit Button Label, name: submitLabel, widget: string, hint: Button text for sending property details. }
+          - label: Form Fields
             name: fields
             widget: list
             summary: "{{fields.label}}"
+            hint: These fields control the public booking/order form. Edit labels/placeholders freely; change Advanced fields only when intentionally changing form behavior.
+            minimize_collapsed: true
             fields:
-              - { label: "Advanced: Field Key", name: name, widget: string, hint: Internal form key used by the website and email payload. Do not change unless the workflow is intentionally changing. }
               - { label: Label, name: label, widget: string, hint: Text clients see above the input. }
-              - { label: "Advanced: Input Type", name: type, widget: select, options: ["text", "email", "tel", "number", "select", "textarea", "checkbox-group"], hint: Controls how the browser renders the field. Do not change unless the field behavior needs to change. }
-              - { label: Required, name: required, widget: boolean, default: false }
-              - { label: Placeholder, name: placeholder, widget: string, required: false }
+              - { label: Required Field, name: required, widget: boolean, default: false, hint: Turn on if clients must fill this out before submitting. }
+              - { label: Placeholder / Example Text, name: placeholder, widget: string, required: false, hint: Light example text shown inside the field before the client types. }
               - { label: Default Value, name: defaultValue, widget: string, required: false, hint: Optional default value, mostly useful for select fields like State = SC. }
               - label: Options
                 name: options
                 widget: list
                 required: false
+                summary: "{{fields.option}}"
+                hint: Only used for dropdowns and checkbox groups.
                 field: { label: Option, name: option, widget: string }
+              - { label: "Advanced: Field Key", name: name, widget: string, hint: Internal form key used by the website and email payload. Do not change unless the workflow is intentionally changing. }
+              - { label: "Advanced: Input Type", name: type, widget: select, options: ["text", "email", "tel", "number", "select", "textarea", "checkbox-group"], hint: Controls how the browser renders the field. Do not change unless the field behavior needs to change. }
 
   - name: page_content
-    label: Page Content
+    label: Page Copy
+    description: Headlines, descriptions, section labels, and call-to-action button text for each page.
     delete: false
     editor:
       preview: false
     files:
       - name: pages
-        label: Page Copy
+        label: Homepage & Page Copy
         file: src/content/pages.json
         format: json
         fields:
-          - label: Home Page
+          - label: Homepage Sections
             name: home
             widget: object
+            hint: Text used across homepage sections.
             fields:
               - label: About Section
                 name: aboutSection
@@ -165,6 +184,7 @@ collections:
               - label: CTA
                 name: cta
                 widget: object
+                hint: Bottom call-to-action section on the homepage.
                 fields:
                   - { label: Eyebrow, name: eyebrow, widget: string }
                   - { label: Title, name: title, widget: string }
@@ -174,6 +194,7 @@ collections:
           - label: Portfolio Page
             name: portfolio
             widget: object
+            hint: Top copy and call-to-action on the public portfolio page.
             fields:
               - label: Hero
                 name: hero
@@ -194,6 +215,7 @@ collections:
           - label: Services Page
             name: services
             widget: object
+            hint: Top copy, overview copy, and call-to-action on the services/pricing page.
             fields:
               - label: Hero
                 name: hero
@@ -221,6 +243,7 @@ collections:
           - label: About Page
             name: about
             widget: object
+            hint: Top copy and call-to-action on the about page.
             fields:
               - label: Hero
                 name: hero
@@ -248,6 +271,7 @@ collections:
           - label: Contact Page
             name: contact
             widget: object
+            hint: Top copy on the contact/order form page.
             fields:
               - label: Hero
                 name: hero
@@ -258,115 +282,132 @@ collections:
                   - { label: Description, name: description, widget: text }
 
   - name: services
-    label: Services
+    label: Services & Pricing
+    description: Service cards, pricing rows, and package descriptions.
     delete: false
     editor:
       preview: false
     files:
       - name: services
-        label: Services
+        label: Services & Pricing
         file: src/content/services.json
         format: json
         fields:
-          - label: Services
+          - label: Service Cards
             name: services
             widget: list
-            summary: "{{fields.name}}"
+            summary: "{{fields.name}} - {{fields.startingPrice}}"
+            hint: Each item becomes a service/pricing card. Keep the service names aligned with Booking Form service options.
+            minimize_collapsed: true
             fields:
-              - { label: "Advanced: URL Anchor Slug", name: slug, widget: string, hint: Used for page anchors and links. Keep lowercase with hyphens and avoid changing after launch. }
-              - { label: Short Label, name: shortLabel, widget: string }
-              - { label: Name, name: name, widget: string }
-              - { label: Short Description, name: shortDescription, widget: text }
-              - { label: Long Description, name: longDescription, widget: text }
-              - { label: Starting Price, name: startingPrice, widget: string }
+              - { label: Service Name, name: name, widget: string, hint: Main name shown on the services page and in the booking form options. }
+              - { label: Short Label, name: shortLabel, widget: string, hint: Shorter label used where space is tighter. }
+              - { label: Short Description, name: shortDescription, widget: text, hint: Brief card description. }
+              - { label: Full Description, name: longDescription, widget: text, hint: Longer services page description. }
+              - { label: Starting Price, name: startingPrice, widget: string, hint: "Example: $150 or Custom." }
               - { label: Icon, name: icon, widget: select, options: ["PH", "DR", "VD"], hint: PH = photos, DR = drone, VD = video. }
               - label: Features
                 name: features
                 widget: list
+                summary: "{{fields.feature}}"
+                hint: Bullets shown under this service.
                 field: { label: Feature, name: feature, widget: string }
               - label: Pricing Rows
                 name: pricingRows
                 widget: list
+                summary: "{{fields.label}} - {{fields.price}}"
+                hint: Pricing table rows shown under this service.
                 fields:
                   - { label: Label, name: label, widget: string }
                   - { label: Price, name: price, widget: string }
+              - { label: "Advanced: URL Anchor Slug", name: slug, widget: string, hint: Used for page anchors and links. Keep lowercase with hyphens and avoid changing after launch. }
 
   - name: portfolio
-    label: Portfolio
+    label: Portfolio Projects
+    description: Public portfolio cards, detail pages, cover images, and project galleries.
     delete: false
     editor:
       preview: false
     files:
       - name: portfolio
-        label: Portfolio
+        label: Portfolio Projects
         file: src/content/portfolio.json
         format: json
         fields:
-          - label: Portfolio Items
+          - label: Portfolio Projects
             name: portfolio
             widget: list
-            summary: "{{fields.sortOrder}} - {{fields.title}}"
-            hint: Each item becomes a portfolio card and its own detail page. Drag items or edit Sort Order to control display order.
+            summary: "{{fields.sortOrder}} - {{fields.title}} ({{fields.category}})"
+            hint: Each published item becomes a portfolio card and its own detail page. After publishing, the public page is /portfolio/[Portfolio URL ID]/.
+            minimize_collapsed: true
+            add_to_top: true
             fields:
-              - { label: "Advanced: Card ID", name: id, widget: string, hint: Unique internal card ID. Keep lowercase with hyphens and avoid changing after launch. }
+              - { label: Project Title, name: title, widget: string, hint: Main title shown on the card and detail page. }
+              - { label: Portfolio URL ID, name: id, widget: string, hint: "Creates the public page URL: /portfolio/this-value/. Use lowercase letters, numbers, and hyphens. Avoid changing after launch." }
               - { label: Published, name: published, widget: boolean, default: true, hint: Turn off to hide the project while keeping the draft in the admin editor. }
               - { label: Sort Order, name: sortOrder, widget: number, value_type: int, default: 10, hint: Lower numbers appear first. Use 10, 20, 30 so new projects can fit between existing ones. }
-              - { label: Title, name: title, widget: string }
-              - { label: Category, name: category, widget: select, options: ["Interior", "Exterior", "Drone", "Video"] }
+              - { label: Category, name: category, widget: select, options: ["Interior", "Exterior", "Drone", "Video"], hint: Used for labels and filtering/grouping. }
               - { label: Short Summary, name: summary, widget: text, hint: Appears on portfolio cards and at the top of the detail page. }
               - { label: Detail Page Description, name: description, widget: text, required: false, hint: Optional longer explanation for the project detail page. }
-              - { label: Image, name: image, widget: image, hint: Upload compressed JPG or WebP photos when real portfolio assets are ready. }
+              - { label: Cover Image, name: image, widget: image, hint: Main card/detail image. Upload compressed JPG or WebP; at least 1600px wide is a good target. }
               - { label: Alt Text, name: alt, widget: string, hint: Plain-language description of the photo. }
-              - { label: Location, name: location, widget: string }
+              - { label: Location, name: location, widget: string, hint: "Example: Beaufort, SC." }
               - { label: Featured, name: featured, widget: boolean, default: false, hint: Featured items appear on the homepage. }
               - label: Gallery Images
                 name: gallery
                 widget: list
                 required: false
                 summary: "{{fields.caption}}"
-                hint: Optional extra images shown on the project's detail page.
+                hint: Optional extra images shown on the project detail page. Use public, web-ready portfolio images.
+                minimize_collapsed: true
                 fields:
-                  - { label: Image, name: image, widget: image }
-                  - { label: Alt Text, name: alt, widget: string }
-                  - { label: Caption, name: caption, widget: string, required: false }
+                  - { label: Gallery Image, name: image, widget: image, hint: Additional image for the detail page. }
+                  - { label: Alt Text, name: alt, widget: string, hint: Plain-language description of the image. }
+                  - { label: Caption, name: caption, widget: string, required: false, hint: Optional short caption shown with the image. }
 
   - name: testimonials
-    label: Testimonials
+    label: Client Testimonials
+    description: Quotes displayed on the homepage.
     delete: false
     editor:
       preview: false
     files:
       - name: testimonials
-        label: Testimonials
+        label: Client Testimonials
         file: src/content/testimonials.json
         format: json
         fields:
-          - label: Testimonials
+          - label: Client Testimonials
             name: testimonials
             widget: list
             summary: "{{fields.name}}"
+            hint: Quotes shown in the testimonials section.
+            minimize_collapsed: true
             fields:
-              - { label: Quote, name: quote, widget: text }
-              - { label: Name, name: name, widget: string }
-              - { label: Role, name: role, widget: string }
-              - { label: Stars, name: stars, widget: number, value_type: int, min: 1, max: 5 }
+              - { label: Quote, name: quote, widget: text, hint: Testimonial text. Keep it concise. }
+              - { label: Client Name, name: name, widget: string }
+              - { label: Client Role / Company, name: role, widget: string }
+              - { label: Star Rating, name: stars, widget: number, value_type: int, min: 1, max: 5, hint: Usually 5. Must be between 1 and 5. }
 
   - name: credentials
-    label: Credentials
+    label: Credentials / Qualifications
+    description: Qualification cards shown on the homepage and About page.
     delete: false
     editor:
       preview: false
     files:
       - name: credentials
-        label: Credentials
+        label: Credentials / Qualifications
         file: src/content/credentials.json
         format: json
         fields:
-          - label: Credentials
+          - label: Credentials / Qualifications
             name: credentials
             widget: list
             summary: "{{fields.title}}"
+            hint: Qualification cards shown on the site.
+            minimize_collapsed: true
             fields:
-              - { label: Title, name: title, widget: string }
-              - { label: Description, name: description, widget: text }
+              - { label: Title, name: title, widget: string, hint: Short credential title. }
+              - { label: Description, name: description, widget: text, hint: One sentence explaining the credential. }
               - { label: Icon, name: icon, widget: select, options: ["PRO", "FAA", "PPL", "NAV"], hint: PRO = professional, FAA = drone pilot, PPL = private pilot, NAV = Navy veteran. }

@@ -11,7 +11,9 @@ Astro site for a real estate photography business. The project is structured aro
 ## Commands
 
 - `npm install`
-- `npm run dev`
+- `npm run dev` starts Astro plus the Decap local editing proxy
+- `npm run dev:site` starts only Astro
+- `npm run cms:proxy` starts only the Decap local editing proxy
 - `npm run build`
 - `npm run preview`
 - `npm run typecheck`
@@ -49,13 +51,13 @@ Astro site for a real estate photography business. The project is structured aro
 
 The site content is designed to be edited through Decap CMS at `/admin`.
 
-For local Astro dev, open `http://127.0.0.1:4321/admin/`. Production uses the same `/admin/` path.
+For local admin testing, run `npm run dev` so the Decap local editing proxy is available, then open `http://localhost:4321/admin/`. Production uses the same `/admin/` path with GitHub OAuth.
 
 Current Decap status:
 
 - the admin UI and collection config are live
 - GitHub OAuth production login is configured through Vercel Functions
-- `local_backend: true` remains enabled for local development
+- `local_backend: true` remains enabled for local development through `decap-server`
 - the production Git backend points at `stellar-images/stellar-images-site`
 - Vercel is connected to the GitHub repo for automatic deploys from `main`
 - a CMS publish test was completed and verified against GitHub/Vercel

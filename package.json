@@ -6,7 +6,9 @@
     "node": ">=22.12.0"
   },
   "scripts": {
-    "dev": "astro dev",
+    "dev": "concurrently -k -n site,cms -c cyan,magenta \"astro dev\" \"decap-server\"",
+    "dev:site": "astro dev",
+    "cms:proxy": "decap-server",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
@@ -22,6 +24,8 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
     "@types/node": "^25.6.0",
+    "concurrently": "^9.2.1",
+    "decap-server": "^3.7.0",
     "typescript": "^6.0.3",
     "yaml": "^2.8.4"
   },

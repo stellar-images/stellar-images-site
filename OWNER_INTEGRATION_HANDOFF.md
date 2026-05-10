@@ -54,11 +54,12 @@ The Calendly URL is content, not a secret.
 CMS path:
 
 1. Open `/admin/`.
-2. Open `Site Settings`.
-3. Open `Booking`.
-4. Replace `Public Calendly Event URL` with the owner event URL.
-5. Publish.
-6. Wait for Vercel to redeploy.
+2. Open `Site Basics & Launch`.
+3. Open `Site Basics, Contact & Launch`.
+4. Open `Booking Link`.
+5. Replace `Public Calendly Event URL` with the owner event URL.
+6. Publish.
+7. Wait for Vercel to redeploy.
 
 Repo file if editing by hand:
 
@@ -147,8 +148,8 @@ Do not publicly launch until these are true:
 - owner Google Calendar receives test bookings
 - placeholder photos are replaced or explicitly accepted
 - placeholder testimonials are replaced or removed
-- final domain is set in `Site Settings -> SEO -> Site URL`
-- `Site Settings -> SEO -> Hide From Search Engines Until Launch` is turned off
+- final domain is set in `Site Basics & Launch -> Site Basics, Contact & Launch -> Launch & Search Settings -> Site URL`
+- `Site Basics & Launch -> Site Basics, Contact & Launch -> Launch & Search Settings -> Keep Site Hidden From Google Until Launch` is turned off
 - `robots.txt` allows crawling on the final domain
 
 ## Rollback

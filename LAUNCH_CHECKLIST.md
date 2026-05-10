@@ -7,11 +7,11 @@ Use this before pointing a real domain at the site or sharing it publicly.
 - Replace placeholder hero, portfolio, and about images.
 - Replace placeholder business copy, testimonial names, and credential text with real approved copy.
 - Replace all `Sample Client` testimonials with real testimonials or remove that section until real feedback is available.
-- Add the real Calendly event URL in `Site Settings -> Booking -> Public Calendly Event URL`.
+- Add the real Calendly event URL in `Site Basics & Launch -> Site Basics, Contact & Launch -> Booking Link -> Public Calendly Event URL`.
 - Configure production email delivery for `/api/intake`.
 - Submit one real end-to-end booking test: form submit, email received, Calendly booking created.
-- Set the final domain in `Site Settings -> SEO -> Site URL`.
-- Turn off `Site Settings -> SEO -> Hide From Search Engines Until Launch`.
+- Set the final domain in `Site Basics & Launch -> Site Basics, Contact & Launch -> Launch & Search Settings -> Site URL`.
+- Turn off `Site Basics & Launch -> Site Basics, Contact & Launch -> Launch & Search Settings -> Keep Site Hidden From Google Until Launch`.
 - Confirm `https://final-domain.com/robots.txt` allows crawling after launch.
 
 Current note: the full integration path was tested in production on May 8, 2026 with temporary integration values. Repeat the same smoke test after swapping to the owner-controlled Calendly account, sender domain, and inquiry inbox.

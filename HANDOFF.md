@@ -39,6 +39,15 @@ See `EDITOR_GUIDE.md` for the non-technical editing guide.
 See `LAUNCH_CHECKLIST.md` before sharing the site publicly.
 See `OWNER_INTEGRATION_HANDOFF.md` for the exact owner account swap and verification sequence.
 
+## Admin: Site Basics & Launch
+
+The first CMS section is `Site Basics & Launch`. It contains the business-wide settings that affect multiple pages:
+
+- `Site Basics, Contact & Launch`: business name, homepage hero, about preview, contact details, service area, public Calendly URL, footer text, social sharing image, and launch/search settings.
+- `Booking / Order Form`: the public property/order form intro text, submit button text, field labels, field requirements, dropdown options, and checkbox options.
+
+The launch/search toggle is labeled `Keep Site Hidden From Google Until Launch`. Keep it on while placeholder photos/copy are still visible. Turn it off only when the real photos, copy, Calendly link, email delivery, and final domain are ready.
+
 ## Current State
 
 Scaffolded and configured now:
@@ -193,11 +202,11 @@ Important business-use caveat: Vercel Hobby is intended for personal/non-commerc
 
 These files are intended to be managed by Decap rather than edited by hand in normal use.
 
-## Launch SEO Flag
+## Launch Search Setting
 
 The site currently sets `noindex, nofollow` through `src/content/site.json` because it still contains placeholder content. In the CMS, this is:
 
-- `Site Settings -> SEO -> Hide From Search Engines Until Launch`
+- `Site Basics & Launch -> Site Basics, Contact & Launch -> Launch & Search Settings -> Keep Site Hidden From Google Until Launch`
 
 Turn it off only after real content, photos, Calendly, email delivery, and domain setup are ready.
 
