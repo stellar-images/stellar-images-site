@@ -26,10 +26,24 @@
         background:
           linear-gradient(135deg, rgba(255, 255, 255, 0.86), rgba(246, 241, 231, 0.96)),
           var(--admin-note-bg);
-        border-bottom: 1px solid var(--admin-note-border);
+        border: 1px solid var(--admin-note-border);
+        border-radius: 18px;
+        bottom: 16px;
+        box-shadow: 0 18px 50px rgba(25, 21, 15, 0.18);
         color: var(--admin-note-ink);
         font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        padding: 14px clamp(16px, 3vw, 36px);
+        left: 16px;
+        max-height: min(76vh, 640px);
+        max-width: 920px;
+        overflow: auto;
+        padding: 0;
+        position: fixed;
+        width: min(calc(100vw - 32px), 920px);
+        z-index: 2147483646;
+      }
+
+      .admin-help:not([open]) {
+        width: auto;
       }
 
       .admin-help__summary {
@@ -38,6 +52,7 @@
         display: flex;
         gap: 12px;
         list-style: none;
+        padding: 12px 16px;
       }
 
       .admin-help__summary::-webkit-details-marker {
@@ -60,6 +75,10 @@
         transform: rotate(-135deg);
       }
 
+      .admin-help[open] .admin-help__summary {
+        border-bottom: 1px solid rgba(217, 197, 161, 0.82);
+      }
+
       .admin-help__eyebrow {
         color: var(--admin-note-accent);
         font-size: 11px;
@@ -78,8 +97,7 @@
         display: grid;
         gap: 18px;
         grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-        margin-top: 12px;
-        max-width: 1120px;
+        padding: 16px;
       }
 
       .admin-help__section {
@@ -114,6 +132,13 @@
       }
 
       @media (max-width: 760px) {
+        .admin-help {
+          bottom: 10px;
+          left: 10px;
+          max-height: 70vh;
+          width: min(calc(100vw - 20px), 920px);
+        }
+
         .admin-help__body {
           grid-template-columns: 1fr;
         }
@@ -125,7 +150,7 @@
     </style>
   </head>
   <body>
-    <details class="admin-help" open>
+    <details class="admin-help">
       <summary class="admin-help__summary">
         <span class="admin-help__eyebrow">Admin notes</span>
         <span class="admin-help__title">How edits become website updates</span>
