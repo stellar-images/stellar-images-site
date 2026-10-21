@@ -1,10 +1,10 @@
 {
   "businessName": "Stellar Images",
   "seo": {
-    "siteUrl": "https://stellar-images-site.vercel.app",
-    "defaultTitle": "Stellar Images | Real Estate Photography",
+    "siteUrl": "https://Allex-Maass-site.vercel.app",
+    "defaultTitle": "Allex Maass | Real Estate Photography",
     "defaultDescription": "Professional listing photos, drone media, and video that help homes sell faster.",
-    "socialImage": "/images/demo-portfolio/exterior-twilight-modern.jpg",
+    "socialImage": "/images/uploads/dji_20260714180553_0643_d.jpg",
     "noIndex": true
   },
   "hero": {
@@ -12,7 +12,7 @@
     "heading": "Beaufort's Premier Real Estate Photography",
     "description": "Professional listing photos, drone media, and video that help homes sell faster.",
     "image": {
-      "src": "/images/placeholders/hero-high-res-home.jpg",
+      "src": "/images/uploads/dji_20260714180753_0658_d.jpg",
       "alt": "Bright exterior real estate photograph of a large white home"
     }
   },
@@ -38,7 +38,8 @@
     "serviceArea": [
       "Beaufort",
       "Bluffton",
-      "Hilton Head & Lowcountry"
+      "Hilton Head & Lowcountry",
+      "Savannah"
     ]
   },
   "booking": {
