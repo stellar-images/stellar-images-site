@@ -48,15 +48,11 @@
       "pricingRows": [
         {
           "label": "Photos Only",
-          "price": "$70"
+          "price": "$50"
         },
         {
           "label": "Photos + Video",
-          "price": "$150"
-        },
-        {
-          "label": "Premium Aerial Package",
-          "price": "$250"
+          "price": "$300"
         }
       ]
     },
@@ -78,15 +74,15 @@
       "pricingRows": [
         {
           "label": "Under 2,000 sq ft",
-          "price": "$75"
+          "price": "$400"
         },
         {
           "label": "2,000 - 3,500 sq ft",
-          "price": "$150"
+          "price": "$650"
         },
         {
           "label": "3,500+ sq ft",
-          "price": "$200"
+          "price": "$800"
         }
       ]
     }
