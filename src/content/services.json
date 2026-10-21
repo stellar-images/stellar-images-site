@@ -3,7 +3,7 @@
     {
       "shortDescription": "Interior and exterior coverage with MLS-ready editing that makes every room shine.",
       "longDescription": "High-quality interior and exterior photography that makes every listing shine. Our photos are MLS-ready and optimized for online platforms.",
-      "startingPrice": "$125",
+      "startingPrice": "$200",
       "name": "Professional Listing Photos",
       "slug": "professional-listing-photos",
       "shortLabel": "Listing Photos",
@@ -33,7 +33,7 @@
     {
       "shortDescription": "Aerial imagery and cinematic footage to showcase property location, land, and surroundings.",
       "longDescription": "FAA-licensed aerial imaging that showcases the full scope of any property - from sweeping land views to neighborhood context.",
-      "startingPrice": "$250",
+      "startingPrice": "$50",
       "name": "Drone Photography",
       "slug": "drone-photography-video",
       "shortLabel": "Drone Media",
@@ -63,7 +63,7 @@
     {
       "shortDescription": "Smooth, professional home tours optimized for social media and MLS listings.",
       "longDescription": "Smooth, cinematic home tours that give buyers a true feel for the property. Optimized for social media, MLS, and websites.",
-      "startingPrice": "$75",
+      "startingPrice": "$400",
       "name": "Video Walkthroughs",
       "slug": "video-walkthroughs",
       "shortLabel": "Walkthrough Video",
